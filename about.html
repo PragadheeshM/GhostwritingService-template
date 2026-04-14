@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About InkCraft — Learn about our elite team of ghostwriters, editors, and publishing consultants with 15+ years of experience." />
+  <title>About Us | InkCraft Ghostwriting & Book Editing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="font-body">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transparent-on-dark">
+    <div class="container-xl">
+      <div class="flex items-center justify-between h-20">
+          <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+            <div class="logo-icon-box"><i class="fas fa-feather-alt"></i></div>
+            <div><span class="font-heading font-bold text-xl leading-none logo-text" >InkCraft</span></div>
+          </a>
+        <!-- Right Blocks -->
+        <div class="flex items-center gap-4 lg:gap-8">
+          <div class="hidden xl:flex items-center gap-1">
+            <div class="nav-dropdown"><button class="nav-link">Home <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="index.html"><i class="fas fa-building"></i> Corporate Home</a><a href="index2.html"><i class="fas fa-star"></i> Creative Home</a></div></div>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <div class="nav-dropdown"><button class="nav-link">Blog <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="blog.html"><i class="fas fa-newspaper"></i> Blog Listing</a><a href="blog-details.html"><i class="fas fa-file-alt"></i> Blog Article</a></div></div>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <div class="nav-dropdown"><button class="nav-link">Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="user-dashboard.html"><i class="fas fa-user"></i> User Dashboard</a><a href="admin-dashboard.html"><i class="fas fa-shield-halved"></i> Admin Dashboard</a></div></div>
+          </div>
+          <div class="flex items-center gap-2 md:gap-3">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <button id="rtl-toggle" class="icon-btn"><i class="fas fa-globe rtl-icon" id="rtl-icon"></i></button>
+              <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
+              <a href="login.html" class="btn-outline ml-2 hidden sm:inline-flex">Login</a>
+              <a href="register.html" class="btn-primary hidden sm:inline-flex" style="background:var(--color-accent);color:white;border-radius:9999px;">Get Started <i class="fas fa-arrow-right text-xs"></i></a>
+            </div>
+            <button id="mobile-menu-btn" class="xl:hidden icon-btn"><i class="fas fa-bars"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div id="mobile-overlay"></div>
+  <div id="mobile-menu">
+    <div class="flex items-center justify-between mb-6"><a href="index.html" class="flex items-center gap-3 flex-shrink-0"><div class="logo-icon-box" style="width:36px;height:36px;"><i class="fas fa-feather-alt" style="font-size:0.9rem;"></i></div><div><span class="font-heading font-bold text-lg leading-none logo-text">InkCraft</span></div></a><button id="mobile-close-btn" class="icon-btn"><i class="fas fa-times"></i></button></div>
+    
+    <div class="divider"></div>
+    <nav class="space-y-1">
+      <button class="mobile-accordion-btn" data-target="mob-home" ><span class="flex items-center gap-3"><i class="fas fa-home w-5 text-accent"></i> Home</span><i class="fas fa-chevron-down accordion-arrow text-xs transition-transform" style="color:var(--color-text-muted);"></i></button>
+      <div id="mob-home" class="mobile-sub-menu"><a href="index.html" class="mobile-sub-link">Corporate Home</a><a href="index2.html" class="mobile-sub-link">Creative Home</a></div>
+      <a href="about.html" class="mobile-nav-link"><i class="fas fa-info-circle w-5 text-accent"></i> About</a>
+      <a href="services.html" class="mobile-nav-link"><i class="fas fa-pen-nib w-5 text-accent"></i> Services</a>
+      <a href="pricing.html" class="mobile-nav-link"><i class="fas fa-tags w-5 text-accent"></i> Pricing</a>
+      <button class="mobile-accordion-btn" data-target="mob-blog" ><span class="flex items-center gap-3"><i class="fas fa-newspaper w-5 text-accent"></i> Blog</span><i class="fas fa-chevron-down accordion-arrow text-xs transition-transform" style="color:var(--color-text-muted);"></i></button>
+      <div id="mob-blog" class="mobile-sub-menu"><a href="blog.html" class="mobile-sub-link">Blog Listing</a><a href="blog-details.html" class="mobile-sub-link">Blog Article</a></div>
+      <a href="contact.html" class="mobile-nav-link"><i class="fas fa-envelope w-5 text-accent"></i> Contact</a>
+      <button class="mobile-accordion-btn" data-target="mob-dash" ><span class="flex items-center gap-3"><i class="fas fa-chart-pie w-5 text-accent"></i> Dashboard</span><i class="fas fa-chevron-down accordion-arrow text-xs" style="color:var(--color-text-muted);"></i></button>
+      <div id="mob-dash" class="mobile-sub-menu"><a href="user-dashboard.html" class="mobile-sub-link">User Dashboard</a><a href="admin-dashboard.html" class="mobile-sub-link">Admin Dashboard</a></div>
+    </nav>
+    
+    <!-- Mobile Auth (360px) -->
+    <div class="mt-8 pt-6 border-t sm:hidden" style="border-color:var(--color-border);">
+      <div class="flex flex-col gap-3">
+        <a href="login.html" class="btn-outline w-full justify-center">Login</a>
+        <a href="register.html" class="btn-primary w-full justify-center">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="blob blob-primary w-96 h-96 -top-20 -right-20 opacity-20"></div>
+    <div class="blob blob-secondary w-72 h-72 bottom-0 left-10 opacity-10"></div>
+    <div class="container-xl page-header-content">
+      <div class="section-tag mb-4" style="background:rgba(255,255,255,0.08);color:#A78BFA;border-color:rgba(255,255,255,0.15);">
+        <i class="fas fa-building"></i> Our Company
+      </div>
+      <h1 class="page-header-title">About InkCraft</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span><i class="fas fa-chevron-right fa-xs"></i></span>
+        <span class="current">About Us</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: STORY -->
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
+    <div class="container-xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="slide-left">
+          <div class="relative">
+            <div class="w-full h-[440px] rounded-3xl overflow-hidden shadow-glass-lg">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=700&fit=crop" alt="InkCraft Team" class="img-cover" />
+            </div>
+            <div class="absolute -bottom-6 -right-6 w-36 h-36 rounded-2xl overflow-hidden shadow-glass-lg border-4 border-white dark:border-gray-800">
+              <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=200&fit=crop" alt="Books" class="img-cover" />
+            </div>
+          </div>
+        </div>
+        <div class="slide-right">
+          <div class="section-tag"><i class="fas fa-bookmark"></i> Our Story</div>
+          <h2 class="section-title">Fifteen Years of <span>Literary Excellence</span></h2>
+          <div class="accent-divider"></div>
+          <p class="section-desc mb-5">Founded in 2010 by a team of bestselling authors and veteran editors, InkCraft began as a boutique studio with a single mission: to give every great story the professional voice it deserves.</p>
+          <p class="text-base leading-relaxed mb-8" style="color:var(--color-text-muted);">Today, we're an agency of over 120 elite ghostwriters, developmental editors, and publishing consultants spanning 18 countries — having helped deliver 24,000+ books that have collectively reached millions of readers worldwide.</p>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="card p-4 text-center">
+              <div class="text-2xl font-black font-heading gradient-text">2010</div>
+              <div class="text-sm mt-1" style="color:var(--color-text-muted);">Founded</div>
+            </div>
+            <div class="card p-4 text-center">
+              <div class="text-2xl font-black font-heading gradient-text">120+</div>
+              <div class="text-sm mt-1" style="color:var(--color-text-muted);">Expert Professionals</div>
+            </div>
+            <div class="card p-4 text-center">
+              <div class="text-2xl font-black font-heading gradient-text">18</div>
+              <div class="text-sm mt-1" style="color:var(--color-text-muted);">Countries Represented</div>
+            </div>
+            <div class="card p-4 text-center">
+              <div class="text-2xl font-black font-heading gradient-text">450+</div>
+              <div class="text-sm mt-1" style="color:var(--color-text-muted);">Bestsellers Produced</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: MISSION / VALUES -->
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-secondary);">
+    <div class="container-xl">
+      <div class="text-center max-w-2xl mx-auto mb-12 fade-in">
+        <div class="section-tag mx-auto"><i class="fas fa-heart"></i> Core Values</div>
+        <h2 class="section-title">What We <span>Stand For</span></h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 stagger-children">
+        <div class="card p-8 text-center hover-float">
+          <div class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-gem"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-3" >Excellence Without Compromise</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--color-text-muted);">Every manuscript we produce undergoes a rigorous multi-stage review. We never submit work below the highest literary and professional standard.</p>
+        </div>
+        <div class="card p-8 text-center hover-float">
+          <div class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-lock"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-3" >Absolute Confidentiality</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--color-text-muted);">Your story is your intellectual property — always. Every client and project is protected by iron-clad NDAs and strict internal privacy protocols.</p>
+        </div>
+        <div class="card p-8 text-center hover-float">
+          <div class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-hands-helping"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-3" >Collaborative Partnership</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--color-text-muted);">We listen first. Your voice, vision, and goals drive every decision. We're your partner, not just a vendor — invested in your success at every milestone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: TEAM -->
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
+    <div class="container-xl">
+      <div class="text-center max-w-2xl mx-auto mb-12 fade-in">
+        <div class="section-tag mx-auto"><i class="fas fa-users"></i> Meet the Team</div>
+        <h2 class="section-title">The Minds Behind <span>Your Masterpiece</span></h2>
+        <p class="section-desc mx-auto">Our leadership team combines decades of publishing, writing, and editing expertise at the highest level.</p>
+      </div>
+      <div class="grid sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+        <div class="card overflow-hidden hover-float group">
+          <div class="h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=480&fit=crop&crop=faces" alt="Amanda Rivers" class="img-cover h-full transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg" >Amanda Rivers</h3>
+            <p class="text-sm font-medium mb-2" style="color:var(--color-accent);">Founder & CEO</p>
+            <p class="text-xs leading-relaxed" style="color:var(--color-text-muted);">NYT Bestselling author of 7 books. Former senior editor at Random House with 20 years in trade publishing.</p>
+            <div class="flex gap-2 mt-3">
+              <a href="#" class="footer-social" style="width:30px;height:30px;font-size:0.75rem;" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social" style="width:30px;height:30px;font-size:0.75rem;" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="card overflow-hidden hover-float group">
+          <div class="h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=480&fit=crop&crop=faces" alt="Daniel Hayes" class="img-cover h-full transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg" >Daniel Hayes</h3>
+            <p class="text-sm font-medium mb-2" style="color:var(--color-accent);">Head of Ghostwriting</p>
+            <p class="text-xs leading-relaxed" style="color:var(--color-text-muted);">Award-winning ghostwriter behind 40+ published books. Specialist in business, memoir, and leadership narratives.</p>
+            <div class="flex gap-2 mt-3">
+              <a href="#" class="footer-social" style="width:30px;height:30px;font-size:0.75rem;" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social" style="width:30px;height:30px;font-size:0.75rem;" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="card overflow-hidden hover-float group">
+          <div class="h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=480&fit=crop&crop=faces" alt="Priya Nair" class="img-cover h-full transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg" >Priya Nair</h3>
+            <p class="text-sm font-medium mb-2" style="color:var(--color-accent);">Chief Editor</p>
+            <p class="text-xs leading-relaxed" style="color:var(--color-text-muted);">15 years in developmental editing, former acquisitions editor at HarperCollins. Expert in structure and literary flow.</p>
+            <div class="flex gap-2 mt-3">
+              <a href="#" class="footer-social" style="width:30px;height:30px;font-size:0.75rem;" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social" style="width:30px;height:30px;font-size:0.75rem;" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="card overflow-hidden hover-float group">
+          <div class="h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=480&fit=crop&crop=face" alt="Tom Whitfield" class="img-cover h-full transition-transform duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-bold text-lg" >Tom Whitfield</h3>
+            <p class="text-sm font-medium mb-2" style="color:var(--color-accent);">Publishing Director</p>
+            <p class="text-xs leading-relaxed" style="color:var(--color-text-muted);">Former literary agent with 18 years placing manuscripts at major publishers. Expert in book proposals and agent pitching.</p>
+            <div class="flex gap-2 mt-3">
+              <a href="#" class="footer-social" style="width:30px;height:30px;font-size:0.75rem;" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social" style="width:30px;height:30px;font-size:0.75rem;" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: MILESTONES TIMELINE -->
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-secondary);">
+    <div class="container-xl">
+      <div class="text-center max-w-2xl mx-auto mb-14 fade-in">
+        <div class="section-tag mx-auto"><i class="fas fa-history"></i> Our Journey</div>
+        <h2 class="section-title">15 Years of <span>Milestones</span></h2>
+      </div>
+      <div class="max-w-3xl mx-auto timeline">
+        <div class="timeline-item fade-in">
+          <div class="section-tag mb-2" style="font-size:0.75rem;">2010</div>
+          <h4 class="font-heading font-bold text-lg mb-1" >InkCraft Founded</h4>
+          <p class="text-sm" style="color:var(--color-text-muted);">Amanda Rivers and three co-founders launch InkCraft from a shared office in Manhattan with just 8 freelance writers.</p>
+        </div>
+        <div class="timeline-item fade-in" style="transition-delay:100ms;">
+          <div class="section-tag mb-2" style="font-size:0.75rem;">2013</div>
+          <h4 class="font-heading font-bold text-lg mb-1" >First Bestseller</h4>
+          <p class="text-sm" style="color:var(--color-text-muted);">Our ghostwritten business memoir debuts at #4 on the New York Times Bestseller List — validating our model.</p>
+        </div>
+        <div class="timeline-item fade-in" style="transition-delay:200ms;">
+          <div class="section-tag mb-2" style="font-size:0.75rem;">2016</div>
+          <h4 class="font-heading font-bold text-lg mb-1" >Global Expansion</h4>
+          <p class="text-sm" style="color:var(--color-text-muted);">Expanded to 18 countries with writers specializing in over 15 literary genres including AI-assisted research workflows.</p>
+        </div>
+        <div class="timeline-item fade-in" style="transition-delay:300ms;">
+          <div class="section-tag mb-2" style="font-size:0.75rem;">2020</div>
+          <h4 class="font-heading font-bold text-lg mb-1" >10,000th Book Delivered</h4>
+          <p class="text-sm" style="color:var(--color-text-muted);">A landmark milestone. Our 10,000th manuscript is a debut novel that goes on to win the International Literary Prize.</p>
+        </div>
+        <div class="timeline-item fade-in" style="transition-delay:400ms;">
+          <div class="section-tag mb-2" style="font-size:0.75rem;">2026</div>
+          <h4 class="font-heading font-bold text-lg mb-1" >Industry Recognition</h4>
+          <p class="text-sm" style="color:var(--color-text-muted);">Named "Top Ghostwriting Agency" by Publisher's Weekly and "Best Book Editing Service" by Author Magazine two years running.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║                FOOTER                       ║
+       ╚══════════════════════════════════════════════╝ -->
+  <footer class="footer bg-dark-fixed" style="padding-top: 4rem; padding-bottom: 2.5rem;">
+    <div class="blob blob-primary w-80 h-80 top-0 right-0 opacity-10"></div>
+    <div class="container-xl relative z-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 pb-12 border-b" style="border-color:rgba(255,255,255,0.08);">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="logo-icon-box">
+              <i class="fas fa-feather-alt"></i>
+            </div>
+            <div>
+              <span class="font-heading font-bold text-xl text-white logo-text">InkCraft</span>
+              
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed mb-6 max-w-xs" style="color:rgba(255,255,255,0.55);">
+            Transforming ideas into published masterpieces. Professional ghostwriting, editing, and publishing consulting since 2010.
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            <a href="#" class="footer-social" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="footer-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <!-- Services -->
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <a href="services.html" class="footer-link">Ghostwriting</a>
+          <a href="services.html" class="footer-link">Manuscript Editing</a>
+          <a href="services.html" class="footer-link">Proofreading</a>
+          <a href="services.html" class="footer-link">Book Proposals</a>
+          <a href="services.html" class="footer-link">Self-Publishing</a>
+        </div>
+        <!-- Company -->
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="portfolio.html" class="footer-link">Portfolio</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+          <a href="pricing.html" class="footer-link">Pricing</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="space-y-3">
+            <div class="flex items-start gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-map-marker-alt mt-1 text-purple-400 flex-shrink-0"></i>
+              <span>350 Fifth Ave, Suite 6000,<br/>New York, NY 10118</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-envelope text-purple-400"></i>
+              <a href="mailto:hello@inkcraft.com" class="hover:text-purple-400 transition-colors">hello@inkcraft.com</a>
+            </div>
+            <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-phone text-purple-400"></i>
+              <a href="tel:+12125551234" class="hover:text-purple-400 transition-colors">+1 (212) 555-1234</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-white/5 text-center">
+        <p class="text-sm" style="color:rgba(255,255,255,0.40);">© 2026 InkCraft. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

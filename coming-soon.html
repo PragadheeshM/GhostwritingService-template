@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon | InkCraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cs-bg {
+      background: var(--color-primary);
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .cd-block {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 1rem;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      min-width: 80px;
+      backdrop-filter: blur(16px);
+    }
+    .cd-num { font-family: var(--font-heading); font-size: clamp(2.5rem,6vw,4rem); font-weight: 900; color: white; line-height: 1; }
+    .cd-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.50); margin-top: 0.5rem; }
+    .progress-outer { height: 6px; background: rgba(255,255,255,0.10); border-radius: 9999px; overflow: hidden; }
+    .progress-inner { height: 100%; background: linear-gradient(90deg,var(--color-accent),#A78BFA); border-radius: 9999px; width: 68%; }
+  </style>
+</head>
+<body class="font-body">
+  <!-- Controls -->
+  <div style="position:fixed;top:1.5rem;right:1.5rem;z-index:50;display:flex;gap:0.5rem;">
+    <button id="rtl-toggle" class="icon-btn" style="background:rgba(255,255,255,0.1);color:white;border-color:rgba(255,255,255,0.15);"><i class="fas fa-globe rtl-icon" id="rtl-icon"></i></button>
+    <button id="theme-toggle" class="icon-btn" style="background:rgba(255,255,255,0.1);color:white;border-color:rgba(255,255,255,0.15);"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
+  </div>
+
+  <div class="cs-bg">
+    <div class="blob blob-primary w-96 h-96 top-0 left-0 opacity-20"></div>
+    <div class="blob blob-secondary w-72 h-72 bottom-0 right-0 opacity-15"></div>
+
+    <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+      <!-- Logo -->
+      <a href="index.html" class="inline-flex items-center gap-3 mb-12 justify-center">
+        <div class="w-12 h-12 rounded-xl bg-accent flex items-center justify-center shadow-accent"><i class="fas fa-feather-alt text-white text-xl"></i></div>
+        <span class="font-heading font-bold text-2xl text-white">InkCraft</span>
+      </a>
+
+      <!-- Headline -->
+      <div class="section-tag mx-auto mb-6" style="background:rgba(255,255,255,0.08);color:#A78BFA;border-color:rgba(255,255,255,0.15);">
+        <i class="fas fa-rocket"></i> Something Extraordinary Is Being Written
+      </div>
+
+      <h1 class="font-heading font-black text-white mb-4" style="font-size:clamp(2.5rem,7vw,5rem);line-height:1.05;">
+        A New Chapter<br/><span style="background:linear-gradient(135deg,#A78BFA,#7C3AED);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Is Coming</span>
+      </h1>
+
+      <p class="text-lg mb-12 max-w-xl mx-auto" style="color:rgba(255,255,255,0.65);line-height:1.75;">
+        We're crafting something extraordinary. InkCraft's new platform will transform how authors collaborate with ghostwriters and editors. Be the first to know.
+      </p>
+
+      <!-- Countdown -->
+      <div id="countdown" data-date="2026-12-01T00:00:00" class="flex justify-center gap-4 mb-10 flex-wrap">
+        <div class="cd-block"><div class="cd-num" id="cd-days">00</div><div class="cd-label">Days</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Hours</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-minutes">00</div><div class="cd-label">Minutes</div></div>
+        <div class="cd-block"><div class="cd-num" id="cd-seconds">00</div><div class="cd-label">Seconds</div></div>
+      </div>
+
+      <!-- Progress -->
+      <div class="max-w-sm mx-auto mb-10">
+        <div class="flex justify-between text-xs mb-2" style="color:rgba(255,255,255,0.55);">
+          <span>Platform Development</span>
+          <span class="text-purple-400 font-semibold">68% Complete</span>
+        </div>
+        <div class="progress-outer">
+          <div class="progress-inner"></div>
+        </div>
+      </div>
+
+      <!-- Email Signup -->
+      <div class="max-w-md mx-auto">
+        <h3 class="text-white font-heading font-semibold text-lg mb-4">Get Early Access</h3>
+        <form data-mock data-mock-type="success" data-mock-title="You're on the List!" data-mock-message="We'll email you the moment we launch. Thank you!" class="flex gap-2">
+          <div class="flex-1 form-input-group">
+            <i class="fas fa-envelope input-icon" style="color:rgba(255,255,255,0.40);"></i>
+            <input type="email" class="form-input" placeholder="your@email.com" required style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.20);color:white;padding-left:2.75rem;border-radius:9999px;" />
+          </div>
+          <button type="submit" class="btn-primary flex-shrink-0" style="border-radius:9999px;">Notify Me</button>
+        </form>
+        <p class="text-xs mt-3" style="color:rgba(255,255,255,0.40);">No spam. Unsubscribe anytime. Launching Q4 2026.</p>
+      </div>
+
+      <!-- Social links -->
+      <div class="flex justify-center gap-3 mt-10">
+        <a href="#" class="footer-social" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="footer-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <div class="mt-8">
+        <a href="index.html" class="text-sm" style="color:rgba(255,255,255,0.45);">← Back to Main Site</a>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

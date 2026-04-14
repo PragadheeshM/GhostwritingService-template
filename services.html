@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="InkCraft Services — Full ghostwriting, manuscript editing, proofreading, book proposals, and self-publishing coaching from industry experts." />
+  <title>Services | InkCraft Ghostwriting & Book Editing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="font-body">
+
+  <!-- NAVBAR (Condensed) -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transparent-on-dark">
+    <div class="container-xl"><div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0"><div class="logo-icon-box"><i class="fas fa-feather-alt"></i></div><div><span class="font-heading font-bold text-xl leading-none logo-text" >InkCraft</span></div></a>
+        <!-- Right Blocks -->
+        <div class="flex items-center gap-4 xl:gap-8">
+          <div class="hidden xl:flex items-center gap-1">
+            <div class="nav-dropdown"><button class="nav-link">Home <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="index.html"><i class="fas fa-building"></i> Corporate Home</a><a href="index2.html"><i class="fas fa-star"></i> Creative Home</a></div></div>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link active">Services</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <div class="nav-dropdown"><button class="nav-link">Blog <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="blog.html"><i class="fas fa-newspaper"></i> Blog Listing</a><a href="blog-details.html"><i class="fas fa-file-alt"></i> Blog Article</a></div></div>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <div class="nav-dropdown"><button class="nav-link">Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="user-dashboard.html"><i class="fas fa-user"></i> User Dashboard</a><a href="admin-dashboard.html"><i class="fas fa-shield-halved"></i> Admin Dashboard</a></div></div>
+          </div>
+          <div class="flex items-center gap-2 md:gap-3">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <button id="rtl-toggle" class="icon-btn"><i class="fas fa-globe rtl-icon" id="rtl-icon"></i></button>
+              <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
+              <a href="login.html" class="btn-outline ml-2 hidden sm:inline-flex">Login</a>
+              <a href="register.html" class="btn-primary hidden sm:inline-flex">Get Started <i class="fas fa-arrow-right text-xs"></i></a>
+            </div>
+            <button id="mobile-menu-btn" class="xl:hidden icon-btn"><i class="fas fa-bars"></i></button>
+          </div>
+        </div>
+    </div></div>
+  </nav>
+  <div id="mobile-overlay"></div>
+  <div id="mobile-menu">
+    <div class="flex items-center justify-between mb-6"><a href="index.html" class="flex items-center gap-3 flex-shrink-0"><div class="logo-icon-box" style="width:36px;height:36px;"><i class="fas fa-feather-alt" style="font-size:0.9rem;"></i></div><div><span class="font-heading font-bold text-lg leading-none logo-text">InkCraft</span></div></a><button id="mobile-close-btn" class="icon-btn"><i class="fas fa-times"></i></button></div>
+    
+    <div class="divider"></div>
+    <nav class="space-y-1">
+      <button class="mobile-accordion-btn" data-target="mob-home" ><span class="flex items-center gap-3"><i class="fas fa-home w-5 text-accent"></i> Home</span><i class="fas fa-chevron-down accordion-arrow text-xs" style="color:var(--color-text-muted);"></i></button>
+      <div id="mob-home" class="mobile-sub-menu"><a href="index.html" class="mobile-sub-link">Corporate Home</a><a href="index2.html" class="mobile-sub-link">Creative Home</a></div>
+      <a href="about.html" class="mobile-nav-link"><i class="fas fa-info-circle w-5 text-accent"></i> About</a>
+      <a href="services.html" class="mobile-nav-link"><i class="fas fa-pen-nib w-5 text-accent"></i> Services</a>
+      <a href="pricing.html" class="mobile-nav-link"><i class="fas fa-tags w-5 text-accent"></i> Pricing</a>
+      <button class="mobile-accordion-btn" data-target="mob-blog" ><span class="flex items-center gap-3"><i class="fas fa-newspaper w-5 text-accent"></i> Blog</span><i class="fas fa-chevron-down accordion-arrow text-xs" style="color:var(--color-text-muted);"></i></button>
+      <div id="mob-blog" class="mobile-sub-menu"><a href="blog.html" class="mobile-sub-link">Blog Listing</a><a href="blog-details.html" class="mobile-sub-link">Blog Article</a></div>
+      <a href="contact.html" class="mobile-nav-link"><i class="fas fa-envelope w-5 text-accent"></i> Contact</a>
+      <button class="mobile-accordion-btn" data-target="mob-dash" ><span class="flex items-center gap-3"><i class="fas fa-chart-pie w-5 text-accent"></i> Dashboard</span><i class="fas fa-chevron-down accordion-arrow text-xs" style="color:var(--color-text-muted);"></i></button>
+      <div id="mob-dash" class="mobile-sub-menu"><a href="user-dashboard.html" class="mobile-sub-link">User Dashboard</a><a href="admin-dashboard.html" class="mobile-sub-link">Admin Dashboard</a></div>
+    </nav>
+
+    <!-- Mobile Auth (360px) -->
+    <div class="mt-8 pt-6 border-t sm:hidden" style="border-color:var(--color-border);">
+      <div class="flex flex-col gap-3">
+        <a href="login.html" class="btn-outline w-full justify-center">Login</a>
+        <a href="register.html" class="btn-primary w-full justify-center">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="blob blob-primary w-96 h-96 -top-20 -right-20 opacity-20"></div>
+    <div class="container-xl page-header-content">
+      <div class="section-tag mb-4" style="background:rgba(255,255,255,0.08);color:#A78BFA;border-color:rgba(255,255,255,0.15);"><i class="fas fa-pen-nib"></i> What We Do</div>
+      <h1 class="page-header-title">Our Services</h1>
+      <div class="breadcrumb"><a href="index.html">Home</a><span><i class="fas fa-chevron-right fa-xs"></i></span><span class="current">Services</span></div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: SERVICES GRID -->
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
+    <div class="container-xl">
+      <div class="text-center max-w-2xl mx-auto mb-14 fade-in">
+        <div class="section-tag mx-auto"><i class="fas fa-layer-group"></i> Full Service Suite</div>
+        <h2 class="section-title">Every Service You Need to <span>Get Published</span></h2>
+        <p class="section-desc mx-auto">From first concept to final print run, InkCraft covers the entire literary journey with specialized expertise at each step.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+        <div class="service-card hover-float hover-glow">
+          <div class="service-icon-wrap"><i class="fas fa-ghost"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-2" >Full Ghostwriting</h3>
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Complete manuscript ghostwriting — from interview and outline through final draft. We write entirely in your voice, style, and perspective. 100% confidential, 100% yours.</p>
+          <ul class="space-y-1 mb-5">
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Any genre or length</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Deep voice-matching interviews</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Milestone-based delivery</li>
+          </ul>
+          <a href="service-details.html" class="btn-accent-outline text-sm w-full justify-center">View Details <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+        <div class="service-card hover-float hover-glow">
+          <div class="service-icon-wrap"><i class="fas fa-pen-ruler"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-2" >Developmental Editing</h3>
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Big-picture structural editing examining plot, character arcs, pacing, theme, and overall narrative architecture. Transform a good draft into a great book.</p>
+          <ul class="space-y-1 mb-5">
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Chapter-by-chapter analysis</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Detailed editorial letter</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Follow-up consultation</li>
+          </ul>
+          <a href="service-details.html" class="btn-accent-outline text-sm w-full justify-center">View Details <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+        <div class="service-card hover-float hover-glow">
+          <div class="service-icon-wrap"><i class="fas fa-spell-check"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-2" >Copy Editing</h3>
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Line-level editing ensuring grammar, syntax, word choice, consistency, and tone are polished to publication standard without altering your unique voice.</p>
+          <ul class="space-y-1 mb-5">
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Grammar & style corrections</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Style guide adherence</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Tracked changes delivery</li>
+          </ul>
+          <a href="service-details.html" class="btn-accent-outline text-sm w-full justify-center">View Details <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+        <div class="service-card hover-float hover-glow">
+          <div class="service-icon-wrap"><i class="fas fa-search"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-2" >Proofreading</h3>
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">The essential final pass before publication. Catching every typo, punctuation error, formatting inconsistency, and overlooked slip that humans and AI miss.</p>
+          <ul class="space-y-1 mb-5">
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Two-pass quality check</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Formatting verification</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> 48-hour turnaround available</li>
+          </ul>
+          <a href="service-details.html" class="btn-accent-outline text-sm w-full justify-center">View Details <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+        <div class="service-card hover-float hover-glow">
+          <div class="service-icon-wrap"><i class="fas fa-file-contract"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-2" >Book Proposal Writing</h3>
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Crafting compelling non-fiction book proposals that agents and acquisition editors respond to — including overview, market analysis, competitive titles, and sample chapters.</p>
+          <ul class="space-y-1 mb-5">
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Full proposal package</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Agent targeting advice</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Query letter included</li>
+          </ul>
+          <a href="service-details.html" class="btn-accent-outline text-sm w-full justify-center">View Details <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+        <div class="service-card hover-float hover-glow">
+          <div class="service-icon-wrap"><i class="fas fa-landmark"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-2" >Self-Publishing Coaching</h3>
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Expert guidance navigating Amazon KDP, IngramSpark, cover design, metadata, pricing strategy, and launch marketing for maximum visibility and sales.</p>
+          <ul class="space-y-1 mb-5">
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Platform setup & upload</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Sales optimization</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Launch strategy included</li>
+          </ul>
+          <a href="service-details.html" class="btn-accent-outline text-sm w-full justify-center">View Details <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+        <div class="service-card hover-float hover-glow">
+          <div class="service-icon-wrap"><i class="fas fa-language"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-2" >Literary Translation</h3>
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Professional literary translation of manuscripts, memoirs, and non-fiction books across 20+ language pairs — preserving your tone, nuance, cultural context, and authorial voice throughout.</p>
+          <ul class="space-y-1 mb-5">
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> 20+ language pairs available</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Native-speaker literary translators</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Cultural adaptation review</li>
+          </ul>
+          <a href="service-details.html" class="btn-accent-outline text-sm w-full justify-center">View Details <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+        <div class="service-card hover-float hover-glow">
+          <div class="service-icon-wrap"><i class="fas fa-headphones"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-2" >Audiobook Script Writing</h3>
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Adapting your manuscript into a professionally formatted, narrator-ready audiobook script — optimized for pacing, performance cues, chapter transitions, and listener engagement on Audible & beyond.</p>
+          <ul class="space-y-1 mb-5">
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Narrator direction notes included</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> ACX/Audible format compliant</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Pacing & flow optimization</li>
+          </ul>
+          <a href="service-details.html" class="btn-accent-outline text-sm w-full justify-center">View Details <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+        <div class="service-card hover-float hover-glow">
+          <div class="service-icon-wrap"><i class="fas fa-palette"></i></div>
+          <h3 class="font-heading font-bold text-xl mb-2" >Book Cover Concept Writing</h3>
+          <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Creating compelling back-cover blurbs, taglines, author bios, and creative design briefs that give your cover designer everything they need to produce a market-ready, sales-driving book cover.</p>
+          <ul class="space-y-1 mb-5">
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Back-cover blurb writing</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Tagline & subtitle crafting</li>
+            <li class="flex items-center gap-2 text-sm" style="color:var(--color-text-muted);"><i class="fas fa-check text-accent text-xs"></i> Designer creative brief</li>
+          </ul>
+          <a href="service-details.html" class="btn-accent-outline text-sm w-full justify-center">View Details <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: GENRES WE COVER -->
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-secondary);">
+    <div class="container-xl">
+      <div class="text-center mb-12 fade-in">
+        <div class="section-tag mx-auto"><i class="fas fa-book-reader"></i> Genre Expertise</div>
+        <h2 class="section-title">Genres We <span>Specialize In</span></h2>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 stagger-children">
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-user-tie text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Business</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-heart text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Memoir</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-dragon text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Fantasy</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-skull text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Thriller</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-brain text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Self-Help</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-rocket text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Sci-Fi</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-graduation-cap text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Academic</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-child text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Children's</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-globe-americas text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Travel</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-cross text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Spiritual</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-heart-pulse text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Romance</div>
+        </div>
+        <div class="card p-4 text-center hover-float cursor-default">
+          <i class="fas fa-microscope text-2xl mb-2" style="color:var(--color-accent);"></i>
+          <div class="text-sm font-semibold" >Science</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: PROCESS + CTA -->
+  <section class="section-py px-4 sm:px-0 relative overflow-hidden bg-dark-fixed">
+    <div class="blob blob-primary w-80 h-80 top-0 right-0 opacity-20"></div>
+    <div class="container-xl relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="fade-in">
+          <div class="section-tag mb-4" style="background:rgba(255,255,255,0.08);color:#A78BFA;border-color:rgba(255,255,255,0.15);"><i class="fas fa-question-circle"></i> Why Us?</div>
+          <h2 class="font-heading font-black text-white mb-6" style="font-size:clamp(1.75rem,4vw,2.75rem);line-height:1.1;">Not Just Writers — <span style="background:linear-gradient(135deg,#A78BFA,#7C3AED);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Publishing Partners</span></h2>
+          <p class="mb-8 text-lg" style="color:rgba(255,255,255,0.70);line-height:1.75;">InkCraft isn't a freelance marketplace. Every project is managed by a dedicated project lead who ensures quality, communication, and deadlines are met every step of the way.</p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-400"></i><span style="color:rgba(255,255,255,0.85);">Dedicated project manager on every account</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-400"></i><span style="color:rgba(255,255,255,0.85);">Weekly progress updates and check-ins</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-400"></i><span style="color:rgba(255,255,255,0.85);">Secure client portal for file sharing</span></div>
+            <div class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-400"></i><span style="color:rgba(255,255,255,0.85);">Money-back guarantee on all services</span></div>
+          </div>
+        </div>
+        <div class="glass rounded-3xl p-8 slide-right">
+          <h3 class="font-heading font-bold text-xl text-white mb-6">Get a Free Consultation</h3>
+          <form data-mock data-mock-type="success" data-mock-title="Request Received!" data-mock-message="Our team will contact you within 2 business hours." class="space-y-4">
+            <div class="form-group">
+              <label class="form-label" style="color:rgba(255,255,255,0.85);">Full Name</label>
+              <div class="form-input-group">
+                <i class="fas fa-user input-icon" style="color:rgba(255,255,255,0.4);"></i>
+                <input type="text" class="form-input" placeholder="Your full name" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:white;padding-left:2.75rem;" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" style="color:rgba(255,255,255,0.85);">Email Address</label>
+              <div class="form-input-group">
+                <i class="fas fa-envelope input-icon" style="color:rgba(255,255,255,0.4);"></i>
+                <input type="email" class="form-input" placeholder="your@email.com" required style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:white;padding-left:2.75rem;" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" style="color:rgba(255,255,255,0.85);">Service Needed</label>
+              <select class="form-select" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);">
+                <option style="color:#0F172A;">Full Ghostwriting</option>
+                <option style="color:#0F172A;">Developmental Editing</option>
+                <option style="color:#0F172A;">Copy Editing</option>
+                <option style="color:#0F172A;">Proofreading</option>
+                <option style="color:#0F172A;">Book Proposal</option>
+                <option style="color:#0F172A;">Self-Publishing Coaching</option>
+                <option style="color:#0F172A;">Literary Translation</option>
+                <option style="color:#0F172A;">Audiobook Script Writing</option>
+                <option style="color:#0F172A;">Book Cover Concept Writing</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary w-full justify-center btn-primary-lg">
+              <i class="fas fa-paper-plane"></i> Request Free Consultation
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- ╔══════════════════════════════════════════════╗
+       ║                FOOTER                       ║
+       ╚══════════════════════════════════════════════╝ -->
+  <footer class="footer bg-dark-fixed" style="padding-top: 4rem; padding-bottom: 2.5rem;">
+    <div class="blob blob-primary w-80 h-80 top-0 right-0 opacity-10"></div>
+    <div class="container-xl relative z-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 pb-12 border-b" style="border-color:rgba(255,255,255,0.08);">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="logo-icon-box">
+              <i class="fas fa-feather-alt"></i>
+            </div>
+            <div>
+              <span class="font-heading font-bold text-xl text-white logo-text">InkCraft</span>
+              
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed mb-6 max-w-xs" style="color:rgba(255,255,255,0.55);">
+            Transforming ideas into published masterpieces. Professional ghostwriting, editing, and publishing consulting since 2010.
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            <a href="#" class="footer-social" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="footer-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <!-- Services -->
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <a href="services.html" class="footer-link">Ghostwriting</a>
+          <a href="services.html" class="footer-link">Manuscript Editing</a>
+          <a href="services.html" class="footer-link">Proofreading</a>
+          <a href="services.html" class="footer-link">Book Proposals</a>
+          <a href="services.html" class="footer-link">Self-Publishing</a>
+        </div>
+        <!-- Company -->
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="portfolio.html" class="footer-link">Portfolio</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+          <a href="pricing.html" class="footer-link">Pricing</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="space-y-3">
+            <div class="flex items-start gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-map-marker-alt mt-1 text-purple-400 flex-shrink-0"></i>
+              <span>350 Fifth Ave, Suite 6000,<br/>New York, NY 10118</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-envelope text-purple-400"></i>
+              <a href="mailto:hello@inkcraft.com" class="hover:text-purple-400 transition-colors">hello@inkcraft.com</a>
+            </div>
+            <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-phone text-purple-400"></i>
+              <a href="tel:+12125551234" class="hover:text-purple-400 transition-colors">+1 (212) 555-1234</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-white/5 text-center">
+        <p class="text-sm" style="color:rgba(255,255,255,0.40);">© 2026 InkCraft. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

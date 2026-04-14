@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login to InkCraft — Access your ghostwriting projects, manage your manuscripts, and track your publishing journey." />
+  <title>Login | InkCraft Ghostwriting & Book Editing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .auth-bg {
+      position: fixed;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1920&h=1200&fit=crop') center/cover no-repeat;
+      z-index: 0;
+    }
+    .auth-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15,23,42,0.88) 0%, rgba(109,40,217,0.60) 100%);
+      z-index: 1;
+      transition: background 0.4s ease;
+    }
+    .dark .auth-overlay {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    }
+    :root:not(.dark) .auth-overlay {
+      background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+    }
+    .auth-content {
+      position: relative;
+      z-index: 10;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 440px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(32px);
+      -webkit-backdrop-filter: blur(32px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.40);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .dark .auth-card {
+      background: rgba(30, 41, 59, 0.7);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    :root:not(.dark) .auth-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(109, 40, 217, 0.1);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+    }
+    .auth-input {
+      width: 100%;
+      padding: 0.875rem 1rem 0.875rem 2.75rem;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.20);
+      border-radius: 0.75rem;
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+    :root:not(.dark) .auth-input {
+      background: #FFFFFF;
+      border-color: #E2E8F0;
+    }
+    .auth-input::placeholder { color: rgba(156, 163, 175, 0.6); }
+    .auth-input:focus {
+      border-color: var(--color-accent);
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 0 0 3px rgba(109,40,217,0.20);
+    }
+    .auth-label { color: var(--color-text); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; display: block; opacity: 0.9; }
+
+    /* Corner buttons inside card */
+    .auth-controls {
+      position: absolute;
+      top: 1rem;
+      inset-inline-end: 1rem;
+      z-index: 20;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .auth-ctrl-btn {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--color-text);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(8px);
+      font-size: 0.875rem;
+    }
+    .auth-ctrl-btn:hover { background: rgba(109,40,217,0.40); border-color: rgba(109,40,217,0.50); }
+  </style>
+</head>
+<body class="font-body" style="overflow:hidden;">
+
+  <!-- Background -->
+  <div class="auth-bg"></div>
+  <div class="auth-overlay"></div>
+
+  <!-- Auth Content -->
+  <div class="auth-content">
+    <div class="auth-card">
+      <!-- Corner Controls inside card -->
+      <div class="auth-controls">
+        <button class="rtl-toggle-btn auth-ctrl-btn" title="Toggle RTL/LTR">
+          <i class="fas fa-globe rtl-icon"></i>
+        </button>
+        <button class="theme-toggle-btn auth-ctrl-btn" title="Toggle Theme">
+          <i class="fas fa-moon theme-icon" id="theme-icon"></i>
+        </button>
+      </div>
+
+
+      <!-- Logo -->
+      <div class="text-center mb-8">
+        <a href="index.html" class="inline-flex items-center gap-2 mb-4">
+          <div class="logo-icon-box">
+            <i class="fas fa-feather-alt"></i>
+          </div>
+          <span class="font-heading font-bold text-2xl logo-text" >InkCraft</span>
+        </a>
+        <h1 class="font-heading font-bold text-2xl logo-text mb-1" >Welcome Back</h1>
+        <p style="color:var(--color-text-muted);font-size:0.9375rem;">Sign in to your InkCraft account</p>
+      </div>
+
+      <!-- Social Login -->
+      <div class="grid grid-cols-2 gap-3 mb-6">
+        <button onclick="GBS.toast('info','Google Sign-In','Redirecting to Google...')" class="flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold transition-all" style="background:rgba(109,40,217,0.05);border:1px solid var(--color-border);color:var(--color-text);">
+          <i class="fab fa-google"></i> Google
+        </button>
+        <button onclick="GBS.toast('info','LinkedIn Sign-In','Redirecting to LinkedIn...')" class="flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold transition-all" style="background:rgba(109,40,217,0.05);border:1px solid var(--color-border);color:var(--color-text);">
+          <i class="fab fa-linkedin-in"></i> LinkedIn
+        </button>
+      </div>
+
+      <div class="flex items-center gap-3 mb-6">
+        <div class="flex-1 h-px" style="background:var(--color-border);opacity:0.5;"></div>
+        <span class="text-xs font-medium" style="color:var(--color-text-muted);">or sign in with email</span>
+        <div class="flex-1 h-px" style="background:var(--color-border);opacity:0.5;"></div>
+      </div>
+
+      <!-- Login Form -->
+      <form data-mock data-mock-type="success" data-mock-title="Login Successful!" data-mock-message="Redirecting to your dashboard..." class="space-y-4">
+        <div>
+          <label class="auth-label">Email Address</label>
+          <div class="relative">
+            <i class="fas fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2" style="color:rgba(255,255,255,0.40);font-size:0.875rem;"></i>
+            <input type="email" class="auth-input" placeholder="your@email.com" required />
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <label class="auth-label" style="margin-bottom:0;">Password</label>
+            <a href="#" class="text-xs font-semibold" style="color:rgba(109,40,217,0.90);">Forgot password?</a>
+          </div>
+          <div class="relative">
+            <i class="fas fa-lock absolute left-3.5 top-1/2 -translate-y-1/2" style="color:rgba(255,255,255,0.40);font-size:0.875rem;"></i>
+            <input type="password" id="login-pwd" class="auth-input" placeholder="Your password" required style="padding-right:3rem;" />
+            <button type="button" onclick="togglePwd('login-pwd','pw-eye')" class="absolute right-3.5 top-1/2 -translate-y-1/2" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.40);">
+              <i class="fas fa-eye" id="pw-eye"></i>
+            </button>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="checkbox" id="remember-me" class="w-4 h-4 rounded accent-purple-600" />
+          <label for="remember-me" style="color:var(--color-text-muted);font-size:0.875rem;cursor:pointer;">Remember me for 30 days</label>
+        </div>
+        <button type="submit" class="btn-primary w-full justify-center" style="padding:0.875rem;font-size:1rem;border-radius:0.75rem;">
+          <i class="fas fa-sign-in-alt"></i> Sign In to InkCraft
+        </button>
+      </form>
+
+      <!-- Footer -->
+      <p class="text-center mt-6 text-sm" style="color:var(--color-text-muted);">
+        Don't have an account? <a href="register.html" class="font-semibold" style="color:var(--color-accent-light);">Create one free →</a>
+      </p>
+      <p class="text-center mt-3 text-xs" style="color:var(--color-text-muted);opacity:0.6;">
+        By signing in you agree to our <a href="#" style="color:var(--color-accent-light);">Terms of Service</a> and <a href="#" style="color:var(--color-accent-light);">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    function togglePwd(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'fas fa-eye-slash';
+      } else {
+        input.type = 'password';
+        icon.className = 'fas fa-eye';
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

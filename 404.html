@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | InkCraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="font-body bg-grid" style="background-color:var(--color-bg);min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+  <!-- Theme/RTL Controls -->
+  <div style="position:fixed;top:1.5rem;right:1.5rem;z-index:50;display:flex;gap:0.5rem;">
+    <button id="rtl-toggle" class="icon-btn"><i class="fas fa-globe rtl-icon" id="rtl-icon"></i></button>
+    <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
+  </div>
+
+  <div class="blob blob-primary w-96 h-96 -top-20 -left-20 opacity-10"></div>
+  <div class="blob blob-secondary w-72 h-72 bottom-0 right-0 opacity-08"></div>
+
+  <div class="text-center px-4 relative z-10 max-w-lg fade-in">
+    <!-- Big 404 -->
+    <div class="font-heading font-black mb-4" style="font-size:clamp(7rem,20vw,12rem);line-height:1;background:linear-gradient(135deg,var(--color-accent),#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">404</div>
+
+    <!-- Floating book icon -->
+    <div class="w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center text-3xl animate-float" style="background:rgba(109,40,217,0.10);color:var(--color-accent);">
+      <i class="fas fa-book-open"></i>
+    </div>
+
+    <h1 class="font-heading font-bold mb-4" style="font-size:clamp(1.5rem,4vw,2.25rem);color:var(--color-text);">This Chapter Is Missing</h1>
+    <p class="text-base mb-8 max-w-md mx-auto" style="color:var(--color-text-muted);line-height:1.75;">
+      Looks like the page you're looking for has wandered off the shelves. Let's get you back to a chapter that exists.
+    </p>
+
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="index.html" class="btn-primary btn-primary-lg">
+        <i class="fas fa-home"></i> Back to Home
+      </a>
+      <a href="contact.html" class="btn-accent-outline" style="padding:0.875rem 2rem;font-size:1rem;border-radius:9999px;">
+        <i class="fas fa-life-ring"></i> Get Help
+      </a>
+    </div>
+
+    <!-- Quick links -->
+    <div class="mt-12 pt-8 border-t flex flex-wrap gap-4 justify-center" style="border-color:var(--color-border);">
+      <a href="services.html" class="text-sm font-medium" style="color:var(--color-text-muted);">Services</a>
+      <a href="pricing.html" class="text-sm font-medium" style="color:var(--color-text-muted);">Pricing</a>
+      <a href="about.html" class="text-sm font-medium" style="color:var(--color-text-muted);">About</a>
+      <a href="blog.html" class="text-sm font-medium" style="color:var(--color-text-muted);">Blog</a>
+      <a href="contact.html" class="text-sm font-medium" style="color:var(--color-text-muted);">Contact</a>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

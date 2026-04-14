@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="InkCraft — Professional Ghostwriting & Book Editing. See our award-winning authors and get professionally published today." />
+  <title>InkCraft | Creative Home — Ghostwriting & Book Editing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hero2-bg {
+      background: var(--color-primary);
+      position: relative;
+      overflow: hidden;
+      min-height: 100dvh;
+    }
+    .hero2-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1800&h=1200&fit=crop') center/cover no-repeat;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+    .author-card {
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .author-card:hover { transform: translateY(-6px); }
+    .author-card img { width: 100%; height: 280px; object-fit: cover; display: block; }
+    .author-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.4) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+      transition: background 0.4s ease;
+    }
+    .author-card:hover .author-card-overlay { background: linear-gradient(to top, rgba(109,40,217,0.90) 0%, rgba(109,40,217,0.4) 70%, transparent 100%); }
+    .process-connector {
+      position: absolute;
+      top: 50%;
+      right: -2rem;
+      width: 4rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-accent), transparent);
+    }
+    .genre-pill {
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 1.5px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.06);
+      white-space: nowrap;
+    }
+    .genre-pill:hover, .genre-pill.active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: white;
+    }
+    .dark .author-card img { filter: brightness(0.88) saturate(0.9); }
+  </style>
+</head>
+<body class="font-body">
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║               NAVBAR                        ║
+       ╚══════════════════════════════════════════════╝ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transparent-on-dark">
+    <div class="container-xl">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 flex-shrink-0"><div class="logo-icon-box"><i class="fas fa-feather-alt"></i></div><div><span class="font-heading font-bold text-xl leading-none logo-text">InkCraft</span></div></a>
+        <!-- Right Blocks -->
+        <div class="flex items-center gap-4 lg:gap-8">
+          <div class="hidden xl:flex items-center gap-1">
+            <div class="nav-dropdown">
+              <button class="nav-link">Home <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+              <div class="dropdown-menu">
+                <a href="index.html"><i class="fas fa-building"></i> Corporate Home</a>
+                <a href="index2.html"><i class="fas fa-star"></i> Creative Home</a>
+              </div>
+            </div>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <div class="nav-dropdown">
+              <button class="nav-link">Blog <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+              <div class="dropdown-menu">
+                <a href="blog.html"><i class="fas fa-newspaper"></i> Blog Listing</a>
+                <a href="blog-details.html"><i class="fas fa-file-alt"></i> Blog Article</a>
+              </div>
+            </div>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <div class="nav-dropdown">
+              <button class="nav-link">Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+              <div class="dropdown-menu">
+                <a href="user-dashboard.html"><i class="fas fa-user"></i> User Dashboard</a>
+                <a href="admin-dashboard.html"><i class="fas fa-shield-halved"></i> Admin Dashboard</a>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 md:gap-3">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <button id="rtl-toggle" class="icon-btn" title="Toggle RTL/LTR">
+                <i class="fas fa-globe rtl-icon" id="rtl-icon"></i>
+              </button>
+              <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                <i class="fas fa-moon theme-icon" id="theme-icon"></i>
+              </button>
+              <a href="login.html" class="btn-outline ml-2 hidden sm:inline-flex">Login</a>
+              <a href="register.html" class="btn-primary hidden sm:inline-flex" style="background:var(--color-accent);color:white;border-radius:9999px;">Get Started <i class="fas fa-arrow-right text-xs"></i></a>
+            </div>
+            <button id="mobile-menu-btn" class="xl:hidden icon-btn">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Overlay & Menu (same as index.html) -->
+  <div id="mobile-overlay"></div>
+  <div id="mobile-menu">
+    <div class="flex items-center justify-between mb-6">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+        <div class="logo-icon-box" style="width:36px;height:36px;">
+          <i class="fas fa-feather-alt" style="font-size:0.9rem;"></i>
+        </div>
+        <span class="font-heading font-bold text-lg leading-none logo-text">InkCraft</span>
+      </a>
+      <button id="mobile-close-btn" class="icon-btn"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="divider"></div>
+    <nav class="space-y-1">
+      <button class="mobile-accordion-btn" data-target="mob-home" >
+        <span class="flex items-center gap-3"><i class="fas fa-home w-5 text-accent"></i> Home</span>
+        <i class="fas fa-chevron-down accordion-arrow text-xs transition-transform" style="color:var(--color-text-muted);"></i>
+      </button>
+      <div id="mob-home" class="mobile-sub-menu">
+        <a href="index.html" class="mobile-sub-link">Corporate Home</a>
+        <a href="index2.html" class="mobile-sub-link">Creative Home</a>
+      </div>
+      <a href="about.html" class="mobile-nav-link"><i class="fas fa-info-circle w-5 text-accent"></i> About</a>
+      <a href="services.html" class="mobile-nav-link"><i class="fas fa-pen-nib w-5 text-accent"></i> Services</a>
+      <a href="pricing.html" class="mobile-nav-link"><i class="fas fa-tags w-5 text-accent"></i> Pricing</a>
+      <button class="mobile-accordion-btn" data-target="mob-blog" >
+        <span class="flex items-center gap-3"><i class="fas fa-newspaper w-5 text-accent"></i> Blog</span>
+        <i class="fas fa-chevron-down accordion-arrow text-xs transition-transform" style="color:var(--color-text-muted);"></i>
+      </button>
+      <div id="mob-blog" class="mobile-sub-menu">
+        <a href="blog.html" class="mobile-sub-link">Blog Listing</a>
+        <a href="blog-details.html" class="mobile-sub-link">Blog Article</a>
+      </div>
+      <a href="contact.html" class="mobile-nav-link"><i class="fas fa-envelope w-5 text-accent"></i> Contact</a>
+      <button class="mobile-accordion-btn" data-target="mob-dash" >
+        <span class="flex items-center gap-3"><i class="fas fa-chart-pie w-5 text-accent"></i> Dashboard</span>
+        <i class="fas fa-chevron-down accordion-arrow text-xs transition-transform" style="color:var(--color-text-muted);"></i>
+      </button>
+      <div id="mob-dash" class="mobile-sub-menu">
+        <a href="user-dashboard.html" class="mobile-sub-link">User Dashboard</a>
+        <a href="admin-dashboard.html" class="mobile-sub-link">Admin Dashboard</a>
+      </div>
+    </nav>
+    
+    <!-- Mobile Auth (360px) -->
+    <div class="mt-8 pt-6 border-t sm:hidden" style="border-color:var(--color-border);">
+      <div class="flex flex-col gap-3">
+        <a href="login.html" class="btn-outline w-full justify-center">Login</a>
+        <a href="register.html" class="btn-primary w-full justify-center">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║      SECTION 1: VIBRANT SPLIT HERO          ║
+       ╚══════════════════════════════════════════════╝ -->
+  <section class="hero2-bg flex items-center pt-20">
+    <!-- Animated mesh blobs -->
+    <div class="blob w-[600px] h-[600px] -top-40 -left-40 opacity-15" style="background:var(--color-accent);"></div>
+    <div class="blob w-72 h-72 bottom-20 left-1/3 opacity-10" style="background:#A78BFA;"></div>
+
+    <div class="container-xl py-20 md:py-28 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="text-white fade-in">
+          <div class="flex items-center gap-2 flex-wrap mb-6">
+            <span class="genre-pill active">Fiction</span>
+            <span class="genre-pill">Non-Fiction</span>
+            <span class="genre-pill">Memoir</span>
+            <span class="genre-pill">Business</span>
+            <span class="genre-pill">Self-Help</span>
+          </div>
+          <h1 class="font-heading font-black mb-6 text-white" style="font-size:clamp(2.75rem,6vw,5.5rem);line-height:1.05;">
+            Where Stories<br/>Become<br/><span style="background:linear-gradient(135deg,#C4B5FD,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Legends</span>
+          </h1>
+          <p class="text-lg mb-8 max-w-lg" style="color:rgba(255,255,255,0.75);line-height:1.75;">
+            Award-winning ghostwriters and editors partnering with visionaries to publish stories that define careers and change lives.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-10">
+            <a href="register.html" class="btn-primary btn-primary-lg" style="background:linear-gradient(135deg,#7C3AED,#A78BFA);">
+              <i class="fas fa-rocket"></i> Start Your Book
+            </a>
+            <a href="portfolio.html" class="btn-outline btn-primary-lg" style="border-color:rgba(255,255,255,0.35);color:white;padding:0.875rem 2rem;font-size:1rem;border-radius:9999px;">
+              <i class="fas fa-eye"></i> See Our Work
+            </a>
+          </div>
+          <!-- Awards Strip -->
+          <div class="flex items-center gap-6 flex-wrap">
+            <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.65);">
+              <i class="fas fa-trophy text-purple-300"></i>
+              <span>Publisher's Weekly Award 2025</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.65);">
+              <i class="fas fa-star text-purple-300"></i>
+              <span>Top Ghostwriting Agency 2024</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Book Showcase Grid -->
+        <div class="relative grid grid-cols-2 gap-4 slide-right hidden lg:grid">
+          <div class="space-y-4">
+            <div class="rounded-2xl overflow-hidden h-52 shadow-glass-lg border border-white/10 hover-float">
+              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=320&fit=crop" alt="Book" class="img-cover" />
+            </div>
+            <div class="rounded-2xl overflow-hidden h-36 shadow-glass-lg border border-white/10 hover-float" style="animation-delay:0.5s;">
+              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=250&fit=crop" alt="Books" class="img-cover" />
+            </div>
+          </div>
+          <div class="space-y-4 mt-8">
+            <div class="rounded-2xl overflow-hidden h-36 shadow-glass-lg border border-white/10 hover-float" style="animation-delay:1s;">
+              <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=250&fit=crop" alt="Library" class="img-cover" />
+            </div>
+            <div class="rounded-2xl overflow-hidden h-52 shadow-glass-lg border border-white/10 hover-float" style="animation-delay:1.5s;">
+              <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=400&h=320&fit=crop" alt="Writing" class="img-cover" />
+            </div>
+          </div>
+          <!-- Overlay stat -->
+          <div class="absolute inset-x-0 bottom-0 flex justify-center">
+            <div class="glass rounded-2xl px-5 py-3 flex items-center gap-4">
+              <div class="text-center text-white">
+                <div class="font-heading font-black text-xl text-purple-300">450+</div>
+                <div class="text-xs" style="color:rgba(255,255,255,0.65);">Bestsellers</div>
+              </div>
+              <div class="w-px h-8 bg-white/20"></div>
+              <div class="text-center text-white">
+                <div class="font-heading font-black text-xl text-purple-300">38</div>
+                <div class="text-xs" style="color:rgba(255,255,255,0.65);">Awards Won</div>
+              </div>
+              <div class="w-px h-8 bg-white/20"></div>
+              <div class="text-center text-white">
+                <div class="font-heading font-black text-xl text-purple-300">15+</div>
+                <div class="text-xs" style="color:rgba(255,255,255,0.65);">Genres</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║      SECTION 2: GENRES STATS STRIP          ║
+       ╚══════════════════════════════════════════════╝ -->
+  <section class="py-8 border-y" style="background:var(--color-bg);border-color:var(--color-border);">
+    <div class="container-xl">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center stagger-children">
+        <div class="text-center">
+          <div class="text-2xl font-black font-heading gradient-text">450+</div>
+          <div class="text-xs mt-1" style="color:var(--color-text-muted);">Bestselling Titles</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-black font-heading gradient-text">15+</div>
+          <div class="text-xs mt-1" style="color:var(--color-text-muted);">Genres Covered</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-black font-heading gradient-text">38</div>
+          <div class="text-xs mt-1" style="color:var(--color-text-muted);">Literary Awards</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-black font-heading gradient-text">72h</div>
+          <div class="text-xs mt-1" style="color:var(--color-text-muted);">Sample Turnaround</div>
+        </div>
+        <div class="text-center hidden lg:block">
+          <div class="text-2xl font-black font-heading gradient-text">100%</div>
+          <div class="text-xs mt-1" style="color:var(--color-text-muted);">Confidential NDA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║     SECTION 3: FEATURED AUTHORS             ║
+       ╚══════════════════════════════════════════════╝ -->
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
+    <div class="container-xl">
+      <div class="text-center mb-12 fade-in">
+        <div class="section-tag mx-auto"><i class="fas fa-users"></i> Our Team</div>
+        <h2 class="section-title">Meet Our <span>Elite Writers</span></h2>
+        <p class="section-desc mx-auto">A hand-picked collective of published authors, journalists, and genre specialists ready to tell your story.</p>
+      </div>
+      <div class="grid sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger-children">
+        <div class="author-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop&crop=faces" alt="Elena Rhodes" />
+          <div class="author-card-overlay">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="badge badge-accent text-xs">Non-Fiction</span>
+            </div>
+            <h3 class="text-white font-heading font-bold text-lg">Elena Rhodes</h3>
+            <p class="text-xs" style="color:rgba(255,255,255,0.70);">12 Bestsellers · NYT Listed</p>
+            <div class="stars mt-2" style="font-size:0.7rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+        </div>
+        <div class="author-card" style="margin-top:1.5rem;">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&crop=faces" alt="Marcus Webb" />
+          <div class="author-card-overlay">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="badge badge-info text-xs">Business</span>
+            </div>
+            <h3 class="text-white font-heading font-bold text-lg">Marcus Webb</h3>
+            <p class="text-xs" style="color:rgba(255,255,255,0.70);">8 Books · Forbes Contributor</p>
+            <div class="stars mt-2" style="font-size:0.7rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+        </div>
+        <div class="author-card">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=500&fit=crop&crop=faces" alt="Amara Chen" />
+          <div class="author-card-overlay">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="badge badge-success text-xs">Fiction</span>
+            </div>
+            <h3 class="text-white font-heading font-bold text-lg">Amara Chen</h3>
+            <p class="text-xs" style="color:rgba(255,255,255,0.70);">6 Novels · Award Winner</p>
+            <div class="stars mt-2" style="font-size:0.7rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          </div>
+        </div>
+        <div class="author-card" style="margin-top:1.5rem;">
+          <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&h=500&fit=crop&crop=faces" alt="James Harlow" />
+          <div class="author-card-overlay">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="badge badge-warning text-xs">Memoir</span>
+            </div>
+            <h3 class="text-white font-heading font-bold text-lg">James Harlow</h3>
+            <p class="text-xs" style="color:rgba(255,255,255,0.70);">9 Memoirs · Ex-Journalist</p>
+            <div class="stars mt-2" style="font-size:0.7rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="about.html" class="btn-accent-outline">Meet Full Team <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║       SECTION 4: PROCESS TIMELINE           ║
+       ╚══════════════════════════════════════════════╝ -->
+  <section class="section-py px-4 sm:px-0 relative overflow-hidden bg-dark-fixed">
+    <div class="blob blob-primary w-96 h-96 top-0 right-0 opacity-25"></div>
+    <div class="container-xl relative z-10">
+      <div class="text-center mb-14 fade-in">
+        <div class="section-tag mx-auto" style="background:rgba(255,255,255,0.08);color:#A78BFA;border-color:rgba(255,255,255,0.15);">
+          <i class="fas fa-map-signs"></i> The Journey
+        </div>
+        <h2 class="font-heading font-black text-white" style="font-size:clamp(1.75rem,4vw,2.75rem);">Your Manuscript, <span style="background:linear-gradient(135deg,#A78BFA,#7C3AED);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Step by Step</span></h2>
+      </div>
+      <div class="grid md:grid-cols-5 gap-4 stagger-children">
+        <!-- Steps -->
+        <div class="text-center px-2">
+          <div class="w-14 h-14 rounded-full bg-accent mx-auto flex items-center justify-center text-xl text-white mb-4 shadow-accent-sm">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white mb-2">Discovery</h4>
+          <p class="text-xs" style="color:rgba(255,255,255,0.55);">Share your vision, goals and timeline with our team</p>
+        </div>
+        <div class="hidden md:flex items-center justify-center opacity-30">
+          <div class="h-px w-full" style="background:linear-gradient(90deg,#7C3AED,transparent);"></div>
+        </div>
+        <div class="text-center px-2">
+          <div class="w-14 h-14 rounded-full bg-accent mx-auto flex items-center justify-center text-xl text-white mb-4 shadow-accent-sm">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white mb-2">Matching</h4>
+          <p class="text-xs" style="color:rgba(255,255,255,0.55);">We pair you with the ideal ghostwriter or editor</p>
+        </div>
+        <div class="hidden md:flex items-center justify-center opacity-30">
+          <div class="h-px w-full" style="background:linear-gradient(90deg,#7C3AED,transparent);"></div>
+        </div>
+        <div class="text-center px-2">
+          <div class="w-14 h-14 rounded-full bg-accent mx-auto flex items-center justify-center text-xl text-white mb-4 shadow-accent-sm">
+            <i class="fas fa-pen-alt"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white mb-2">Creation</h4>
+          <p class="text-xs" style="color:rgba(255,255,255,0.55);">Collaborative writing with milestone reviews</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-5 gap-4 stagger-children mt-6">
+        <div class="md:col-start-2 text-center px-2">
+          <div class="w-14 h-14 rounded-full bg-accent mx-auto flex items-center justify-center text-xl text-white mb-4 shadow-accent-sm">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white mb-2">Revision</h4>
+          <p class="text-xs" style="color:rgba(255,255,255,0.55);">Unlimited rounds of feedback until you're thrilled</p>
+        </div>
+        <div class="hidden md:flex items-center justify-center opacity-30">
+          <div class="h-px w-full" style="background:linear-gradient(90deg,#7C3AED,transparent);"></div>
+        </div>
+        <div class="text-center px-2">
+          <div class="w-14 h-14 rounded-full bg-accent mx-auto flex items-center justify-center text-xl text-white mb-4 shadow-accent-sm">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h4 class="font-heading font-bold text-white mb-2">Launch</h4>
+          <p class="text-xs" style="color:rgba(255,255,255,0.55);">Receive your polished, publication-ready book</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║    SECTION 5: PRICING SNAPSHOT              ║
+       ╚══════════════════════════════════════════════╝ -->
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
+    <div class="container-xl">
+      <div class="text-center max-w-2xl mx-auto mb-14 fade-in">
+        <div class="section-tag mx-auto"><i class="fas fa-tags"></i> Transparent Pricing</div>
+        <h2 class="section-title">Simple, <span>Honest Pricing</span></h2>
+        <p class="section-desc mx-auto">Choose a plan that matches your project scope. All plans include an NDA and dedicated writer.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto stagger-children">
+        <!-- Starter -->
+        <div class="pricing-card hover-float hover-glow">
+          <h3 class="font-heading font-bold text-xl mb-1" >Starter</h3>
+          <p class="text-sm mb-4" style="color:var(--color-text-muted);">Short-form content & blog posts</p>
+          <div class="pricing-price gradient-text">$500</div>
+          <p class="text-sm mb-6" style="color:var(--color-text-muted);">per project</p>
+          <div class="space-y-0 mb-8">
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>Up to 5,000 words</div>
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>2 revision rounds</div>
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>NDA included</div>
+          </div>
+          <a href="pricing.html" class="btn-accent-outline w-full justify-center">Get Started</a>
+        </div>
+        <!-- Pro (Featured) -->
+        <div class="pricing-card featured hover-float" style="transform:scale(1.04);">
+          <div class="pricing-popular">Most Popular</div>
+          <h3 class="font-heading font-bold text-xl mb-1 text-white">Professional</h3>
+          <p class="text-sm mb-4" style="color:rgba(255,255,255,0.65);">Full chapters & manuscripts</p>
+          <div class="pricing-price" style="color:white;">$2,800</div>
+          <p class="text-sm mb-6" style="color:rgba(255,255,255,0.55);">per project</p>
+          <div class="space-y-0 mb-8">
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>Up to 40,000 words</div>
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>Unlimited revisions</div>
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>Dedicated ghostwriter</div>
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>Editing included</div>
+          </div>
+          <a href="pricing.html" class="btn-primary w-full justify-center" style="background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.3);">Get Started</a>
+        </div>
+        <!-- Elite -->
+        <div class="pricing-card hover-float hover-glow">
+          <h3 class="font-heading font-bold text-xl mb-1" >Elite</h3>
+          <p class="text-sm mb-4" style="color:var(--color-text-muted);">Full novel & memoir packages</p>
+          <div class="pricing-price gradient-text">$8,500</div>
+          <p class="text-sm mb-6" style="color:var(--color-text-muted);">per project</p>
+          <div class="space-y-0 mb-8">
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>80,000+ words</div>
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>Full editing & proofread</div>
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>Publishing coaching</div>
+            <div class="pricing-feature"><div class="pricing-check"><i class="fas fa-check fa-xs"></i></div>Priority support</div>
+          </div>
+          <a href="pricing.html" class="btn-accent-outline w-full justify-center">Get Started</a>
+        </div>
+      </div>
+      <div class="text-center mt-10 fade-in">
+        <p class="text-sm mb-4" style="color:var(--color-text-muted);">Need a custom quote for an enterprise or multi-book project?</p>
+        <a href="contact.html" class="btn-primary"><i class="fas fa-comments"></i> Request Custom Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║       SECTION 6: SUCCESS STORIES             ║
+       ╚══════════════════════════════════════════════╝ -->
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-secondary);">
+    <div class="container-xl">
+      <div class="text-center mb-12 fade-in">
+        <div class="section-tag mx-auto"><i class="fas fa-trophy"></i> Success Stories</div>
+        <h2 class="section-title">Books That <span>Changed Lives</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+        <div class="card p-6 hover-float">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&crop=face" class="img-cover w-full h-full" alt="Sarah Mitchell" />
+            </div>
+            <div>
+              <h4 class="font-bold text-base" >Sarah Mitchell</h4>
+              <p class="text-xs" style="color:var(--color-text-muted);">Debut Memoir · USA Today Bestseller</p>
+              <div class="stars mt-1" style="font-size:0.7rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed" style="color:var(--color-text-muted);">"InkCraft turned my chaotic notes about surviving corporate burnout into a USA Today bestselling memoir. I couldn't have done it without them."</p>
+        </div>
+        <div class="card p-6 hover-float">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" class="img-cover w-full h-full" alt="" />
+            </div>
+            <div>
+              <h4 class="font-bold text-base" >David Park</h4>
+              <p class="text-xs" style="color:var(--color-text-muted);">Business Book · 80K+ Copies Sold</p>
+              <div class="stars mt-1" style="font-size:0.7rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed" style="color:var(--color-text-muted);">"My business framework finally has a voice. InkCraft delivered a manuscript that exceeded every expectation and secured a traditional publishing deal."</p>
+        </div>
+        <div class="card p-6 hover-float">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face" class="img-cover w-full h-full" alt="" />
+            </div>
+            <div>
+              <h4 class="font-bold text-base" >Nina Walsh</h4>
+              <p class="text-xs" style="color:var(--color-text-muted);">Fantasy Novel · 5 BookTok Awards</p>
+              <div class="stars mt-1" style="font-size:0.7rem;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed" style="color:var(--color-text-muted);">"I had a world fully built in my head but couldn't transfer it to paper. InkCraft's writer brought my fantasy world to life beyond my imagination."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║       SECTION 7: NEWSLETTER CTA             ║
+       ╚══════════════════════════════════════════════╝ -->
+  <section class="section-py px-4 sm:px-0 relative overflow-hidden" style="background:var(--color-bg);">
+    <div class="container-xl">
+      <div class="relative rounded-3xl overflow-hidden p-10 md:p-16" style="background:linear-gradient(135deg,var(--color-accent),#4C1D95);">
+        <div class="blob w-80 h-80 -top-10 -right-10 opacity-20" style="background:#A78BFA;"></div>
+        <div class="relative z-10 grid md:grid-cols-2 gap-10 items-center">
+          <div class="text-white fade-in">
+            <div class="section-tag mb-4" style="background:rgba(255,255,255,0.12);color:white;border-color:rgba(255,255,255,0.2);">
+              <i class="fas fa-envelope-open-text"></i> Newsletter
+            </div>
+            <h2 class="font-heading font-black text-white mb-3" style="font-size:clamp(1.75rem,4vw,2.5rem);line-height:1.1;">
+              Writing Secrets from<br/>the Pros — Free
+            </h2>
+            <p style="color:rgba(255,255,255,0.75);">Join 18,000+ authors getting weekly insider tips on writing craft, publishing, and growing your author brand.</p>
+          </div>
+          <div class="slide-right">
+            <form data-mock data-mock-type="success" data-mock-title="Subscribed!" data-mock-message="Welcome to the InkCraft community! Check your inbox." class="space-y-3">
+              <div class="form-input-group">
+                <i class="fas fa-user input-icon" style="color:rgba(255,255,255,0.5);"></i>
+                <input type="text" placeholder="Your Name" class="form-input" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.20);color:white;padding-left:2.75rem;" />
+              </div>
+              <div class="form-input-group">
+                <i class="fas fa-envelope input-icon" style="color:rgba(255,255,255,0.5);"></i>
+                <input type="email" placeholder="Your Email Address" required class="form-input" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.20);color:white;padding-left:2.75rem;" />
+              </div>
+              <button type="submit" class="btn-primary w-full justify-center" style="background:white;color:var(--color-accent);font-size:1rem;padding:0.875rem;">
+                <i class="fas fa-paper-plane"></i> Subscribe Free
+              </button>
+              <p class="text-xs text-center" style="color:rgba(255,255,255,0.55);">No spam, ever. Unsubscribe at any time.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║                FOOTER                       ║
+       ╚══════════════════════════════════════════════╝ -->
+  <footer class="footer bg-dark-fixed" style="padding-top: 4rem; padding-bottom: 2.5rem;">
+    <div class="blob blob-primary w-80 h-80 top-0 right-0 opacity-10"></div>
+    <div class="container-xl relative z-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 pb-12 border-b" style="border-color:rgba(255,255,255,0.08);">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="logo-icon-box">
+              <i class="fas fa-feather-alt"></i>
+            </div>
+            <div>
+              <span class="font-heading font-bold text-xl text-white logo-text">InkCraft</span>
+              
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed mb-6 max-w-xs" style="color:rgba(255,255,255,0.55);">
+            Transforming ideas into published masterpieces. Professional ghostwriting, editing, and publishing consulting since 2010.
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            <a href="#" class="footer-social" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="footer-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <!-- Services -->
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <a href="services.html" class="footer-link">Ghostwriting</a>
+          <a href="services.html" class="footer-link">Manuscript Editing</a>
+          <a href="services.html" class="footer-link">Proofreading</a>
+          <a href="services.html" class="footer-link">Book Proposals</a>
+          <a href="services.html" class="footer-link">Self-Publishing</a>
+        </div>
+        <!-- Company -->
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="portfolio.html" class="footer-link">Portfolio</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+          <a href="pricing.html" class="footer-link">Pricing</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="space-y-3">
+            <div class="flex items-start gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-map-marker-alt mt-1 text-purple-400 flex-shrink-0"></i>
+              <span>350 Fifth Ave, Suite 6000,<br/>New York, NY 10118</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-envelope text-purple-400"></i>
+              <a href="mailto:hello@inkcraft.com" class="hover:text-purple-400 transition-colors">hello@inkcraft.com</a>
+            </div>
+            <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-phone text-purple-400"></i>
+              <a href="tel:+12125551234" class="hover:text-purple-400 transition-colors">+1 (212) 555-1234</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-white/5 text-center">
+        <p class="text-sm" style="color:rgba(255,255,255,0.40);">© 2026 InkCraft. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

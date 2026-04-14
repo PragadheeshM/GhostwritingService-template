@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact InkCraft — Reach our team of ghostwriting and editing experts for a free consultation and project estimate." />
+  <title>Contact Us | InkCraft Ghostwriting & Book Editing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(1) contrast(1.1) brightness(0.95);
+      transition: filter 0.3s ease;
+    }
+    .dark .map-wrapper iframe { filter: grayscale(1) invert(0.9) hue-rotate(180deg) brightness(0.85); }
+    .map-wrapper:hover iframe { filter: grayscale(0.3) contrast(1.1) brightness(1); }
+  </style>
+</head>
+<body class="font-body">
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transparent-on-dark">
+    <div class="container-xl"><div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0"><div class="logo-icon-box"><i class="fas fa-feather-alt"></i></div><div><span class="font-heading font-bold text-xl leading-none logo-text" >InkCraft</span></div></a>
+        <!-- Right Blocks -->
+        <div class="flex items-center gap-4 lg:gap-8">
+          <div class="hidden xl:flex items-center gap-1">
+            <div class="nav-dropdown"><button class="nav-link">Home <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="index.html"><i class="fas fa-building"></i> Corporate Home</a><a href="index2.html"><i class="fas fa-star"></i> Creative Home</a></div></div>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <div class="nav-dropdown"><button class="nav-link">Blog <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="blog.html"><i class="fas fa-newspaper"></i> Blog Listing</a><a href="blog-details.html"><i class="fas fa-file-alt"></i> Blog Article</a></div></div>
+            <a href="contact.html" class="nav-link active">Contact</a>
+            <div class="nav-dropdown"><button class="nav-link">Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="user-dashboard.html"><i class="fas fa-user"></i> User Dashboard</a><a href="admin-dashboard.html"><i class="fas fa-shield-halved"></i> Admin Dashboard</a></div></div>
+          </div>
+          <div class="flex items-center gap-2 md:gap-3">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <button id="rtl-toggle" class="icon-btn"><i class="fas fa-globe rtl-icon" id="rtl-icon"></i></button>
+              <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
+              <a href="login.html" class="btn-outline ml-2 hidden sm:inline-flex">Login</a>
+              <a href="register.html" class="btn-primary hidden sm:inline-flex">Get Started <i class="fas fa-arrow-right text-xs"></i></a>
+            </div>
+            <button id="mobile-menu-btn" class="xl:hidden icon-btn"><i class="fas fa-bars"></i></button>
+          </div>
+        </div>
+    </div></div>
+  </nav>
+  <div id="mobile-overlay"></div>
+  <div id="mobile-menu">
+    <div class="flex items-center justify-between mb-6"><a href="index.html" class="flex items-center gap-3 flex-shrink-0"><div class="logo-icon-box" style="width:36px;height:36px;"><i class="fas fa-feather-alt" style="font-size:0.9rem;"></i></div><div><span class="font-heading font-bold text-lg leading-none logo-text">InkCraft</span></div></a><button id="mobile-close-btn" class="icon-btn"><i class="fas fa-times"></i></button></div>
+    
+    <div class="divider"></div>
+    <nav class="space-y-1">
+      <button class="mobile-accordion-btn" data-target="mob-home" ><span class="flex items-center gap-3"><i class="fas fa-home w-5 text-accent"></i> Home</span><i class="fas fa-chevron-down accordion-arrow text-xs" style="color:var(--color-text-muted);"></i></button>
+      <div id="mob-home" class="mobile-sub-menu"><a href="index.html" class="mobile-sub-link">Corporate Home</a><a href="index2.html" class="mobile-sub-link">Creative Home</a></div>
+      <a href="about.html" class="mobile-nav-link"><i class="fas fa-info-circle w-5 text-accent"></i> About</a>
+      <a href="services.html" class="mobile-nav-link"><i class="fas fa-pen-nib w-5 text-accent"></i> Services</a>
+      <a href="pricing.html" class="mobile-nav-link"><i class="fas fa-tags w-5 text-accent"></i> Pricing</a>
+      <button class="mobile-accordion-btn" data-target="mob-blog" ><span class="flex items-center gap-3"><i class="fas fa-newspaper w-5 text-accent"></i> Blog</span><i class="fas fa-chevron-down accordion-arrow text-xs" style="color:var(--color-text-muted);"></i></button>
+      <div id="mob-blog" class="mobile-sub-menu"><a href="blog.html" class="mobile-sub-link">Blog Listing</a><a href="blog-details.html" class="mobile-sub-link">Blog Article</a></div>
+      <a href="contact.html" class="mobile-nav-link active"><i class="fas fa-envelope w-5 text-accent"></i> Contact</a>
+      <button class="mobile-accordion-btn" data-target="mob-dash" ><span class="flex items-center gap-3"><i class="fas fa-chart-pie w-5 text-accent"></i> Dashboard</span><i class="fas fa-chevron-down accordion-arrow text-xs" style="color:var(--color-text-muted);"></i></button>
+      <div id="mob-dash" class="mobile-sub-menu"><a href="user-dashboard.html" class="mobile-sub-link">User Dashboard</a><a href="admin-dashboard.html" class="mobile-sub-link">Admin Dashboard</a></div>
+    </nav>
+    
+    <!-- Mobile Auth (360px) -->
+    <div class="mt-8 pt-6 border-t sm:hidden" style="border-color:var(--color-border);">
+      <div class="flex flex-col gap-3">
+        <a href="login.html" class="btn-outline w-full justify-center">Login</a>
+        <a href="register.html" class="btn-primary w-full justify-center">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="blob blob-primary w-96 h-96 -top-20 -right-20 opacity-20"></div>
+    <div class="container-xl page-header-content">
+      <div class="section-tag mb-4" style="background:rgba(255,255,255,0.08);color:#A78BFA;border-color:rgba(255,255,255,0.15);"><i class="fas fa-envelope"></i> Get in Touch</div>
+      <h1 class="page-header-title">Contact Us</h1>
+      <div class="breadcrumb"><a href="index.html">Home</a><span><i class="fas fa-chevron-right fa-xs"></i></span><span class="current">Contact</span></div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: CONTACT CARDS -->
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
+    <div class="container-xl">
+      <div class="grid sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16 stagger-children">
+        <div class="card p-6 text-center hover-float hover-glow">
+          <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-phone"></i></div>
+          <h4 class="font-heading font-bold text-base mb-1" >Call Us</h4>
+          <p class="text-xs mb-2" style="color:var(--color-text-muted);">Mon–Fri, 9AM–6PM ET</p>
+          <a href="tel:+12125551234" class="text-sm font-semibold" style="color:var(--color-accent);">+1 (212) 555-1234</a>
+        </div>
+        <div class="card p-6 text-center hover-float hover-glow">
+          <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-envelope"></i></div>
+          <h4 class="font-heading font-bold text-base mb-1" >Email Us</h4>
+          <p class="text-xs mb-2" style="color:var(--color-text-muted);">Response within 2 hours</p>
+          <a href="mailto:hello@inkcraft.com" class="text-sm font-semibold" style="color:var(--color-accent);">hello@inkcraft.com</a>
+        </div>
+        <div class="card p-6 text-center hover-float hover-glow">
+          <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-map-marker-alt"></i></div>
+          <h4 class="font-heading font-bold text-base mb-1" >Visit Us</h4>
+          <p class="text-xs mb-2" style="color:var(--color-text-muted);">Our New York HQ</p>
+          <span class="text-sm font-semibold" style="color:var(--color-accent);">350 Fifth Ave, Suite 6000, NY</span>
+        </div>
+        <div class="card p-6 text-center hover-float hover-glow">
+          <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-comments"></i></div>
+          <h4 class="font-heading font-bold text-base mb-1" >Live Chat</h4>
+          <p class="text-xs mb-2" style="color:var(--color-text-muted);">Available 8AM–10PM ET</p>
+          <button onclick="GBS.toast('success','Chat Started!','Connecting you to an agent...')" class="text-sm font-semibold cursor-pointer" style="color:var(--color-accent);background:none;border:none;">Start Chat →</button>
+        </div>
+      </div>
+
+      <!-- Form + Info -->
+      <div class="grid lg:grid-cols-5 gap-12">
+        <!-- Form -->
+        <div class="lg:col-span-3 card p-8 fade-in">
+          <h2 class="font-heading font-bold text-2xl mb-2" >Send Us a Message</h2>
+          <p class="text-sm mb-6" style="color:var(--color-text-muted);">Tell us about your project and we'll get back to you with a free quote within 2 hours during business hours.</p>
+          <form data-mock data-mock-type="success" data-mock-title="Message Sent!" data-mock-message="Our team will respond within 2 business hours.">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="form-group">
+                <label class="form-label">First Name *</label>
+                <div class="form-input-group"><i class="fas fa-user input-icon"></i><input type="text" class="form-input" placeholder="John" style="padding-left:2.75rem;" required /></div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name *</label>
+                <div class="form-input-group"><i class="fas fa-user input-icon"></i><input type="text" class="form-input" placeholder="Doe" style="padding-left:2.75rem;" required /></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <div class="form-input-group"><i class="fas fa-envelope input-icon"></i><input type="email" class="form-input" placeholder="john@example.com" style="padding-left:2.75rem;" required /></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone (Optional)</label>
+              <div class="form-input-group"><i class="fas fa-phone input-icon"></i><input type="tel" class="form-input" placeholder="+1 (555) 000-0000" style="padding-left:2.75rem;" /></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Service Interested In</label>
+              <select class="form-select">
+                <option>Full Ghostwriting</option>
+                <option>Developmental Editing</option>
+                <option>Copy Editing & Proofreading</option>
+                <option>Book Proposal Writing</option>
+                <option>Self-Publishing Coaching</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Project Budget</label>
+              <select class="form-select">
+                <option>Under $500</option>
+                <option>$500 – $2,000</option>
+                <option>$2,000 – $5,000</option>
+                <option>$5,000 – $10,000</option>
+                <option>$10,000+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tell Us About Your Project *</label>
+              <textarea class="form-textarea" rows="5" placeholder="Describe your book idea, current status, word count goal, target audience, and any notes about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-primary-lg w-full justify-center">
+              <i class="fas fa-paper-plane"></i> Send Message & Get Free Quote
+            </button>
+          </form>
+        </div>
+        <!-- Info Panel -->
+        <div class="lg:col-span-2 space-y-6 slide-right">
+          <div class="card p-6">
+            <h3 class="font-heading font-bold text-lg mb-4" >Office Hours</h3>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm py-2 border-b" style="border-color:var(--color-border);"><span style="color:var(--color-text-muted);">Monday – Friday</span><span class="font-semibold" >9:00 AM – 6:00 PM ET</span></div>
+              <div class="flex justify-between text-sm py-2 border-b" style="border-color:var(--color-border);"><span style="color:var(--color-text-muted);">Saturday</span><span class="font-semibold" >10:00 AM – 2:00 PM ET</span></div>
+              <div class="flex justify-between text-sm py-2"><span style="color:var(--color-text-muted);">Sunday</span><span class="badge badge-danger">Closed</span></div>
+            </div>
+          </div>
+          <div class="card p-6">
+            <h3 class="font-heading font-bold text-lg mb-4" >Response Times</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-2.5 h-2.5 rounded-full bg-green-500 flex-shrink-0"></div>
+                <div><div class="text-sm font-semibold" >Email</div><div class="text-xs" style="color:var(--color-text-muted);">Within 2 business hours</div></div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-2.5 h-2.5 rounded-full bg-accent flex-shrink-0"></div>
+                <div><div class="text-sm font-semibold" >Live Chat</div><div class="text-xs" style="color:var(--color-text-muted);">Under 5 minutes</div></div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-2.5 h-2.5 rounded-full bg-yellow-400 flex-shrink-0"></div>
+                <div><div class="text-sm font-semibold" >Phone</div><div class="text-xs" style="color:var(--color-text-muted);">Immediate during office hours</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="card p-6">
+            <h3 class="font-heading font-bold text-lg mb-4" >Follow InkCraft</h3>
+            <div class="flex gap-2 flex-wrap">
+              <a href="#" class="footer-social" style="background:rgba(109,40,217,0.08);color:var(--color-accent);" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" class="footer-social" style="background:rgba(109,40,217,0.08);color:var(--color-accent);" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="footer-social" style="background:rgba(109,40,217,0.08);color:var(--color-accent);" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="footer-social" style="background:rgba(109,40,217,0.08);color:var(--color-accent);" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: FULL-WIDTH MAP -->
+  <section class="map-wrapper" style="height:440px;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343015!2d-73.9871424842929!3d40.74844047932819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1617291456780!5m2!1sen!2sus"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="InkCraft New York Office Location">
+    </iframe>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════╗
+       ║                FOOTER                       ║
+       ╚══════════════════════════════════════════════╝ -->
+  <footer class="footer bg-dark-fixed" style="padding-top: 4rem; padding-bottom: 2.5rem;">
+    <div class="blob blob-primary w-80 h-80 top-0 right-0 opacity-10"></div>
+    <div class="container-xl relative z-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 pb-12 border-b" style="border-color:rgba(255,255,255,0.08);">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="logo-icon-box">
+              <i class="fas fa-feather-alt"></i>
+            </div>
+            <div>
+              <span class="font-heading font-bold text-xl text-white logo-text">InkCraft</span>
+              
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed mb-6 max-w-xs" style="color:rgba(255,255,255,0.55);">
+            Transforming ideas into published masterpieces. Professional ghostwriting, editing, and publishing consulting since 2010.
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            <a href="#" class="footer-social" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="footer-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <!-- Services -->
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <a href="services.html" class="footer-link">Ghostwriting</a>
+          <a href="services.html" class="footer-link">Manuscript Editing</a>
+          <a href="services.html" class="footer-link">Proofreading</a>
+          <a href="services.html" class="footer-link">Book Proposals</a>
+          <a href="services.html" class="footer-link">Self-Publishing</a>
+        </div>
+        <!-- Company -->
+        <div>
+          <h4 class="footer-title">Company</h4>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="portfolio.html" class="footer-link">Portfolio</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+          <a href="pricing.html" class="footer-link">Pricing</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="space-y-3">
+            <div class="flex items-start gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-map-marker-alt mt-1 text-purple-400 flex-shrink-0"></i>
+              <span>350 Fifth Ave, Suite 6000,<br/>New York, NY 10118</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-envelope text-purple-400"></i>
+              <a href="mailto:hello@inkcraft.com" class="hover:text-purple-400 transition-colors">hello@inkcraft.com</a>
+            </div>
+            <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
+              <i class="fas fa-phone text-purple-400"></i>
+              <a href="tel:+12125551234" class="hover:text-purple-400 transition-colors">+1 (212) 555-1234</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-white/5 text-center">
+        <p class="text-sm" style="color:rgba(255,255,255,0.40);">© 2026 InkCraft. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
