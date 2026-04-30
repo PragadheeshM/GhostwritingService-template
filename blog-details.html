@@ -31,22 +31,22 @@
 <body class="font-body">
   <!-- NAVBAR -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transparent-on-dark">
-    <div class="container-xl"><div class="flex items-center justify-between h-20">
-      <a href="index.html" class="flex items-center gap-3 flex-shrink-0"><div class="logo-icon-box"><i class="fas fa-feather-alt"></i></div><div><span class="font-heading font-bold text-xl leading-none logo-text" >InkCraft</span></div></a>
+    <div class="container-xl"><div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 flex-shrink-0"><div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.875rem;"></i></div><div><span class="font-heading font-semibold text-lg leading-none logo-text" >InkCraft</span></div></a>
         <!-- Right Blocks -->
         <div class="flex items-center gap-4 lg:gap-8">
           <div class="hidden xl:flex items-center gap-1">
-            <div class="nav-dropdown"><button class="nav-link">Home <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="index.html"><i class="fas fa-building"></i> Corporate Home</a><a href="index2.html"><i class="fas fa-star"></i> Creative Home</a></div></div>
+            <div class="nav-dropdown"><button class="nav-link">Home <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="index.html">Corporate Home</a><a href="index2.html">Creative Home</a></div></div>
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Services</a>
             <a href="pricing.html" class="nav-link">Pricing</a>
-            <div class="nav-dropdown"><button class="nav-link active dark:text-gray-200">Blog <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="blog.html"><i class="fas fa-newspaper"></i>Blog Listing</a><a href="blog-details.html"><i class="fas fa-file-alt"></i>Blog Article</a></div></div>
+            <div class="nav-dropdown"><button class="nav-link active dark:text-gray-200">Blog <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="blog.html">Blog Listing</a><a href="blog-details.html">Blog Article</a></div></div>
             <a href="contact.html" class="nav-link">Contact</a>
-            <div class="nav-dropdown"><button class="nav-link">Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="user-dashboard.html"><i class="fas fa-user"></i>User Dashboard</a><a href="admin-dashboard.html"><i class="fas fa-shield-halved"></i>Admin Dashboard</a></div></div>
+            <div class="nav-dropdown"><button class="nav-link">Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="user-dashboard.html">User Dashboard</a><a href="admin-dashboard.html">Admin Dashboard</a></div></div>
           </div>
           <div class="flex items-center gap-2 md:gap-3">
             <div class="flex items-center gap-1.5 sm:gap-2">
-              <button id="rtl-toggle" class="icon-btn"><i class="fas fa-globe rtl-icon" id="rtl-icon"></i></button>
+              <button id="rtl-toggle" class="nav-link px-3 py-1 font-semibold text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">RTL</button>
               <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
               <a href="login.html" class="btn-outline ml-2 hidden sm:inline-flex">Login</a>
               <a href="register.html" class="btn-primary hidden sm:inline-flex">Get Started</a>
@@ -58,7 +58,7 @@
     </nav>
     <div id="mobile-overlay"></div>
     <div id="mobile-menu">
-      <div class="flex items-center justify-between mb-6"><a href="index.html" class="flex items-center gap-3 flex-shrink-0"><div class="logo-icon-box" style="width:36px;height:36px;"><i class="fas fa-feather-alt" style="font-size:0.9rem;"></i></div><div><span class="font-heading font-bold text-lg leading-none logo-text">InkCraft</span></div></a><button id="mobile-close-btn" class="icon-btn"><i class="fas fa-times"></i></button></div>
+      <div class="flex items-center justify-between mb-6"><a href="index.html" class="flex items-center gap-2 flex-shrink-0"><div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.875rem;"></i></div><div><span class="font-heading font-semibold text-lg leading-none logo-text">InkCraft</span></div></a><button id="mobile-close-btn" class="icon-btn"><i class="fas fa-times"></i></button></div>
       
       <div class="divider"></div>
       <nav class="space-y-1">
@@ -70,7 +70,7 @@
         <button class="mobile-accordion-btn" data-target="mob-blog" ><span class="flex items-center gap-3"><i class="fas fa-newspaper w-5 text-accent"></i> Blog</span><i class="fas fa-chevron-down accordion-arrow text-xs" style="color:var(--color-text-muted);"></i></button>
         <div id="mob-blog" class="mobile-sub-menu"><a href="blog.html" class="mobile-sub-link">Blog Listing</a><a href="blog-details.html" class="mobile-sub-link">Blog Article</a></div>
         <a href="contact.html" class="mobile-nav-link"><i class="fas fa-envelope w-5 text-accent"></i> Contact</a>
-        <button class="mobile-accordion-btn" data-target="mob-dash" ><span class="flex items-center gap-3"><i class="fas fa-chart-pie w-5 text-accent"></i> Dashboard</span><i class="fas fa-chevron-down accordion-arrow text-xs transition-transform" style="color:var(--color-text-muted);"></i></button>
+        <button class="mobile-accordion-btn" data-target="mob-dash" ><span class="flex items-center gap-3"><i class="fas fa-chart-pie w-5 text-accent"></i> Dashboard</span><i class="fas fa-chevron-down accordion-arrow text-xs" style="color:var(--color-text-muted);"></i></button>
         <div id="mob-dash" class="mobile-sub-menu"><a href="user-dashboard.html" class="mobile-sub-link">User Dashboard</a><a href="admin-dashboard.html" class="mobile-sub-link">Admin Dashboard</a></div>
       </nav>
 
@@ -86,18 +86,19 @@
   </div>
 
   <!-- HERO -->
-  <section class="pt-24 pb-10" style="background:var(--color-primary);">
-    <div class="container-xl max-w-4xl mx-auto">
-      <div class="flex items-center gap-2 mb-4 flex-wrap">
+  <section class="pt-32 pb-20 text-center relative overflow-hidden" style="background:var(--color-primary);">
+    <div class="blob blob-primary w-96 h-96 -top-20 -right-20 opacity-20"></div>
+    <div class="container-xl max-w-4xl mx-auto relative z-10 flex flex-col items-center">
+      <div class="flex items-center justify-center gap-2 mb-4 flex-wrap">
         <a href="blog.html" class="breadcrumb-item text-sm" style="color:rgba(255,255,255,0.55);">Blog</a>
         <i class="fas fa-chevron-right fa-xs" style="color:rgba(255,255,255,0.30);"></i>
         <span class="badge badge-accent">Ghostwriting</span>
       </div>
-      <h1 class="font-heading font-black text-white mb-5" style="font-size:clamp(2rem,5vw,3rem);line-height:1.1;">The Ultimate Guide to Working with a Ghostwriter: Everything You Need to Know Before You Start</h1>
-      <div class="flex items-center gap-5 flex-wrap">
+      <h1 class="font-heading font-semibold text-white mb-6" style="font-size:clamp(2.25rem,6vw,3.5rem);line-height:1.1;max-width:25ch;">The Ultimate Guide to Working with a Ghostwriter: Everything You Need to Know Before You Start</h1>
+      <div class="flex items-center justify-center gap-5 flex-wrap">
         <div class="flex items-center gap-2.5">
           <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover border-2 border-white/20" alt="Elena Rhodes" />
-          <div>
+          <div class="text-left">
             <div class="text-sm font-semibold text-white">Elena Rhodes</div>
             <div class="text-xs" style="color:rgba(255,255,255,0.55);">Head Writer · InkCraft</div>
           </div>
@@ -175,7 +176,7 @@
           <!-- CTA Box -->
           <div class="card p-8 mt-10 text-center" style="background:linear-gradient(135deg,rgba(109,40,217,0.06),rgba(109,40,217,0.02));border-color:rgba(109,40,217,0.20);">
             <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-feather-alt"></i></div>
-            <h3 class="font-heading font-bold text-xl mb-2" >Ready to Start Your Book?</h3>
+            <h3 class="font-heading font-semibold text-xl mb-2" >Ready to Start Your Book?</h3>
             <p class="text-sm mb-5" style="color:var(--color-text-muted);">Book a free 30-minute consultation with an InkCraft ghostwriting expert to discuss your project.</p>
             <a href="contact.html" class="btn-primary btn-primary-lg"><i class="fas fa-calendar-alt"></i> Book Free Consultation</a>
           </div>
@@ -184,7 +185,7 @@
           <div class="card p-6 mt-8 flex items-start gap-5">
             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face" class="w-16 h-16 rounded-full object-cover flex-shrink-0 border-2" style="border-color:var(--color-accent);" alt="Elena Rhodes" />
             <div>
-              <div class="font-heading font-bold text-lg mb-1" >Elena Rhodes</div>
+              <div class="font-heading font-semibold text-lg mb-1" >Elena Rhodes</div>
               <div class="text-xs font-semibold mb-2" style="color:var(--color-accent);">Head Writer & NYT Bestselling Author</div>
               <p class="text-sm" style="color:var(--color-text-muted);">With 12 published books and 15 years of ghostwriting experience, Elena leads InkCraft's ghostwriting division and has helped 200+ clients become published authors.</p>
             </div>
@@ -192,10 +193,10 @@
         </div>
 
         <!-- Sidebar -->
-        <div class="lg:col-span-1 space-y-6 slide-right">
+        <div class="lg:col-span-1 space-y-6 slide-right lg:sticky lg:top-28 h-fit z-10">
           <!-- TOC -->
-          <div class="card p-5 sticky top-24">
-            <h4 class="font-heading font-bold text-base mb-3" >Table of Contents</h4>
+          <div class="card p-5">
+            <h4 class="font-heading font-semibold text-base mb-3" >Table of Contents</h4>
             <nav>
               <a href="#" class="toc-link">What Is Ghostwriting?</a>
               <a href="#" class="toc-link">Why Hire a Ghostwriter?</a>
@@ -205,7 +206,7 @@
           </div>
           <!-- Related -->
           <div class="card p-5">
-            <h4 class="font-heading font-bold text-base mb-4" >Related Articles</h4>
+            <h4 class="font-heading font-semibold text-base mb-4" >Related Articles</h4>
             <div class="space-y-4">
               <a href="blog-details.html" class="flex items-start gap-3 group">
                 <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=80&h=60&fit=crop" class="w-16 h-12 rounded-lg object-cover flex-shrink-0" alt="" />
@@ -245,11 +246,9 @@
         <!-- Brand -->
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <div class="logo-icon-box">
-              <i class="fas fa-feather-alt"></i>
-            </div>
+            <div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.875rem;"></i></div>
             <div>
-              <span class="font-heading font-bold text-xl text-white logo-text">InkCraft</span>
+              <span class="font-heading font-semibold text-xl text-white logo-text">InkCraft</span>
               
             </div>
           </div>
@@ -310,27 +309,3 @@
   <script src="main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

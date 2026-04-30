@@ -25,16 +25,15 @@
        ╚══════════════════════════════════════════════╝ -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
     <div class="container-xl">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex items-center justify-between h-16">
 
         <!-- Logo -->
-        <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
-      <div class="logo-icon-box">
-        <i class="fas fa-feather-alt"></i>
+        <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+      <div class="logo-icon-box" style="width:32px;height:32px;">
+        <i class="fas fa-feather-alt" style="font-size:0.875rem;"></i>
       </div>
       <div>
-        <span class="font-heading font-bold text-xl leading-none logo-text">InkCraft</span>
-        
+        <span class="font-heading font-semibold text-lg leading-none logo-text">InkCraft</span>
       </div>
     </a>
 
@@ -46,8 +45,8 @@
             <div class="nav-dropdown">
               <button class="nav-link">Home <i class="fas fa-chevron-down text-xs ml-1"></i></button>
               <div class="dropdown-menu">
-                <a href="index.html"><i class="fas fa-building"></i> Corporate Home</a>
-                <a href="index2.html"><i class="fas fa-star"></i> Creative Home</a>
+                <a href="index.html">Corporate Home</a>
+                <a href="index2.html">Creative Home</a>
               </div>
             </div>
             <a href="about.html" class="nav-link">About</a>
@@ -57,8 +56,8 @@
             <div class="nav-dropdown">
               <button class="nav-link">Blog <i class="fas fa-chevron-down text-xs ml-1"></i></button>
               <div class="dropdown-menu">
-                <a href="blog.html"><i class="fas fa-newspaper"></i> Blog Listing</a>
-                <a href="blog-details.html"><i class="fas fa-file-alt"></i> Blog Article</a>
+                <a href="blog.html">Blog Listing</a>
+                <a href="blog-details.html">Blog Article</a>
               </div>
             </div>
             <a href="contact.html" class="nav-link">Contact</a>
@@ -66,8 +65,8 @@
             <div class="nav-dropdown">
               <button class="nav-link">Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i></button>
               <div class="dropdown-menu">
-                <a href="user-dashboard.html"><i class="fas fa-user"></i> User Dashboard</a>
-                <a href="admin-dashboard.html"><i class="fas fa-shield-halved"></i> Admin Dashboard</a>
+                <a href="user-dashboard.html">User Dashboard</a>
+                <a href="admin-dashboard.html">Admin Dashboard</a>
               </div>
             </div>
           </div>
@@ -76,14 +75,14 @@
           <div class="flex items-center gap-2 md:gap-3">
             <!-- Right Actions -->
             <div class="flex items-center gap-1.5 sm:gap-2">
-              <button id="rtl-toggle" class="icon-btn" title="Toggle RTL/LTR">
-                <i class="fas fa-globe rtl-icon" id="rtl-icon"></i>
+              <button id="rtl-toggle" class="nav-link px-3 py-1 font-semibold text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">
+                RTL
               </button>
               <button id="theme-toggle" class="icon-btn" title="Toggle Dark/Light Theme">
                 <i class="fas fa-moon theme-icon" id="theme-icon"></i>
               </button>
               <a href="login.html" class="btn-outline ml-2 hidden sm:inline-flex">Login</a>
-              <a href="register.html" class="btn-primary hidden sm:inline-flex">Get Started <i class="fas fa-arrow-right text-xs"></i></a>
+              <a href="register.html" class="btn-primary hidden sm:inline-flex">Get Started</a>
             </div>
 
             <!-- Mobile Hamburger -->
@@ -103,11 +102,11 @@
   <div id="mobile-menu">
     <!-- Menu Header -->
     <div class="flex items-center justify-between mb-6">
-      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
-        <div class="logo-icon-box" style="width:36px;height:36px;">
-          <i class="fas fa-feather-alt" style="font-size:0.9rem;"></i>
+      <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+        <div class="logo-icon-box" style="width:32px;height:32px;">
+          <i class="fas fa-feather-alt" style="font-size:0.875rem;"></i>
         </div>
-        <span class="font-heading font-bold text-lg leading-none logo-text">InkCraft</span>
+        <span class="font-heading font-semibold text-lg leading-none logo-text">InkCraft</span>
       </a>
       <button id="mobile-close-btn" class="icon-btn"><i class="fas fa-times"></i></button>
     </div>
@@ -188,8 +187,8 @@
             <a href="services.html" class="btn-primary btn-primary-lg">
               <i class="fas fa-feather-alt"></i> Explore Services
             </a>
-            <a href="pricing.html" class="btn-accent-outline" style="padding:0.875rem 2rem;font-size:1rem;border-radius:9999px;">
-              View Pricing <i class="fas fa-arrow-right text-xs"></i>
+            <a href="pricing.html" class="btn-accent-outline btn-primary-lg">
+              View Pricing
             </a>
           </div>
           <!-- Trust Strip -->
@@ -198,7 +197,7 @@
               <img src="https://images.unsplash.com/photo-1494790108755-2616b612b2ab?w=40&h=40&fit=crop&crop=face" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="Client" />
               <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="Client" />
               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&h=40&fit=crop&crop=face" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="Client" />
-              <div class="w-9 h-9 rounded-full border-2 border-white bg-accent flex items-center justify-center text-white text-xs font-bold">+</div>
+              <div class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-semibold" style="background:var(--color-accent);">+</div>
             </div>
             <div>
               <div class="stars" style="margin-bottom:0.25rem;">
@@ -214,18 +213,17 @@
           <div class="relative w-full aspect-square max-w-[520px] mx-auto">
             <!-- Main Image -->
             <div class="w-full h-[480px] rounded-3xl overflow-hidden shadow-glass-lg border border-white/20">
-              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=800&fit=crop" alt="Professional writer at desk" class="img-cover" />
+              <img src="https://images.unsplash.com/photo-1491841573634-28140fc7ced7?w=800&h=800&fit=crop" alt="Premium writing setup" class="img-cover" />
             </div>
             <!-- Purple overlay gradient -->
             <div class="absolute inset-0 rounded-3xl" style="background:linear-gradient(135deg,rgba(109,40,217,0.15)0%,transparent 60%);pointer-events:none;"></div>
 
-            <!-- Floating Card 1: Books Delivered -->
             <div class="floating-card -bottom-6 -left-10" style="min-width:190px;">
-              <div class="w-11 h-11 rounded-xl bg-accent flex items-center justify-center flex-shrink-0">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:var(--color-accent);">
                 <i class="fas fa-book text-white"></i>
               </div>
               <div>
-                <div class="text-lg font-bold font-heading" style="color:var(--color-text);line-height:1.2;">24,000+</div>
+                <div class="text-lg font-semibold font-heading" style="color:var(--color-text);line-height:1.2;">24,000+</div>
                 <div class="text-xs" style="color:var(--color-text-muted);">Books Delivered</div>
               </div>
             </div>
@@ -236,7 +234,7 @@
                 <i class="fas fa-check-circle" style="color:#059669;font-size:1.25rem;"></i>
               </div>
               <div>
-                <div class="text-lg font-bold font-heading" style="color:var(--color-text);line-height:1.2;">99.2%</div>
+                <div class="text-lg font-semibold font-heading" style="color:var(--color-text);line-height:1.2;">99.2%</div>
                 <div class="text-xs" style="color:var(--color-text-muted);">Satisfaction</div>
               </div>
             </div>
@@ -245,13 +243,7 @@
       </div>
     </div>
 
-    <!-- Scroll Hint -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-      <span class="text-xs font-medium tracking-widest uppercase" style="color:var(--color-text-muted);">Scroll</span>
-      <div class="w-5 h-8 rounded-full border-2 flex items-start justify-center pt-1.5" style="border-color:var(--color-text-soft);">
-        <div class="w-1 h-1.5 rounded-full bg-accent animate-bounce"></div>
-      </div>
-    </div>
+
   </section>
 
   <!-- ╔══════════════════════════════════════════════╗
@@ -262,22 +254,22 @@
       <p class="text-center text-sm font-semibold tracking-widest uppercase mb-8 fade-in" style="color:var(--color-text-muted);">Trusted by leading publishers & brands</p>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-8 items-center justify-items-center stagger-children">
         <div class="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
-          <span class="font-heading font-bold text-sm sm:text-base lg:text-lg text-center px-1" >Penguin Books</span>
+          <span class="font-heading font-semibold text-sm sm:text-base lg:text-lg text-center px-1" >Penguin Books</span>
         </div>
         <div class="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
-          <span class="font-heading font-bold text-sm sm:text-base lg:text-lg text-center px-1" >HarperCollins</span>
+          <span class="font-heading font-semibold text-sm sm:text-base lg:text-lg text-center px-1" >HarperCollins</span>
         </div>
         <div class="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
-          <span class="font-heading font-bold text-sm sm:text-base lg:text-lg text-center px-1" >Simon & Schuster</span>
+          <span class="font-heading font-semibold text-sm sm:text-base lg:text-lg text-center px-1" >Simon & Schuster</span>
         </div>
         <div class="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
-          <span class="font-heading font-bold text-sm sm:text-base lg:text-lg text-center px-1" >Macmillan</span>
+          <span class="font-heading font-semibold text-sm sm:text-base lg:text-lg text-center px-1" >Macmillan</span>
         </div>
         <div class="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
-          <span class="font-heading font-bold text-sm sm:text-base lg:text-lg text-center px-1" >Hachette</span>
+          <span class="font-heading font-semibold text-sm sm:text-base lg:text-lg text-center px-1" >Hachette</span>
         </div>
         <div class="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
-          <span class="font-heading font-bold text-sm sm:text-base lg:text-lg text-center px-1" >Random House</span>
+          <span class="font-heading font-semibold text-sm sm:text-base lg:text-lg text-center px-1" >Random House</span>
         </div>
       </div>
     </div>
@@ -324,44 +316,44 @@
 
         <div class="service-card hover-float hover-glow">
           <div class="service-icon-wrap"><i class="fas fa-ghost"></i></div>
-          <h3 class="font-heading font-bold text-xl mb-3" >Full Ghostwriting</h3>
+          <h3 class="font-heading font-semibold text-xl mb-3" >Full Ghostwriting</h3>
           <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Share your vision and we'll write the entire book in your voice. Absolutely confidential, 100% yours.</p>
-          <a href="service-details.html" class="text-sm font-semibold flex items-center gap-2" style="color:var(--color-accent);">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
+          <a href="service-details.html" class="btn-accent-outline flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm">View Details <i class="fas fa-arrow-right text-xs"></i></a>
         </div>
 
         <div class="service-card hover-float hover-glow">
           <div class="service-icon-wrap"><i class="fas fa-spell-check"></i></div>
-          <h3 class="font-heading font-bold text-xl mb-3" >Manuscript Editing</h3>
+          <h3 class="font-heading font-semibold text-xl mb-3" >Manuscript Editing</h3>
           <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Comprehensive developmental, line, and copy editing to strengthen structure, flow, and clarity.</p>
-          <a href="service-details.html" class="text-sm font-semibold flex items-center gap-2" style="color:var(--color-accent);">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
+          <a href="service-details.html" class="btn-accent-outline flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm">View Details <i class="fas fa-arrow-right text-xs"></i></a>
         </div>
 
         <div class="service-card hover-float hover-glow">
           <div class="service-icon-wrap"><i class="fas fa-search"></i></div>
-          <h3 class="font-heading font-bold text-xl mb-3" >Proofreading</h3>
+          <h3 class="font-heading font-semibold text-xl mb-3" >Proofreading</h3>
           <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">A meticulous final polish catching every typo, grammar slip, and formatting inconsistency.</p>
-          <a href="service-details.html" class="text-sm font-semibold flex items-center gap-2" style="color:var(--color-accent);">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
+          <a href="service-details.html" class="btn-accent-outline flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm">View Details <i class="fas fa-arrow-right text-xs"></i></a>
         </div>
 
         <div class="service-card hover-float hover-glow">
           <div class="service-icon-wrap"><i class="fas fa-book-open"></i></div>
-          <h3 class="font-heading font-bold text-xl mb-3" >Book Proposal Writing</h3>
+          <h3 class="font-heading font-semibold text-xl mb-3" >Book Proposal Writing</h3>
           <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Compelling book proposals that open doors with top literary agents and traditional publishers.</p>
-          <a href="service-details.html" class="text-sm font-semibold flex items-center gap-2" style="color:var(--color-accent);">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
+          <a href="service-details.html" class="btn-accent-outline flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm">View Details <i class="fas fa-arrow-right text-xs"></i></a>
         </div>
 
         <div class="service-card hover-float hover-glow">
           <div class="service-icon-wrap"><i class="fas fa-landmark"></i></div>
-          <h3 class="font-heading font-bold text-xl mb-3" >Self-Publishing Coaching</h3>
+          <h3 class="font-heading font-semibold text-xl mb-3" >Self-Publishing Coaching</h3>
           <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">Navigate Amazon KDP, IngramSpark, and global distribution with expert hands-on guidance.</p>
-          <a href="service-details.html" class="text-sm font-semibold flex items-center gap-2" style="color:var(--color-accent);">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
+          <a href="service-details.html" class="btn-accent-outline flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm">View Details <i class="fas fa-arrow-right text-xs"></i></a>
         </div>
 
         <div class="service-card hover-float hover-glow">
           <div class="service-icon-wrap"><i class="fas fa-pen-fancy"></i></div>
-          <h3 class="font-heading font-bold text-xl mb-3" >Content & Blog Writing</h3>
+          <h3 class="font-heading font-semibold text-xl mb-3" >Content & Blog Writing</h3>
           <p class="text-sm leading-relaxed mb-4" style="color:var(--color-text-muted);">SEO-optimized long-form articles, thought leadership pieces, and content strategy that converts.</p>
-          <a href="service-details.html" class="text-sm font-semibold flex items-center gap-2" style="color:var(--color-accent);">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
+          <a href="service-details.html" class="btn-accent-outline flex items-center justify-center gap-2 w-full py-3 rounded-full text-sm">View Details <i class="fas fa-arrow-right text-xs"></i></a>
         </div>
       </div>
       <div class="text-center mt-12">
@@ -381,36 +373,36 @@
         <h2 class="section-title">From Idea to <span>Published Book</span> in 4 Steps</h2>
       </div>
       <div class="grid md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
-        <div class="card p-6 text-center relative">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">1</div>
+        <div class="card p-6 text-center relative !overflow-visible">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-semibold" style="background:var(--color-accent);">1</div>
           <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.08);color:var(--color-accent);">
             <i class="fas fa-comments"></i>
           </div>
-          <h3 class="font-heading font-bold text-lg mb-2" >Free Consultation</h3>
+          <h3 class="font-heading font-semibold text-lg mb-2" >Free Consultation</h3>
           <p class="text-sm" style="color:var(--color-text-muted);">Share your idea, goals, and timeline with our expert team in a no-obligation discovery call.</p>
         </div>
-        <div class="card p-6 text-center relative">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">2</div>
+        <div class="card p-6 text-center relative !overflow-visible">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-semibold" style="background:var(--color-accent);">2</div>
           <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.08);color:var(--color-accent);">
             <i class="fas fa-user-check"></i>
           </div>
-          <h3 class="font-heading font-bold text-lg mb-2" >Match & Plan</h3>
+          <h3 class="font-heading font-semibold text-lg mb-2" >Match & Plan</h3>
           <p class="text-sm" style="color:var(--color-text-muted);">We match you with the perfect writer or editor and build a detailed project roadmap.</p>
         </div>
-        <div class="card p-6 text-center relative">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">3</div>
+        <div class="card p-6 text-center relative !overflow-visible">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-semibold" style="background:var(--color-accent);">3</div>
           <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.08);color:var(--color-accent);">
             <i class="fas fa-pen-alt"></i>
           </div>
-          <h3 class="font-heading font-bold text-lg mb-2" >Create & Revise</h3>
+          <h3 class="font-heading font-semibold text-lg mb-2" >Create & Revise</h3>
           <p class="text-sm" style="color:var(--color-text-muted);">Collaborative writing and editing with unlimited revisions and milestone reviews.</p>
         </div>
-        <div class="card p-6 text-center relative">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center text-sm font-bold">4</div>
+        <div class="card p-6 text-center relative !overflow-visible">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-semibold" style="background:var(--color-accent);">4</div>
           <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.08);color:var(--color-accent);">
             <i class="fas fa-rocket"></i>
           </div>
-          <h3 class="font-heading font-bold text-lg mb-2" >Publish & Launch</h3>
+          <h3 class="font-heading font-semibold text-lg mb-2" >Publish & Launch</h3>
           <p class="text-sm" style="color:var(--color-text-muted);">Receive your finished, publication-ready manuscript and launch your book with confidence.</p>
         </div>
       </div>
@@ -472,15 +464,15 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="relative slide-left">
           <div class="w-full h-[440px] rounded-3xl overflow-hidden shadow-glass-lg">
-            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&h=700&fit=crop" alt="Writer working" class="img-cover" />
+            <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=800&h=700&fit=crop" alt="The craft of writing" class="img-cover" />
           </div>
           <!-- Floating badge -->
           <div class="floating-card bottom-6 right-0" style="min-width:200px;animation-delay:0.5s;">
-            <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" >
               <i class="fas fa-lock text-white text-sm"></i>
             </div>
             <div>
-              <div class="font-bold text-sm" >100% Confidential</div>
+              <div class="font-semibold text-sm" >100% Confidential</div>
               <div class="text-xs" style="color:var(--color-text-muted);">NDA on every project</div>
             </div>
           </div>
@@ -495,7 +487,7 @@
                 <i class="fas fa-shield-alt"></i>
               </div>
               <div>
-                <h4 class="font-bold text-base mb-1" >Complete Confidentiality</h4>
+                <h4 class="font-semibold text-base mb-1" >Complete Confidentiality</h4>
                 <p class="text-sm" style="color:var(--color-text-muted);">Every project is protected by a watertight NDA. Your book is yours — fully and exclusively.</p>
               </div>
             </div>
@@ -504,7 +496,7 @@
                 <i class="fas fa-users"></i>
               </div>
               <div>
-                <h4 class="font-bold text-base mb-1" >Elite Writing Talent</h4>
+                <h4 class="font-semibold text-base mb-1" >Elite Writing Talent</h4>
                 <p class="text-sm" style="color:var(--color-text-muted);">Our writers are vetted professionals — published authors, ex-journalists, and genre specialists.</p>
               </div>
             </div>
@@ -513,7 +505,7 @@
                 <i class="fas fa-infinity"></i>
               </div>
               <div>
-                <h4 class="font-bold text-base mb-1" >Unlimited Revisions</h4>
+                <h4 class="font-semibold text-base mb-1" >Unlimited Revisions</h4>
                 <p class="text-sm" style="color:var(--color-text-muted);">We iterate until you're completely satisfied. No hidden fees, no revision limits on core packages.</p>
               </div>
             </div>
@@ -522,7 +514,7 @@
                 <i class="fas fa-calendar-check"></i>
               </div>
               <div>
-                <h4 class="font-bold text-base mb-1" >On-Time Delivery</h4>
+                <h4 class="font-semibold text-base mb-1" >On-Time Delivery</h4>
                 <p class="text-sm" style="color:var(--color-text-muted);">98.7% on-time delivery rate backed by milestone tracking and transparent project management.</p>
               </div>
             </div>
@@ -547,16 +539,16 @@
       <div class="grid md:grid-cols-3 gap-6 stagger-children">
         <div class="blog-card">
           <div class="overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&h=360&fit=crop" alt="Writing tips" />
+            <img src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?w=600&h=360&fit=crop" alt="Writing process" />
           </div>
           <div class="p-5">
             <div class="flex items-center gap-2 mb-3">
               <span class="badge badge-accent">Ghostwriting</span>
               <span class="text-xs" style="color:var(--color-text-muted);">Apr 10, 2026</span>
             </div>
-            <h3 class="font-heading font-bold text-lg mb-2" >10 Secrets to Finding Your Authentic Writing Voice</h3>
+            <h3 class="font-heading font-semibold text-lg mb-2" >10 Secrets to Finding Your Authentic Writing Voice</h3>
             <p class="text-sm mb-4" style="color:var(--color-text-muted);">Discover techniques that top ghostwriters use to capture a client's voice before drafting a single word...</p>
-            <a href="blog-details.html" class="text-sm font-semibold" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+            <a href="blog-details.html" class="text-sm font-semibold mt-auto w-fit" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
           </div>
         </div>
         <div class="blog-card">
@@ -568,9 +560,9 @@
               <span class="badge badge-info">Publishing</span>
               <span class="text-xs" style="color:var(--color-text-muted);">Apr 5, 2026</span>
             </div>
-            <h3 class="font-heading font-bold text-lg mb-2" >Self-Publishing vs. Traditional: Which Path Is Right for You?</h3>
+            <h3 class="font-heading font-semibold text-lg mb-2" >Self-Publishing vs. Traditional: Which Path Is Right for You?</h3>
             <p class="text-sm mb-4" style="color:var(--color-text-muted);">A comprehensive guide comparing royalty rates, control, distribution, and timelines for both routes...</p>
-            <a href="blog-details.html" class="text-sm font-semibold" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+            <a href="blog-details.html" class="text-sm font-semibold mt-auto w-fit" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
           </div>
         </div>
         <div class="blog-card">
@@ -582,9 +574,9 @@
               <span class="badge badge-success">Editing</span>
               <span class="text-xs" style="color:var(--color-text-muted);">Mar 28, 2026</span>
             </div>
-            <h3 class="font-heading font-bold text-lg mb-2" >The 5 Editing Passes Every Manuscript Needs Before Submission</h3>
+            <h3 class="font-heading font-semibold text-lg mb-2" >The 5 Editing Passes Every Manuscript Needs Before Submission</h3>
             <p class="text-sm mb-4" style="color:var(--color-text-muted);">Learn the professional editing workflow from developmental editing through final proofreading...</p>
-            <a href="blog-details.html" class="text-sm font-semibold" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+            <a href="blog-details.html" class="text-sm font-semibold mt-auto w-fit" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
           </div>
         </div>
       </div>
@@ -594,7 +586,7 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║              SECTION 9: CTA                 ║
        ╚══════════════════════════════════════════════╝ -->
-  <section class="section-py px-4 sm:px-0 relative overflow-hidden bg-dark-fixed">
+  <section class="section-py pb-32 px-4 sm:px-0 relative overflow-hidden" style="background: linear-gradient(145deg, #1E293B 0%, #151E32 100%);">
     <div class="blob blob-primary w-96 h-96 -top-24 -left-24 opacity-30"></div>
     <div class="blob blob-secondary w-80 h-80 -bottom-20 -right-10 opacity-20"></div>
     <div class="container-xl relative z-10 text-center">
@@ -602,7 +594,7 @@
         <div class="section-tag mx-auto" style="background:rgba(255,255,255,0.08);color:#A78BFA;border-color:rgba(255,255,255,0.15);">
           <i class="fas fa-bolt"></i> Start Today
         </div>
-        <h2 class="font-heading font-black mb-6" style="font-size:clamp(2rem,5vw,3.5rem);color:white;line-height:1.1;">
+        <h2 class="font-heading font-semibold mb-6" style="font-size:clamp(2rem,5vw,3.5rem);color:white;line-height:1.1;">
           Your Book Deserves<br/><span style="background:linear-gradient(135deg,#A78BFA,#7C3AED);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">to Exist</span>
         </h2>
         <p class="text-lg mb-10" style="color:rgba(255,255,255,0.70);max-width:48ch;margin-left:auto;margin-right:auto;line-height:1.75;">
@@ -623,18 +615,16 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║                FOOTER                       ║
        ╚══════════════════════════════════════════════╝ -->
-  <footer class="footer bg-dark-fixed" style="padding-top: 4rem; padding-bottom: 2.5rem;">
+  <footer class="footer bg-dark-fixed" style="padding-top: 4rem; padding-bottom: 2.5rem; border-top: 1px solid rgba(255,255,255,0.06);">
     <div class="blob blob-primary w-80 h-80 top-0 right-0 opacity-10"></div>
     <div class="container-xl relative z-10">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 pb-12 border-b" style="border-color:rgba(255,255,255,0.08);">
         <!-- Brand -->
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <div class="logo-icon-box">
-              <i class="fas fa-feather-alt"></i>
-            </div>
+            <div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.875rem;"></i></div>
             <div>
-              <span class="font-heading font-bold text-xl text-white logo-text">InkCraft</span>
+              <span class="font-heading font-semibold text-xl text-white logo-text">InkCraft</span>
               
             </div>
           </div>
@@ -696,6 +686,12 @@
   <script src="main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 

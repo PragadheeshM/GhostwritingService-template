@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects | InkCraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .sidebar-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 49; opacity: 0; visibility: hidden; transition: all 0.3s ease; backdrop-filter: blur(4px); }
+    .sidebar-overlay.open { opacity: 1; visibility: visible; }
+  </style>
+</head>
+<body class="font-body">
+<div class="dashboard-layout">
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar collapsed">
+    <div class="p-5 border-b flex items-center justify-between" style="border-color:var(--color-border);">
+      <a href="index.html" class="flex items-center gap-2.5 flex-shrink-0">
+        <div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.875rem;"></i></div>
+        <div><span class="font-heading font-semibold text-lg leading-none logo-text">InkCraft</span><span class="block text-[0.65rem] font-semibold uppercase tracking-wider mt-0.5" style="color:var(--color-accent);">User Portal</span></div>
+      </a>
+    </div>
+    <div class="p-4 m-3 rounded-xl" style="background:rgba(109,40,217,0.08);">
+      <div class="flex items-center gap-3">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover border-2" style="border-color:var(--color-accent);" alt="User" />
+        <div class="min-w-0">
+          <div class="font-semibold text-sm truncate">Sarah Mitchell</div>
+          <div class="text-xs truncate" style="color:var(--color-text-muted);">Professional Plan</div>
+        </div>
+      </div>
+    </div>
+    <nav class="flex-1 py-2 px-3">
+      <p class="text-xs font-semibold tracking-widest uppercase px-3 mb-2" style="color:var(--color-text-soft);">Main</p>
+      <a href="user-dashboard.html" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-th-large"></i></div><span>Dashboard</span></a>
+      <a href="projects.html" class="sidebar-link active"><div class="sidebar-icon"><i class="fas fa-book"></i></div><span>My Projects</span></a>
+      <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-comments"></i></div><span>Messages</span></a>
+      <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-ticket"></i></div><span>Support Tickets</span></a>
+      <p class="text-xs font-semibold tracking-widest uppercase px-3 mb-2 mt-4" style="color:var(--color-text-soft);">Account</p>
+      <a href="user-profile.html" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-user-circle"></i></div><span>My Profile</span></a>
+      <a href="billing.html" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-credit-card"></i></div><span>Billing</span></a>
+      <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-cog"></i></div><span>Settings</span></a>
+    </nav>
+    <div class="p-4 border-t" style="border-color:var(--color-border);">
+      <a href="login.html" class="sidebar-link" style="color:#DC2626;"><div class="sidebar-icon" style="color:#DC2626;"><i class="fas fa-sign-out-alt"></i></div><span>Sign Out</span></a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content" class="main-content expanded">
+    <!-- TOPBAR -->
+    <header class="dashboard-topbar">
+      <div class="flex items-center gap-3">
+        <button id="sidebar-toggle" class="icon-btn"><i class="fas fa-bars"></i></button>
+        <div class="hidden sm:block">
+          <div class="font-heading font-semibold text-base">My Projects</div>
+          <div class="text-xs" style="color:var(--color-text-muted);">Track your active and completed manuscripts</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="rtl-toggle" class="nav-link px-3 py-1 font-semibold text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">RTL</button>
+        <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face" class="w-9 h-9 rounded-full object-cover border-2 cursor-pointer" style="border-color:var(--color-accent);" alt="User" />
+      </div>
+    </header>
+
+    <main class="p-5 md:p-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+        <div class="flex gap-2">
+          <button class="filter-chip active" data-group="projects" data-filter="all">All Projects</button>
+          <button class="filter-chip" data-group="projects" data-filter="active">Active</button>
+          <button class="filter-chip" data-group="projects" data-filter="completed">Completed</button>
+        </div>
+        <button onclick="GBS.toast('info','New Project','Opening project onboarding questionnaire...')" class="btn-primary">
+          <i class="fas fa-plus"></i> New Project
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 stagger-children">
+        <!-- Project Card 1 -->
+        <div class="card p-6 fade-in" data-filter-item data-group="projects" data-category="active">
+          <div class="flex items-center justify-between mb-4">
+            <span class="badge badge-accent">Writing</span>
+            <button class="icon-btn text-muted"><i class="fas fa-ellipsis-h"></i></button>
+          </div>
+          <h3 class="font-heading font-semibold text-lg mb-2">The Resilience Code</h3>
+          <p class="text-sm mb-4" style="color:var(--color-text-muted);">Business Memoir — 40,000 words target</p>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs font-medium">
+              <span>Overall Progress</span>
+              <span>60%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:60%;"></div>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-border mt-4">
+              <div class="flex -space-x-2">
+                <img src="https://ui-avatars.com/api/?name=Daniel+H&background=6D28D9&color=fff" class="w-7 h-7 rounded-full border-2 border-bg" title="Ghostwriter: Daniel Hayes" />
+                <img src="https://ui-avatars.com/api/?name=Admin&background=10B981&color=fff" class="w-7 h-7 rounded-full border-2 border-bg" title="PM: Admin" />
+              </div>
+              <div class="text-[10px] font-semibold text-muted uppercase tracking-wider">Due May 13</div>
+            </div>
+          </div>
+          <a href="#" class="btn-accent-outline w-full justify-center mt-5 text-sm">Open Project</a>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="card p-6 fade-in" data-filter-item data-group="projects" data-category="active">
+          <div class="flex items-center justify-between mb-4">
+            <span class="badge badge-success">Editing</span>
+            <button class="icon-btn text-muted"><i class="fas fa-ellipsis-h"></i></button>
+          </div>
+          <h3 class="font-heading font-semibold text-lg mb-2">Beyond the Horizon</h3>
+          <p class="text-sm mb-4" style="color:var(--color-text-muted);">Fiction Novel — Chapter 8 Copy Edit</p>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs font-medium">
+              <span>Overall Progress</span>
+              <span>85%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:85%;"></div>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-border mt-4">
+              <div class="flex -space-x-2">
+                <img src="https://ui-avatars.com/api/?name=Sarah+W&background=8B5CF6&color=fff" class="w-7 h-7 rounded-full border-2 border-bg" title="Editor: Sarah Weaver" />
+              </div>
+              <div class="text-[10px] font-semibold text-muted uppercase tracking-wider">Due Apr 21</div>
+            </div>
+          </div>
+          <a href="#" class="btn-accent-outline w-full justify-center mt-5 text-sm">Open Project</a>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="card p-6 fade-in" data-filter-item data-group="projects" data-category="completed">
+          <div class="flex items-center justify-between mb-4">
+            <span class="badge badge-info">Completed</span>
+            <button class="icon-btn text-muted"><i class="fas fa-ellipsis-h"></i></button>
+          </div>
+          <h3 class="font-heading font-semibold text-lg mb-2">The Startup Way</h3>
+          <p class="text-sm mb-4" style="color:var(--color-text-muted);">Book Proposal — Self-Help</p>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs font-medium text-green-500">
+              <span>Delivered</span>
+              <span>100%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill bg-green-500" style="width:100%;"></div>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-border mt-4">
+              <div class="text-xs font-medium text-muted">Completed Mar 15, 2026</div>
+              <button class="text-accent text-xs font-bold"><i class="fas fa-download mr-1"></i> Files</button>
+            </div>
+          </div>
+          <a href="#" class="btn-outline w-full justify-center mt-5 text-sm">View Archive</a>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

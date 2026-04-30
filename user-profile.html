@@ -26,24 +26,26 @@
   <!-- SIDEBAR (same as user dashboard) -->
   <aside id="sidebar" class="sidebar collapsed">
     <div class="p-5 border-b flex items-center gap-2.5" style="border-color:var(--color-border);">
-      <div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.85rem;"></i></div>
-      <span class="font-heading font-bold text-lg logo-text" >InkCraft</span>
+      <a href="index.html" class="flex items-center gap-2.5 flex-shrink-0">
+        <div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.875rem;"></i></div>
+        <span class="font-heading font-semibold text-lg leading-none logo-text">InkCraft</span>
+      </a>
     </div>
     <div class="p-4 m-3 rounded-xl" style="background:rgba(109,40,217,0.08);">
       <div class="flex items-center gap-3">
-        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b2ab?w=48&h=48&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover border-2" style="border-color:var(--color-accent);" alt="User" />
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover border-2" style="border-color:var(--color-accent);" alt="User" />
         <div class="min-w-0"><div class="font-semibold text-sm truncate" >Sarah Mitchell</div><div class="text-xs" style="color:var(--color-text-muted);">Professional Plan</div></div>
       </div>
     </div>
     <nav class="flex-1 py-2 px-3">
-      <p class="text-xs font-bold tracking-widest uppercase px-3 mb-2" style="color:var(--color-text-soft);">Main</p>
+      <p class="text-xs font-semibold tracking-widest uppercase px-3 mb-2" style="color:var(--color-text-soft);">Main</p>
       <a href="user-dashboard.html" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-th-large"></i></div><span>Dashboard</span></a>
-      <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-book"></i></div><span>My Projects</span></a>
+      <a href="projects.html" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-book"></i></div><span>My Projects</span></a>
       <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-comments"></i></div><span>Messages</span></a>
       <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-ticket"></i></div><span>Support Tickets</span></a>
-      <p class="text-xs font-bold tracking-widest uppercase px-3 mb-2 mt-4" style="color:var(--color-text-soft);">Account</p>
+      <p class="text-xs font-semibold tracking-widest uppercase px-3 mb-2 mt-4" style="color:var(--color-text-soft);">Account</p>
       <a href="user-profile.html" class="sidebar-link active"><div class="sidebar-icon"><i class="fas fa-user-circle"></i></div><span>My Profile</span></a>
-      <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-credit-card"></i></div><span>Billing</span></a>
+      <a href="billing.html" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-credit-card"></i></div><span>Billing</span></a>
       <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-cog"></i></div><span>Settings</span></a>
     </nav>
     <div class="p-4 border-t" style="border-color:var(--color-border);">
@@ -57,10 +59,10 @@
     <header class="dashboard-topbar">
       <div class="flex items-center gap-3">
         <button id="sidebar-toggle" class="icon-btn"><i class="fas fa-bars"></i></button>
-        <div class="hidden sm:block"><div class="font-heading font-bold text-base" >My Profile</div><div class="text-xs" style="color:var(--color-text-muted);">Manage your personal settings</div></div>
+        <div class="hidden sm:block"><div class="font-heading font-semibold text-base" >My Profile</div><div class="text-xs" style="color:var(--color-text-muted);">Manage your personal settings</div></div>
       </div>
       <div class="flex items-center gap-2">
-        <button id="rtl-toggle" class="icon-btn"><i class="fas fa-globe rtl-icon" id="rtl-icon"></i></button>
+        <button id="rtl-toggle" class="nav-link px-3 py-1 font-semibold text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">RTL</button>
         <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
         <img src="https://images.unsplash.com/photo-1494790108755-2616b612b2ab?w=40&h=40&fit=crop&crop=face" class="w-9 h-9 rounded-full object-cover border-2 cursor-pointer" style="border-color:var(--color-accent);" alt="User" />
       </div>
@@ -72,7 +74,7 @@
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
           <div class="flex-shrink-0 text-center">
             <div class="avatar-ring mx-auto">
-              <div class="avatar-inner"><img src="https://images.unsplash.com/photo-1494790108755-2616b612b2ab?w=120&h=120&fit=crop&crop=face" class="img-cover w-full h-full" alt="Sarah Mitchell" /></div>
+              <div class="avatar-inner"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&crop=face" class="img-cover w-full h-full" alt="Sarah Mitchell" /></div>
             </div>
             <button onclick="GBS.toast('info','Upload Started','Opening file picker...')" class="mt-3 text-xs font-semibold flex items-center gap-1 mx-auto" style="color:var(--color-accent);background:none;border:none;cursor:pointer;">
               <i class="fas fa-camera"></i> Change Photo
@@ -80,15 +82,15 @@
           </div>
           <div class="flex-1 text-center sm:text-left">
             <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
-              <h2 class="font-heading font-bold text-2xl" >Sarah Mitchell</h2>
+              <h2 class="font-heading font-semibold text-2xl" >Sarah Mitchell</h2>
               <span class="badge badge-accent mx-auto sm:mx-0">Professional Plan</span>
             </div>
             <p class="text-sm mb-1" style="color:var(--color-text-muted);">sarah.mitchell@example.com</p>
             <p class="text-sm mb-4" style="color:var(--color-text-muted);">Member since April 2026 · New York, USA</p>
             <div class="flex flex-wrap gap-4 justify-center sm:justify-start">
-              <div class="text-center"><div class="font-bold text-lg font-heading gradient-text">3</div><div class="text-xs" style="color:var(--color-text-muted);">Active Projects</div></div>
-              <div class="text-center"><div class="font-bold text-lg font-heading gradient-text">7</div><div class="text-xs" style="color:var(--color-text-muted);">Completed</div></div>
-              <div class="text-center"><div class="font-bold text-lg font-heading gradient-text">24K</div><div class="text-xs" style="color:var(--color-text-muted);">Words Written</div></div>
+              <div class="text-center"><div class="font-semibold text-lg font-heading gradient-text">3</div><div class="text-xs" style="color:var(--color-text-muted);">Active Projects</div></div>
+              <div class="text-center"><div class="font-semibold text-lg font-heading gradient-text">7</div><div class="text-xs" style="color:var(--color-text-muted);">Completed</div></div>
+              <div class="text-center"><div class="font-semibold text-lg font-heading gradient-text">24K</div><div class="text-xs" style="color:var(--color-text-muted);">Words Written</div></div>
             </div>
           </div>
           <button onclick="GBS.toast('success','Profile Updated','Your changes have been saved.')" class="btn-primary flex-shrink-0 self-start">
@@ -102,7 +104,7 @@
         <div class="lg:col-span-2 space-y-6">
           <!-- Personal Info -->
           <div class="card p-6 fade-in">
-            <h3 class="font-heading font-bold text-lg mb-5" >Personal Information</h3>
+            <h3 class="font-heading font-semibold text-lg mb-5" >Personal Information</h3>
             <form data-mock data-mock-type="success" data-mock-title="Profile Updated!" data-mock-message="Your personal information has been saved.">
               <div class="grid sm:grid-cols-2 gap-4">
                 <div class="form-group">
@@ -136,7 +138,7 @@
 
           <!-- Change Password -->
           <div class="card p-6 fade-in">
-            <h3 class="font-heading font-bold text-lg mb-5" >Change Password</h3>
+            <h3 class="font-heading font-semibold text-lg mb-5" >Change Password</h3>
             <form data-mock data-mock-type="success" data-mock-title="Password Updated!" data-mock-message="Your password has been changed successfully.">
               <div class="form-group">
                 <label class="form-label">Current Password</label>
@@ -159,7 +161,7 @@
         <div class="space-y-5">
           <!-- Notification Settings -->
           <div class="card p-5 fade-in">
-            <h4 class="font-heading font-bold text-base mb-4" >Notification Settings</h4>
+            <h4 class="font-heading font-semibold text-base mb-4" >Notification Settings</h4>
             <div class="space-y-4">
               <div class="flex items-center justify-between">
                 <div><div class="text-sm font-medium" >Project Updates</div><div class="text-xs" style="color:var(--color-text-muted);">Get notified on chapter delivery</div></div>
@@ -179,17 +181,17 @@
           <!-- Plan Info -->
           <div class="card p-5 fade-in" style="background:linear-gradient(135deg,rgba(109,40,217,0.06),rgba(109,40,217,0.02));border-color:rgba(109,40,217,0.20);">
             <div class="flex items-center justify-between mb-3">
-              <h4 class="font-heading font-bold text-base" >Current Plan</h4>
+              <h4 class="font-heading font-semibold text-base" >Current Plan</h4>
               <span class="badge badge-accent">Professional</span>
             </div>
             <p class="text-sm mb-4" style="color:var(--color-text-muted);">You're on the Professional plan with unlimited revisions and dedicated support.</p>
-            <div class="text-2xl font-black font-heading gradient-text mb-4">$2,800<span class="text-sm font-medium" style="color:var(--color-text-muted);font-family:var(--font-body);">/project</span></div>
+            <div class="text-2xl font-semibold font-heading gradient-text mb-4">$2,800<span class="text-sm font-medium" style="color:var(--color-text-muted);font-family:var(--font-body);">/project</span></div>
             <a href="pricing.html" class="btn-accent-outline w-full justify-center text-sm">Upgrade to Elite <i class="fas fa-arrow-up text-xs ml-1"></i></a>
           </div>
 
           <!-- Danger Zone -->
           <div class="card p-5 fade-in" style="border-color:rgba(220,38,38,0.25);">
-            <h4 class="font-heading font-bold text-base mb-2" style="color:#DC2626;">Danger Zone</h4>
+            <h4 class="font-heading font-semibold text-base mb-2" style="color:#DC2626;">Danger Zone</h4>
             <p class="text-xs mb-4" style="color:var(--color-text-muted);">These actions are permanent and cannot be undone.</p>
             <button onclick="GBS.toast('error','Action Required','Please confirm this action via email.')" class="w-full text-sm font-semibold py-2.5 rounded-xl border border-red-200 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors" style="background:transparent;">
               <i class="fas fa-trash-alt mr-2"></i> Delete My Account
@@ -203,6 +205,11 @@
 <script src="main.js"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 

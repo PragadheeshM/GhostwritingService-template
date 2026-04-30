@@ -28,22 +28,22 @@
 <body class="font-body">
   <!-- NAVBAR -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transparent-on-dark">
-    <div class="container-xl"><div class="flex items-center justify-between h-20">
-      <a href="index.html" class="flex items-center gap-3 flex-shrink-0"><div class="logo-icon-box"><i class="fas fa-feather-alt"></i></div><div><span class="font-heading font-bold text-xl leading-none logo-text" >InkCraft</span></div></a>
+    <div class="container-xl"><div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 flex-shrink-0"><div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.875rem;"></i></div><div><span class="font-heading font-semibold text-lg leading-none logo-text" >InkCraft</span></div></a>
         <!-- Right Blocks -->
         <div class="flex items-center gap-4 lg:gap-8">
           <div class="hidden xl:flex items-center gap-1">
-            <div class="nav-dropdown"><button class="nav-link">Home <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="index.html"><i class="fas fa-building"></i> Corporate Home</a><a href="index2.html"><i class="fas fa-star"></i> Creative Home</a></div></div>
+            <div class="nav-dropdown"><button class="nav-link">Home <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="index.html">Corporate Home</a><a href="index2.html">Creative Home</a></div></div>
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Services</a>
             <a href="pricing.html" class="nav-link">Pricing</a>
-            <div class="nav-dropdown"><button class="nav-link">Blog <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="blog.html"><i class="fas fa-newspaper"></i> Blog Listing</a><a href="blog-details.html"><i class="fas fa-file-alt"></i> Blog Article</a></div></div>
+            <div class="nav-dropdown"><button class="nav-link">Blog <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="blog.html">Blog Listing</a><a href="blog-details.html">Blog Article</a></div></div>
             <a href="contact.html" class="nav-link active">Contact</a>
-            <div class="nav-dropdown"><button class="nav-link">Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="user-dashboard.html"><i class="fas fa-user"></i> User Dashboard</a><a href="admin-dashboard.html"><i class="fas fa-shield-halved"></i> Admin Dashboard</a></div></div>
+            <div class="nav-dropdown"><button class="nav-link">Dashboard <i class="fas fa-chevron-down text-xs ml-1"></i></button><div class="dropdown-menu"><a href="user-dashboard.html">User Dashboard</a><a href="admin-dashboard.html">Admin Dashboard</a></div></div>
           </div>
           <div class="flex items-center gap-2 md:gap-3">
             <div class="flex items-center gap-1.5 sm:gap-2">
-              <button id="rtl-toggle" class="icon-btn"><i class="fas fa-globe rtl-icon" id="rtl-icon"></i></button>
+              <button id="rtl-toggle" class="nav-link px-3 py-1 font-semibold text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">RTL</button>
               <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
               <a href="login.html" class="btn-outline ml-2 hidden sm:inline-flex">Login</a>
               <a href="register.html" class="btn-primary hidden sm:inline-flex">Get Started <i class="fas fa-arrow-right text-xs"></i></a>
@@ -55,7 +55,7 @@
   </nav>
   <div id="mobile-overlay"></div>
   <div id="mobile-menu">
-    <div class="flex items-center justify-between mb-6"><a href="index.html" class="flex items-center gap-3 flex-shrink-0"><div class="logo-icon-box" style="width:36px;height:36px;"><i class="fas fa-feather-alt" style="font-size:0.9rem;"></i></div><div><span class="font-heading font-bold text-lg leading-none logo-text">InkCraft</span></div></a><button id="mobile-close-btn" class="icon-btn"><i class="fas fa-times"></i></button></div>
+    <div class="flex items-center justify-between mb-6"><a href="index.html" class="flex items-center gap-2 flex-shrink-0"><div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.875rem;"></i></div><div><span class="font-heading font-semibold text-lg leading-none logo-text">InkCraft</span></div></a><button id="mobile-close-btn" class="icon-btn"><i class="fas fa-times"></i></button></div>
     
     <div class="divider"></div>
     <nav class="space-y-1">
@@ -96,25 +96,25 @@
       <div class="grid sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16 stagger-children">
         <div class="card p-6 text-center hover-float hover-glow">
           <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-phone"></i></div>
-          <h4 class="font-heading font-bold text-base mb-1" >Call Us</h4>
+          <h4 class="font-heading font-semibold text-base mb-1" >Call Us</h4>
           <p class="text-xs mb-2" style="color:var(--color-text-muted);">Mon–Fri, 9AM–6PM ET</p>
           <a href="tel:+12125551234" class="text-sm font-semibold" style="color:var(--color-accent);">+1 (212) 555-1234</a>
         </div>
         <div class="card p-6 text-center hover-float hover-glow">
           <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-envelope"></i></div>
-          <h4 class="font-heading font-bold text-base mb-1" >Email Us</h4>
+          <h4 class="font-heading font-semibold text-base mb-1" >Email Us</h4>
           <p class="text-xs mb-2" style="color:var(--color-text-muted);">Response within 2 hours</p>
           <a href="mailto:hello@inkcraft.com" class="text-sm font-semibold" style="color:var(--color-accent);">hello@inkcraft.com</a>
         </div>
         <div class="card p-6 text-center hover-float hover-glow">
           <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-map-marker-alt"></i></div>
-          <h4 class="font-heading font-bold text-base mb-1" >Visit Us</h4>
+          <h4 class="font-heading font-semibold text-base mb-1" >Visit Us</h4>
           <p class="text-xs mb-2" style="color:var(--color-text-muted);">Our New York HQ</p>
           <span class="text-sm font-semibold" style="color:var(--color-accent);">350 Fifth Ave, Suite 6000, NY</span>
         </div>
         <div class="card p-6 text-center hover-float hover-glow">
           <div class="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.10);color:var(--color-accent);"><i class="fas fa-comments"></i></div>
-          <h4 class="font-heading font-bold text-base mb-1" >Live Chat</h4>
+          <h4 class="font-heading font-semibold text-base mb-1" >Live Chat</h4>
           <p class="text-xs mb-2" style="color:var(--color-text-muted);">Available 8AM–10PM ET</p>
           <button onclick="GBS.toast('success','Chat Started!','Connecting you to an agent...')" class="text-sm font-semibold cursor-pointer" style="color:var(--color-accent);background:none;border:none;">Start Chat →</button>
         </div>
@@ -124,7 +124,7 @@
       <div class="grid lg:grid-cols-5 gap-12">
         <!-- Form -->
         <div class="lg:col-span-3 card p-8 fade-in">
-          <h2 class="font-heading font-bold text-2xl mb-2" >Send Us a Message</h2>
+          <h2 class="font-heading font-semibold text-2xl mb-2" >Send Us a Message</h2>
           <p class="text-sm mb-6" style="color:var(--color-text-muted);">Tell us about your project and we'll get back to you with a free quote within 2 hours during business hours.</p>
           <form data-mock data-mock-type="success" data-mock-title="Message Sent!" data-mock-message="Our team will respond within 2 business hours.">
             <div class="grid sm:grid-cols-2 gap-4">
@@ -178,7 +178,7 @@
         <!-- Info Panel -->
         <div class="lg:col-span-2 space-y-6 slide-right">
           <div class="card p-6">
-            <h3 class="font-heading font-bold text-lg mb-4" >Office Hours</h3>
+            <h3 class="font-heading font-semibold text-lg mb-4" >Office Hours</h3>
             <div class="space-y-2">
               <div class="flex justify-between text-sm py-2 border-b" style="border-color:var(--color-border);"><span style="color:var(--color-text-muted);">Monday – Friday</span><span class="font-semibold" >9:00 AM – 6:00 PM ET</span></div>
               <div class="flex justify-between text-sm py-2 border-b" style="border-color:var(--color-border);"><span style="color:var(--color-text-muted);">Saturday</span><span class="font-semibold" >10:00 AM – 2:00 PM ET</span></div>
@@ -186,7 +186,7 @@
             </div>
           </div>
           <div class="card p-6">
-            <h3 class="font-heading font-bold text-lg mb-4" >Response Times</h3>
+            <h3 class="font-heading font-semibold text-lg mb-4" >Response Times</h3>
             <div class="space-y-3">
               <div class="flex items-center gap-3">
                 <div class="w-2.5 h-2.5 rounded-full bg-green-500 flex-shrink-0"></div>
@@ -203,7 +203,7 @@
             </div>
           </div>
           <div class="card p-6">
-            <h3 class="font-heading font-bold text-lg mb-4" >Follow InkCraft</h3>
+            <h3 class="font-heading font-semibold text-lg mb-4" >Follow InkCraft</h3>
             <div class="flex gap-2 flex-wrap">
               <a href="#" class="footer-social" style="background:rgba(109,40,217,0.08);color:var(--color-accent);" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
               <a href="#" class="footer-social" style="background:rgba(109,40,217,0.08);color:var(--color-accent);" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -237,11 +237,9 @@
         <!-- Brand -->
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <div class="logo-icon-box">
-              <i class="fas fa-feather-alt"></i>
-            </div>
+            <div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.875rem;"></i></div>
             <div>
-              <span class="font-heading font-bold text-xl text-white logo-text">InkCraft</span>
+              <span class="font-heading font-semibold text-xl text-white logo-text">InkCraft</span>
               
             </div>
           </div>
@@ -302,6 +300,11 @@
   <script src="main.js"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 

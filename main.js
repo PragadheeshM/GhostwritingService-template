@@ -61,14 +61,17 @@ const RTLManager = (() => {
   function apply(dir) {
     document.documentElement.setAttribute('dir', dir);
     localStorage.setItem(STORAGE_KEY, dir);
-    updateIcons(dir);
+    updateButtonText(dir);
   }
 
-  function updateIcons(dir) {
-    document.querySelectorAll('[id="rtl-icon"], .rtl-icon').forEach(icon => {
-      icon.style.transform = dir === 'rtl' ? 'scaleX(-1)' : '';
+  function updateButtonText(dir) {
+    document.querySelectorAll('[id="rtl-toggle"], .rtl-toggle-btn').forEach(btn => {
+      btn.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+      btn.title = dir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL';
     });
   }
+
+
 
   function toggle() {
     const current = document.documentElement.getAttribute('dir') || 'ltr';
@@ -495,18 +498,26 @@ const DashboardManager = (() => {
     if (!sidebar) return;
 
     function toggle() {
-      const isCollapsed = sidebar.classList.contains('collapsed');
-      if (isCollapsed) {
-        sidebar.classList.remove('collapsed');
-        if (mainContent) mainContent.classList.remove('expanded');
-      } else {
-        sidebar.classList.add('collapsed');
-        if (mainContent) mainContent.classList.add('expanded');
-      }
-
       if (window.innerWidth <= 1024) {
-        sidebar.classList.toggle('open');
-        if (overlay) overlay.classList.toggle('open');
+        const isOpen = sidebar.classList.contains('open');
+        if (isOpen) {
+          sidebar.classList.remove('open');
+          if (overlay) overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        } else {
+          sidebar.classList.add('open');
+          if (overlay) overlay.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+      } else {
+        const isCollapsed = sidebar.classList.contains('collapsed');
+        if (isCollapsed) {
+          sidebar.classList.remove('collapsed');
+          if (mainContent) mainContent.classList.remove('expanded');
+        } else {
+          sidebar.classList.add('collapsed');
+          if (mainContent) mainContent.classList.add('expanded');
+        }
       }
     }
 
@@ -514,8 +525,11 @@ const DashboardManager = (() => {
 
     if (overlay) {
       overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('open');
+        if (window.innerWidth <= 1024) {
+          sidebar.classList.remove('open');
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        }
       });
     }
 

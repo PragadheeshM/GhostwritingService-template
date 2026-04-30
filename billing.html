@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Billing & Subscription | InkCraft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .sidebar-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 49; opacity: 0; visibility: hidden; transition: all 0.3s ease; backdrop-filter: blur(4px); }
+    .sidebar-overlay.open { opacity: 1; visibility: visible; }
+  </style>
+</head>
+<body class="font-body">
+<div class="dashboard-layout">
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar collapsed">
+    <div class="p-5 border-b flex items-center justify-between" style="border-color:var(--color-border);">
+      <a href="index.html" class="flex items-center gap-2.5 flex-shrink-0">
+        <div class="logo-icon-box" style="width:32px;height:32px;"><i class="fas fa-feather-alt" style="font-size:0.875rem;"></i></div>
+        <div><span class="font-heading font-semibold text-lg leading-none logo-text">InkCraft</span><span class="block text-[0.65rem] font-semibold uppercase tracking-wider mt-0.5" style="color:var(--color-accent);">User Portal</span></div>
+      </a>
+    </div>
+    <div class="p-4 m-3 rounded-xl" style="background:rgba(109,40,217,0.08);">
+      <div class="flex items-center gap-3">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover border-2" style="border-color:var(--color-accent);" alt="User" />
+        <div class="min-w-0">
+          <div class="font-semibold text-sm truncate">Sarah Mitchell</div>
+          <div class="text-xs truncate" style="color:var(--color-text-muted);">Professional Plan</div>
+        </div>
+      </div>
+    </div>
+    <nav class="flex-1 py-2 px-3">
+      <p class="text-xs font-semibold tracking-widest uppercase px-3 mb-2" style="color:var(--color-text-soft);">Main</p>
+      <a href="user-dashboard.html" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-th-large"></i></div><span>Dashboard</span></a>
+      <a href="projects.html" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-book"></i></div><span>My Projects</span></a>
+      <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-comments"></i></div><span>Messages</span></a>
+      <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-ticket"></i></div><span>Support Tickets</span></a>
+      <p class="text-xs font-semibold tracking-widest uppercase px-3 mb-2 mt-4" style="color:var(--color-text-soft);">Account</p>
+      <a href="user-profile.html" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-user-circle"></i></div><span>My Profile</span></a>
+      <a href="billing.html" class="sidebar-link active"><div class="sidebar-icon"><i class="fas fa-credit-card"></i></div><span>Billing</span></a>
+      <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-cog"></i></div><span>Settings</span></a>
+    </nav>
+    <div class="p-4 border-t" style="border-color:var(--color-border);">
+      <a href="login.html" class="sidebar-link" style="color:#DC2626;"><div class="sidebar-icon" style="color:#DC2626;"><i class="fas fa-sign-out-alt"></i></div><span>Sign Out</span></a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content" class="main-content expanded">
+    <!-- TOPBAR -->
+    <header class="dashboard-topbar">
+      <div class="flex items-center gap-3">
+        <button id="sidebar-toggle" class="icon-btn"><i class="fas fa-bars"></i></button>
+        <div class="hidden sm:block">
+          <div class="font-heading font-semibold text-base">Billing & Payments</div>
+          <div class="text-xs" style="color:var(--color-text-muted);">Manage your subscriptions and invoices</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="rtl-toggle" class="nav-link px-3 py-1 font-semibold text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">RTL</button>
+        <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face" class="w-9 h-9 rounded-full object-cover border-2 cursor-pointer" style="border-color:var(--color-accent);" alt="User" />
+      </div>
+    </header>
+
+    <main class="p-5 md:p-8">
+      <!-- Plan Summary -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div class="lg:col-span-2 card p-6 fade-in" style="background:linear-gradient(135deg,rgba(109,40,217,0.06),rgba(109,40,217,0.02));border-color:rgba(109,40,217,0.20);">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="badge badge-accent">Current Plan</span>
+                <h2 class="font-heading font-semibold text-xl">Professional Plan</h2>
+              </div>
+              <p class="text-sm mb-4" style="color:var(--color-text-muted);">Includes up to 40,000 words, unlimited revisions, and dedicated project manager.</p>
+              <div class="text-3xl font-semibold font-heading gradient-text">$2,800 <span class="text-sm font-medium" style="color:var(--color-text-muted);font-family:var(--font-body);">/per project</span></div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <a href="pricing.html" class="btn-primary justify-center">Upgrade Plan</a>
+              <button onclick="GBS.toast('info','Request Sent','We will contact you regarding plan adjustment.')" class="btn-outline justify-center">Cancel Subscription</button>
+            </div>
+          </div>
+          <div class="mt-6 pt-6 border-t border-dashed" style="border-color:var(--color-border);">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div><div class="text-xs mb-1" style="color:var(--color-text-muted);">Next Payment</div><div class="font-semibold text-sm">May 15, 2026</div></div>
+              <div><div class="text-xs mb-1" style="color:var(--color-text-muted);">Payment Method</div><div class="font-semibold text-sm">Visa •••• 4242</div></div>
+              <div><div class="text-xs mb-1" style="color:var(--color-text-muted);">Status</div><div class="badge badge-success">Active</div></div>
+              <div><div class="text-xs mb-1" style="color:var(--color-text-muted);">Usage</div><div class="font-semibold text-sm">60% (24K / 40K)</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6 fade-in">
+          <h3 class="font-heading font-semibold text-lg mb-4">Payment Methods</h3>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-3 rounded-xl border border-border bg-muted/20">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-6 bg-slate-100 rounded flex items-center justify-center text-[10px] font-bold text-blue-800">VISA</div>
+                <div><div class="text-sm font-semibold">Visa Ending 4242</div><div class="text-xs text-muted">Expires 12/28</div></div>
+              </div>
+              <span class="badge badge-info">Default</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl border border-border">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-6 bg-slate-100 rounded flex items-center justify-center text-[10px] font-bold text-red-600">MC</div>
+                <div><div class="text-sm font-semibold">Mastercard Ending 8821</div><div class="text-xs text-muted">Expires 05/27</div></div>
+              </div>
+              <button class="icon-btn text-muted"><i class="fas fa-ellipsis-v"></i></button>
+            </div>
+          </div>
+          <button onclick="GBS.toast('info','Payment Gateway','Opening secure payment method selector...')" class="w-full mt-4 btn-outline justify-center py-2.5"><i class="fas fa-plus mr-2"></i> Add New Method</button>
+        </div>
+      </div>
+
+      <!-- Invoices -->
+      <div class="card p-6 fade-in">
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="font-heading font-semibold text-lg">Billing History</h3>
+          <button onclick="GBS.toast('info','Exporting...','Preparing your billing report...')" class="btn-outline text-sm" style="padding:0.5rem 1.25rem;"><i class="fas fa-download text-xs mr-1"></i> Download All</button>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Invoice #</th>
+                <th>Date</th>
+                <th>Project</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-mono text-sm text-accent">#INV-9421</td>
+                <td class="text-sm">Apr 10, 2026</td>
+                <td class="font-medium text-sm">The Resilience Code (Milestone 2)</td>
+                <td class="font-semibold text-sm">$840.00</td>
+                <td><span class="badge badge-success">Paid</span></td>
+                <td><button onclick="GBS.toast('success','Downloaded','Invoice INV-9421 saved to your device.')" class="text-accent hover:underline text-xs font-semibold"><i class="fas fa-file-pdf mr-1"></i> PDF</button></td>
+              </tr>
+              <tr>
+                <td class="font-mono text-sm text-accent">#INV-9388</td>
+                <td class="text-sm">Mar 28, 2026</td>
+                <td class="font-medium text-sm">Fiction Novel (Initial Deposit)</td>
+                <td class="font-semibold text-sm">$1,200.00</td>
+                <td><span class="badge badge-success">Paid</span></td>
+                <td><button onclick="GBS.toast('success','Downloaded','Invoice INV-9388 saved to your device.')" class="text-accent hover:underline text-xs font-semibold"><i class="fas fa-file-pdf mr-1"></i> PDF</button></td>
+              </tr>
+              <tr>
+                <td class="font-mono text-sm text-accent">#INV-9210</td>
+                <td class="text-sm">Mar 12, 2026</td>
+                <td class="font-medium text-sm">Book Proposal (Full Payment)</td>
+                <td class="font-semibold text-sm">$950.00</td>
+                <td><span class="badge badge-success">Paid</span></td>
+                <td><button onclick="GBS.toast('success','Downloaded','Invoice INV-9210 saved to your device.')" class="text-accent hover:underline text-xs font-semibold"><i class="fas fa-file-pdf mr-1"></i> PDF</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
