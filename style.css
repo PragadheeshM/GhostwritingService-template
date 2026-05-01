@@ -1101,6 +1101,18 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-3px);
 }
 
+/* ─── Light mode: footer-social inside cards (e.g. About team section) ─── */
+html:not(.dark) .card .footer-social {
+  background: rgba(109, 40, 217, 0.08);
+  color: var(--color-accent);
+}
+
+html:not(.dark) .card .footer-social:hover {
+  background: var(--color-accent);
+  color: white;
+  transform: translateY(-3px);
+}
+
 /* ═══════════════════════════════════════════════════════════
    STAT COUNTER
    ═══════════════════════════════════════════════════════════ */
