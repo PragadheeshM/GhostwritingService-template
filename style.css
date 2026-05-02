@@ -278,6 +278,22 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(109, 40, 217, 0.08);
 }
 
+.nav-link.active {
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--color-accent);
+}
+
 /* ─── CSS Dropdown ────────────────────────────────────────── */
 .nav-dropdown {
   position: relative;
@@ -385,9 +401,15 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition-fast);
 }
 
-.mobile-nav-link:hover {
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
   color: var(--color-accent);
   background: rgba(109, 40, 217, 0.08);
+}
+
+.mobile-nav-link.active {
+  border-left: 3px solid var(--color-accent);
+  padding-left: calc(1rem - 3px);
 }
 
 .mobile-accordion-btn {
@@ -406,9 +428,15 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition-fast);
 }
 
-.mobile-accordion-btn:hover {
+.mobile-accordion-btn:hover,
+.mobile-accordion-btn.active {
   color: var(--color-accent);
   background: rgba(109, 40, 217, 0.06);
+}
+
+.mobile-accordion-btn.active {
+  border-left: 3px solid var(--color-accent);
+  padding-left: calc(1rem - 3px);
 }
 
 .mobile-sub-menu {
@@ -1353,6 +1381,19 @@ html:not(.dark) .card .footer-social:hover {
 
 .sidebar-link.active {
   font-weight: 600;
+  position: relative;
+}
+
+.sidebar-link.active::before {
+  content: '';
+  position: absolute;
+  left: -0.75rem; /* Negative margin value to align to the edge of sidebar */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 24px;
+  width: 3px;
+  background: var(--color-accent);
+  border-radius: 0 3px 3px 0;
 }
 
 .sidebar-link .sidebar-icon {
