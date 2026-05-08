@@ -75,7 +75,7 @@
           <div class="flex items-center gap-2 md:gap-3">
             <!-- Right Actions -->
             <div class="flex items-center gap-1.5 sm:gap-2">
-              <button id="rtl-toggle" class="nav-link px-3 py-1 font-semibold text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">
+              <button id="rtl-toggle" class="nav-link px-3 py-1 font-medium text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">
                 RTL
               </button>
               <button id="theme-toggle" class="icon-btn" title="Toggle Dark/Light Theme">
@@ -194,9 +194,9 @@
           <!-- Trust Strip -->
           <div class="flex items-center gap-6 mt-10 flex-wrap">
             <div class="flex -space-x-2">
-              <img src="https://images.unsplash.com/photo-1494790108755-2616b612b2ab?w=40&h=40&fit=crop&crop=face" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="Client" />
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="Client" />
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&h=40&fit=crop&crop=face" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="Client" />
+              <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&crop=faces" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="Client" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="Client" />
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="Client" />
               <div class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-semibold" style="background:var(--color-accent);">+</div>
             </div>
             <div>
@@ -210,15 +210,15 @@
 
         <!-- RIGHT: Image + Floating Cards -->
         <div class="relative hidden lg:block slide-right" style="animation-delay:200ms;">
-          <div class="relative w-full aspect-square max-w-[520px] mx-auto">
+          <div class="relative w-full aspect-square lg:max-w-[400px] xl:max-w-[520px] mx-auto">
             <!-- Main Image -->
-            <div class="w-full h-[480px] rounded-3xl overflow-hidden shadow-glass-lg border border-white/20">
-              <img src="https://images.unsplash.com/photo-1491841573634-28140fc7ced7?w=800&h=800&fit=crop" alt="Premium writing setup" class="img-cover" />
+            <div class="w-full h-[400px] xl:h-[480px] rounded-3xl overflow-hidden shadow-glass-lg border border-white/20">
+              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=800&fit=crop" alt="Professional author writing" class="img-cover" />
             </div>
             <!-- Purple overlay gradient -->
-            <div class="absolute inset-0 rounded-3xl" style="background:linear-gradient(135deg,rgba(109,40,217,0.15)0%,transparent 60%);pointer-events:none;"></div>
+            <div class="absolute inset-0 rounded-3xl" style="background:linear-gradient(135deg,var(--color-accent-border)0%,transparent 60%);pointer-events:none;"></div>
 
-            <div class="floating-card -bottom-6 -left-10" style="min-width:190px;">
+            <div class="floating-card -bottom-6 -left-4 xl:-left-10" style="min-width:190px;">
               <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:var(--color-accent);">
                 <i class="fas fa-book text-white"></i>
               </div>
@@ -229,7 +229,7 @@
             </div>
 
             <!-- Floating Card 2: Satisfaction -->
-            <div class="floating-card top-8 -right-10" style="min-width:160px;animation-delay:1.2s;">
+            <div class="floating-card top-8 -right-4 xl:-right-10" style="min-width:160px;animation-delay:1.2s;">
               <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(16,185,129,0.12);">
                 <i class="fas fa-check-circle" style="color:#059669;font-size:1.25rem;"></i>
               </div>
@@ -249,9 +249,9 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║       SECTION 2: TRUSTED PARTNERS           ║
        ╚══════════════════════════════════════════════╝ -->
-  <section class="py-10 border-y" style="border-color:var(--color-border);">
+  <section class="py-10 border-y" style="background:var(--color-bg-alt);border-color:var(--color-border);">
     <div class="container-xl">
-      <p class="text-center text-sm font-semibold tracking-widest uppercase mb-8 fade-in" style="color:var(--color-text-muted);">Trusted by leading publishers & brands</p>
+      <p class="text-center text-sm font-medium tracking-widest uppercase mb-8 fade-in" style="color:var(--color-text-muted);">Trusted by leading publishers & brands</p>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-8 items-center justify-items-center stagger-children">
         <div class="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0">
           <span class="font-heading font-semibold text-sm sm:text-base lg:text-lg text-center px-1" >Penguin Books</span>
@@ -305,7 +305,7 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║          SECTION 4: SERVICES                ║
        ╚══════════════════════════════════════════════╝ -->
-  <section id="services" class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
+  <section id="services" class="section-py px-4 sm:px-0 bg-alt">
     <div class="container-xl">
       <div class="text-center max-w-2xl mx-auto mb-14 fade-in">
         <div class="section-tag mx-auto"><i class="fas fa-pen-nib"></i> Our Expertise</div>
@@ -365,7 +365,7 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║          SECTION 5: HOW IT WORKS            ║
        ╚══════════════════════════════════════════════╝ -->
-  <section class="section-py px-4 sm:px-0 bg-grid" style="background-color:var(--color-secondary);">
+  <section class="section-py px-4 sm:px-0 bg-grid" style="background-color:var(--color-bg);">
     <div class="dark:hidden absolute inset-0 opacity-50" style="background:var(--color-secondary);"></div>
     <div class="container-xl relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-14 fade-in">
@@ -375,7 +375,7 @@
       <div class="grid md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
         <div class="card p-6 text-center relative !overflow-visible">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-semibold" style="background:var(--color-accent);">1</div>
-          <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.08);color:var(--color-accent);">
+          <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:var(--color-accent-soft);color:var(--color-accent);">
             <i class="fas fa-comments"></i>
           </div>
           <h3 class="font-heading font-semibold text-lg mb-2" >Free Consultation</h3>
@@ -383,7 +383,7 @@
         </div>
         <div class="card p-6 text-center relative !overflow-visible">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-semibold" style="background:var(--color-accent);">2</div>
-          <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.08);color:var(--color-accent);">
+          <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:var(--color-accent-soft);color:var(--color-accent);">
             <i class="fas fa-user-check"></i>
           </div>
           <h3 class="font-heading font-semibold text-lg mb-2" >Match & Plan</h3>
@@ -391,7 +391,7 @@
         </div>
         <div class="card p-6 text-center relative !overflow-visible">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-semibold" style="background:var(--color-accent);">3</div>
-          <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.08);color:var(--color-accent);">
+          <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:var(--color-accent-soft);color:var(--color-accent);">
             <i class="fas fa-pen-alt"></i>
           </div>
           <h3 class="font-heading font-semibold text-lg mb-2" >Create & Revise</h3>
@@ -399,7 +399,7 @@
         </div>
         <div class="card p-6 text-center relative !overflow-visible">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full text-white flex items-center justify-center text-sm font-semibold" style="background:var(--color-accent);">4</div>
-          <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:rgba(109,40,217,0.08);color:var(--color-accent);">
+          <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl" style="background:var(--color-accent-soft);color:var(--color-accent);">
             <i class="fas fa-rocket"></i>
           </div>
           <h3 class="font-heading font-semibold text-lg mb-2" >Publish & Launch</h3>
@@ -412,7 +412,7 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║          SECTION 6: TESTIMONIALS            ║
        ╚══════════════════════════════════════════════╝ -->
-  <section class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
+  <section class="section-py px-4 sm:px-0 bg-alt">
     <div class="container-xl">
       <div class="text-center max-w-2xl mx-auto mb-14 fade-in">
         <div class="section-tag mx-auto"><i class="fas fa-quote-left"></i> Testimonials</div>
@@ -459,20 +459,20 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║     SECTION 7: WHY CHOOSE US / USPs         ║
        ╚══════════════════════════════════════════════╝ -->
-  <section class="section-py px-4 sm:px-0" style="background:var(--color-secondary);">
+  <section class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
     <div class="container-xl">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="relative slide-left">
           <div class="w-full h-[440px] rounded-3xl overflow-hidden shadow-glass-lg">
-            <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=800&h=700&fit=crop" alt="The craft of writing" class="img-cover" />
+            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&h=700&fit=crop" alt="Manuscript editing process" class="img-cover" />
           </div>
           <!-- Floating badge -->
           <div class="floating-card bottom-6 right-0" style="min-width:200px;animation-delay:0.5s;">
-            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" >
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--color-accent);">
               <i class="fas fa-lock text-white text-sm"></i>
             </div>
             <div>
-              <div class="font-semibold text-sm" >100% Confidential</div>
+              <div class="font-medium text-sm" >100% Confidential</div>
               <div class="text-xs" style="color:var(--color-text-muted);">NDA on every project</div>
             </div>
           </div>
@@ -527,7 +527,7 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║          SECTION 8: RECENT BLOG             ║
        ╚══════════════════════════════════════════════╝ -->
-  <section class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
+  <section class="section-py px-4 sm:px-0 bg-alt">
     <div class="container-xl">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 fade-in">
         <div>
@@ -539,7 +539,7 @@
       <div class="grid md:grid-cols-3 gap-6 stagger-children">
         <div class="blog-card">
           <div class="overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?w=600&h=360&fit=crop" alt="Writing process" />
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=360&fit=crop" alt="Author brainstorming" />
           </div>
           <div class="p-5">
             <div class="flex items-center gap-2 mb-3">
@@ -548,7 +548,7 @@
             </div>
             <h3 class="font-heading font-semibold text-lg mb-2" >10 Secrets to Finding Your Authentic Writing Voice</h3>
             <p class="text-sm mb-4" style="color:var(--color-text-muted);">Discover techniques that top ghostwriters use to capture a client's voice before drafting a single word...</p>
-            <a href="blog-details.html" class="text-sm font-semibold mt-auto w-fit" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+            <a href="blog-details.html" class="text-sm font-medium mt-auto w-fit" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
           </div>
         </div>
         <div class="blog-card">
@@ -562,12 +562,12 @@
             </div>
             <h3 class="font-heading font-semibold text-lg mb-2" >Self-Publishing vs. Traditional: Which Path Is Right for You?</h3>
             <p class="text-sm mb-4" style="color:var(--color-text-muted);">A comprehensive guide comparing royalty rates, control, distribution, and timelines for both routes...</p>
-            <a href="blog-details.html" class="text-sm font-semibold mt-auto w-fit" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+            <a href="blog-details.html" class="text-sm font-medium mt-auto w-fit" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
           </div>
         </div>
         <div class="blog-card">
           <div class="overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=600&h=360&fit=crop" alt="Editing tips" />
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=360&fit=crop" alt="Professional editing workflow" />
           </div>
           <div class="p-5">
             <div class="flex items-center gap-2 mb-3">
@@ -576,7 +576,7 @@
             </div>
             <h3 class="font-heading font-semibold text-lg mb-2" >The 5 Editing Passes Every Manuscript Needs Before Submission</h3>
             <p class="text-sm mb-4" style="color:var(--color-text-muted);">Learn the professional editing workflow from developmental editing through final proofreading...</p>
-            <a href="blog-details.html" class="text-sm font-semibold mt-auto w-fit" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+            <a href="blog-details.html" class="text-sm font-medium mt-auto w-fit" style="color:var(--color-accent);">Read Article <i class="fas fa-arrow-right text-xs ml-1"></i></a>
           </div>
         </div>
       </div>
@@ -586,7 +586,7 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║              SECTION 9: CTA                 ║
        ╚══════════════════════════════════════════════╝ -->
-  <section class="section-py pb-32 px-4 sm:px-0 relative overflow-hidden" style="background: linear-gradient(145deg, #1E293B 0%, #151E32 100%);">
+  <section class="section-py pb-32 px-4 sm:px-0 relative overflow-hidden" style="background: var(--color-primary);">
     <div class="blob blob-primary w-96 h-96 -top-24 -left-24 opacity-30"></div>
     <div class="blob blob-secondary w-80 h-80 -bottom-20 -right-10 opacity-20"></div>
     <div class="container-xl relative z-10 text-center">
@@ -663,7 +663,7 @@
           <div class="space-y-3">
             <div class="flex items-start gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
               <i class="fas fa-map-marker-alt mt-1 text-purple-400 flex-shrink-0"></i>
-              <span>350 Fifth Ave, Suite 6000,<br/>New York, NY 10118</span>
+              <span style="color:rgba(255,255,255,0.55);">350 Fifth Ave, Suite 6000,<br/>New York, NY 10118</span>
             </div>
             <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
               <i class="fas fa-envelope text-purple-400"></i>

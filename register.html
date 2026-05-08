@@ -13,24 +13,18 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .auth-bg {
-      position: fixed;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1200&fit=crop') center/cover no-repeat;
-      z-index: 0;
-    }
     .auth-overlay {
       position: fixed;
       inset: 0;
-      background: linear-gradient(135deg, rgba(109,40,217,0.75) 0%, rgba(15,23,42,0.85) 100%);
+      background: #111111;
       z-index: 1;
       transition: background 0.4s ease;
     }
     .dark .auth-overlay {
-      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      background: #000000;
     }
     :root:not(.dark) .auth-overlay {
-      background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+      background: linear-gradient(135deg, #FAF9F6 0%, #F3F2EE 100%);
     }
     .auth-content {
       position: relative;
@@ -58,7 +52,7 @@
       transition: all 0.3s ease;
     }
     .dark .auth-card {
-      background: rgba(30, 41, 59, 0.7);
+      background: rgba(0, 0, 0, 0.8);
       border-color: rgba(255, 255, 255, 0.1);
     }
     :root:not(.dark) .auth-card {
@@ -80,11 +74,41 @@
     }
     :root:not(.dark) .auth-input {
       background: #FFFFFF;
-      border-color: #E2E8F0;
+      border-color: #F3F2EE;
     }
     .auth-input::placeholder { color: rgba(156, 163, 175, 0.6); }
     .auth-input:focus { border-color: var(--color-accent); background: rgba(255,255,255,0.12); box-shadow: 0 0 0 3px rgba(109,40,217,0.20); }
     .auth-label { color: var(--color-text); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; display: block; opacity: 0.9; }
+    
+    .auth-input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.5);
+      font-size: 0.875rem;
+      pointer-events: none;
+    }
+    :root:not(.dark) .auth-input-icon {
+      color: var(--color-text-soft) !important;
+    }
+    .auth-pwd-toggle {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    :root:not(.dark) .auth-pwd-toggle {
+      color: var(--color-text-soft) !important;
+    }
     
     /* Fixed corner buttons outside card */
     .auth-controls {
@@ -125,15 +149,15 @@
     :root:not(.dark) .auth-ctrl-btn {
       background: rgba(15, 23, 42, 0.05);
       border-color: rgba(15, 23, 42, 0.1);
-      color: #0F172A;
+      color: #111111;
     }
     :root:not(.dark) .auth-label {
-      color: #0F172A;
+      color: #111111;
       opacity: 1;
     }
     :root:not(.dark) .logo-text, 
     :root:not(.dark) h1 {
-      color: #0F172A !important;
+      color: #111111 !important;
     }
     :root:not(.dark) .auth-card p,
     :root:not(.dark) .auth-label-soft {
@@ -146,7 +170,7 @@
       color: var(--color-accent) !important;
     }
     :root:not(.dark) .auth-input {
-      color: #0F172A;
+      color: #111111;
       border-color: #CBD5E1;
     }
     :root:not(.dark) .auth-input::placeholder {
@@ -157,11 +181,11 @@
     }
     :root:not(.dark) .social-btn {
       background: #FFFFFF !important;
-      border-color: #E2E8F0 !important;
-      color: #0F172A !important;
+      border-color: #F3F2EE !important;
+      color: #111111 !important;
     }
     :root:not(.dark) .social-btn:hover {
-      background: #F8FAFC !important;
+      background: #FAF9F6 !important;
       border-color: var(--color-accent) !important;
     }
     /* Prevent social button overflow on tiny screens */
@@ -180,7 +204,7 @@
   </style>
 </head>
 <body class="font-body">
-  <div class="auth-bg"></div>
+  <!-- Background -->
   <div class="auth-overlay"></div>
 
   <!-- Corner Controls outside card -->
@@ -209,20 +233,20 @@
 
       <!-- Social Signup -->
       <div class="grid grid-cols-3 gap-3 mb-5">
-        <button onclick="GBS.toast('info','Google Sign-Up','Redirecting to Google...')" class="social-btn flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-medium transition-all" style="background:rgba(109,40,217,0.05);border:1px solid var(--color-border);color:var(--color-text);">
+        <button onclick="GBS.toast('info','Google Sign-Up','Redirecting to Google...')" class="social-btn flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-medium transition-all" style="background:var(--color-accent-soft);border:1px solid var(--color-border);color:var(--color-text);">
           <i class="fab fa-google text-base"></i> Google
         </button>
-        <button onclick="GBS.toast('info','Apple Sign-Up','Redirecting to Apple...')" class="social-btn flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-medium transition-all" style="background:rgba(109,40,217,0.05);border:1px solid var(--color-border);color:var(--color-text);">
+        <button onclick="GBS.toast('info','Apple Sign-Up','Redirecting to Apple...')" class="social-btn flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-medium transition-all" style="background:var(--color-accent-soft);border:1px solid var(--color-border);color:var(--color-text);">
           <i class="fab fa-apple text-base"></i> Apple
         </button>
-        <button onclick="GBS.toast('info','LinkedIn Sign-Up','Redirecting to LinkedIn...')" class="social-btn flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-medium transition-all" style="background:rgba(109,40,217,0.05);border:1px solid var(--color-border);color:var(--color-text);">
+        <button onclick="GBS.toast('info','LinkedIn Sign-Up','Redirecting to LinkedIn...')" class="social-btn flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-medium transition-all" style="background:var(--color-accent-soft);border:1px solid var(--color-border);color:var(--color-text);">
           <i class="fab fa-linkedin-in text-base"></i> LinkedIn
         </button>
       </div>
       <div class="flex items-center gap-3 mb-5">
-        <div class="flex-1 h-px" style="background:rgba(255,255,255,0.15);"></div>
-        <span class="text-xs font-medium" style="color:rgba(255,255,255,0.45);">or register with email</span>
-        <div class="flex-1 h-px" style="background:rgba(255,255,255,0.15);"></div>
+        <div class="flex-1 h-px" style="background:var(--color-border);opacity:0.5;"></div>
+        <span class="text-xs font-medium" style="color:var(--color-text-muted);">or register with email</span>
+        <div class="flex-1 h-px" style="background:var(--color-border);opacity:0.5;"></div>
       </div>
 
       <!-- Register Form -->
@@ -231,14 +255,14 @@
           <div>
             <label class="auth-label">First Name</label>
             <div class="relative">
-              <i class="fas fa-user absolute left-3.5 top-1/2 -translate-y-1/2" style="color:rgba(255,255,255,0.40);font-size:0.8rem;"></i>
+              <i class="fas fa-user auth-input-icon"></i>
               <input type="text" class="auth-input" placeholder="John" required />
             </div>
           </div>
           <div>
             <label class="auth-label">Last Name</label>
             <div class="relative">
-              <i class="fas fa-user absolute left-3.5 top-1/2 -translate-y-1/2" style="color:rgba(255,255,255,0.40);font-size:0.8rem;"></i>
+              <i class="fas fa-user auth-input-icon"></i>
               <input type="text" class="auth-input" placeholder="Doe" required />
             </div>
           </div>
@@ -246,35 +270,35 @@
         <div>
           <label class="auth-label">Email Address</label>
           <div class="relative">
-            <i class="fas fa-envelope absolute left-3.5 top-1/2 -translate-y-1/2" style="color:rgba(255,255,255,0.40);font-size:0.875rem;"></i>
+            <i class="fas fa-envelope auth-input-icon"></i>
             <input type="email" class="auth-input" placeholder="your@email.com" required />
           </div>
         </div>
         <div>
           <label class="auth-label">Password</label>
           <div class="relative">
-            <i class="fas fa-lock absolute left-3.5 top-1/2 -translate-y-1/2" style="color:rgba(255,255,255,0.40);font-size:0.875rem;"></i>
+            <i class="fas fa-lock auth-input-icon"></i>
             <input type="password" id="reg-pwd" class="auth-input" placeholder="Min. 8 characters" required oninput="checkStrength(this.value)" style="padding-right:3rem;" />
-            <button type="button" onclick="togglePwd('reg-pwd','rpw-eye')" class="absolute right-3.5 top-1/2 -translate-y-1/2" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.40);">
+            <button type="button" onclick="togglePwd('reg-pwd','rpw-eye')" class="auth-pwd-toggle">
               <i class="fas fa-eye" id="rpw-eye"></i>
             </button>
           </div>
           <div class="flex gap-1.5 mt-2" id="strength-bars">
-            <div class="strength-bar flex-1" id="sb1" style="background:rgba(255,255,255,0.08);"></div>
-            <div class="strength-bar flex-1" id="sb2" style="background:rgba(255,255,255,0.08);"></div>
-            <div class="strength-bar flex-1" id="sb3" style="background:rgba(255,255,255,0.08);"></div>
-            <div class="strength-bar flex-1" id="sb4" style="background:rgba(255,255,255,0.08);"></div>
+            <div class="strength-bar flex-1" id="sb1" style="background:var(--color-border);opacity:0.5;"></div>
+            <div class="strength-bar flex-1" id="sb2" style="background:var(--color-border);opacity:0.5;"></div>
+            <div class="strength-bar flex-1" id="sb3" style="background:var(--color-border);opacity:0.5;"></div>
+            <div class="strength-bar flex-1" id="sb4" style="background:var(--color-border);opacity:0.5;"></div>
           </div>
           <p class="text-xs mt-1" id="strength-label" style="color:var(--color-text-soft);">Enter password</p>
         </div>
         <div>
           <label class="auth-label">I am primarily looking to...</label>
           <select class="auth-input" style="padding-left:1rem;">
-            <option style="color:#0F172A;">Get my book ghostwritten</option>
-            <option style="color:#0F172A;">Have my manuscript edited</option>
-            <option style="color:#0F172A;">Self-publish my book</option>
-            <option style="color:#0F172A;">Write a book proposal</option>
-            <option style="color:#0F172A;">I'm exploring options</option>
+            <option style="color:#111111;">Get my book ghostwritten</option>
+            <option style="color:#111111;">Have my manuscript edited</option>
+            <option style="color:#111111;">Self-publish my book</option>
+            <option style="color:#111111;">Write a book proposal</option>
+            <option style="color:#111111;">I'm exploring options</option>
           </select>
         </div>
         <div class="flex items-start gap-2">

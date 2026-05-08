@@ -13,6 +13,15 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Immediate Theme Application to prevent FOUC and ensure chart consistency
+    (function() {
+      const storedTheme = localStorage.getItem('gbs-theme');
+      const preferredTheme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (preferredTheme === 'dark') document.documentElement.classList.add('dark');
+      else document.documentElement.classList.remove('dark');
+    })();
+  </script>
   <style>
     .sidebar-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 49; opacity: 0; visibility: hidden; transition: all 0.3s ease; backdrop-filter: blur(4px); }
     .sidebar-overlay.open { opacity: 1; visibility: visible; }
@@ -24,34 +33,34 @@
 
   <!-- SIDEBAR -->
   <aside id="sidebar" class="sidebar">
-    <div class="p-5 border-b flex items-center gap-2.5" style="border-color:var(--color-border);">
+    <div class="p-4 border-b flex items-center gap-2.5" style="border-color:var(--color-border);">
       <a href="index.html" class="flex items-center gap-2.5 flex-shrink-0">
         <div class="logo-icon-box" style="width:32px;height:32px;">
           <i class="fas fa-feather-alt" style="font-size:0.875rem;"></i>
         </div>
         <div>
           <span class="font-heading font-semibold text-lg leading-none logo-text">InkCraft</span>
-          <span class="block text-[0.65rem] font-semibold uppercase tracking-wider mt-0.5" style="color:var(--color-accent);">Admin Panel</span>
+          <span class="block text-[0.65rem] font-medium uppercase tracking-wider mt-0.5 logo-subtext" style="color:var(--color-accent);">Admin Panel</span>
         </div>
       </a>
     </div>
-    <div class="p-4 m-3 rounded-xl" style="background:rgba(109,40,217,0.08);">
+    <div class="p-3 m-2 rounded-xl" style="background:var(--color-accent-soft);">
       <div class="flex items-center gap-3">
         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover border-2" style="border-color:var(--color-accent);" alt="Admin" />
-        <div class="min-w-0">
+        <div class="min-w-0 user-info-text">
           <div class="font-semibold text-sm" >Amanda Rivers</div>
           <div class="text-xs" style="color:var(--color-text-muted);">Super Admin</div>
         </div>
       </div>
     </div>
     <nav class="flex-1 py-2 px-3">
-      <p class="text-xs font-semibold tracking-widest uppercase px-3 mb-2" style="color:var(--color-text-soft);">Overview</p>
+      <p class="text-xs font-medium tracking-widest uppercase px-3 mb-2" style="color:var(--color-text-soft);">Overview</p>
       <a href="admin-dashboard.html" class="sidebar-link active"><div class="sidebar-icon"><i class="fas fa-chart-pie"></i></div><span>Dashboard</span></a>
       <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-users"></i></div><span>All Users</span><span class="ml-auto badge badge-info" style="font-size:0.7rem;">1.2K</span></a>
       <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-book"></i></div><span>All Projects</span></a>
       <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-pen-nib"></i></div><span>Writers</span></a>
       <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-dollar-sign"></i></div><span>Revenue</span></a>
-      <p class="text-xs font-semibold tracking-widest uppercase px-3 mb-2 mt-4" style="color:var(--color-text-soft);">Management</p>
+      <p class="text-xs font-medium tracking-widest uppercase px-3 mb-2 mt-4" style="color:var(--color-text-soft);">Management</p>
       <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-ticket"></i></div><span>Support Queue</span><span class="ml-auto badge badge-danger" style="font-size:0.7rem;">18</span></a>
       <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-newspaper"></i></div><span>Blog</span></a>
       <a href="#" class="sidebar-link"><div class="sidebar-icon"><i class="fas fa-cogs"></i></div><span>Settings</span></a>
@@ -64,18 +73,18 @@
   <!-- MAIN CONTENT -->
   <div id="main-content" class="main-content">
     <!-- TOPBAR -->
-    <header class="dashboard-topbar"><div class="flex items-center gap-3"><button id="sidebar-toggle" class="icon-btn lg:hidden"><i class="fas fa-bars"></i></button>
+    <header class="dashboard-topbar"><div class="flex items-center gap-3"><button id="sidebar-toggle" class="icon-btn"><i class="fas fa-bars"></i></button>
         <div class="hidden sm:block">
           <div class="text-xs font-medium" style="color:var(--color-text-muted);">Admin Control</div>
           <div class="font-heading font-semibold text-base" >InkCraft Admin Panel</div>
         </div>
       </div>
       <div class="flex items-center gap-2">
-        <button id="rtl-toggle" class="nav-link px-3 py-1 font-semibold text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">RTL</button>
+        <button id="rtl-toggle" class="nav-link px-3 py-1 font-medium text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">RTL</button>
         <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon theme-icon" id="theme-icon"></i></button>
         <button class="icon-btn relative">
           <i class="fas fa-bell"></i>
-          <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-semibold">7</span>
+          <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium">7</span>
         </button>
         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face" class="w-9 h-9 rounded-full object-cover border-2 cursor-pointer" style="border-color:var(--color-accent);" alt="Admin" />
       </div>
@@ -87,7 +96,7 @@
       <!-- Top Stats -->
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-8 stagger-children">
         <div class="stat-widget">
-          <div class="stat-icon" style="background:rgba(109,40,217,0.12);"><i class="fas fa-dollar-sign text-accent text-xl"></i></div>
+          <div class="stat-icon" style="background:var(--color-accent-soft);"><i class="fas fa-dollar-sign text-accent text-xl"></i></div>
           <div>
             <div class="text-2xl font-semibold font-heading" >$84.2K</div>
             <div class="text-sm" style="color:var(--color-text-muted);">Revenue (Apr)</div>
@@ -230,7 +239,7 @@
         <div class="card p-6 fade-in">
           <div class="flex items-center justify-between mb-5">
             <h3 class="font-heading font-semibold text-lg">Top Writers</h3>
-            <a href="#" class="text-xs font-semibold text-accent">View All</a>
+            <a href="#" class="text-xs font-medium text-accent">View All</a>
           </div>
           <div class="space-y-4">
             <div class="flex items-center justify-between p-3 rounded-xl border border-border">
@@ -242,7 +251,7 @@
                 </div>
               </div>
               <div class="text-right">
-                <div class="text-xs font-bold text-green-500">4.9★</div>
+                <div class="text-xs font-semibold text-green-500">4.9★</div>
                 <div class="text-[10px] text-muted">Rating</div>
               </div>
             </div>
@@ -255,7 +264,7 @@
                 </div>
               </div>
               <div class="text-right">
-                <div class="text-xs font-bold text-green-500">5.0★</div>
+                <div class="text-xs font-semibold text-green-500">5.0★</div>
                 <div class="text-[10px] text-muted">Rating</div>
               </div>
             </div>
@@ -268,7 +277,7 @@
                 </div>
               </div>
               <div class="text-right">
-                <div class="text-xs font-bold text-accent">4.7★</div>
+                <div class="text-xs font-semibold text-accent">4.7★</div>
                 <div class="text-[10px] text-muted">Rating</div>
               </div>
             </div>
@@ -281,7 +290,7 @@
       <div class="grid sm:grid-cols-4 gap-4 stagger-children">
         <button onclick="GBS.toast('info','Writer Added','Opening new writer onboarding form...')" class="card p-5 text-center hover-float cursor-pointer">
           <i class="fas fa-user-plus text-accent text-2xl mb-2 block"></i>
-          <div class="text-sm font-semibold" >Add Writer</div>
+          <div class="text-sm font-medium" >Add Writer</div>
         </button>
         <button onclick="GBS.toast('success','Report Generated','Annual revenue report is ready.')" class="card p-5 text-center hover-float cursor-pointer">
           <i class="fas fa-chart-bar text-blue-500 text-2xl mb-2 block"></i>
@@ -302,57 +311,60 @@
 
 <script src="main.js"></script>
 <script>
-  // Revenue Bar Chart
-  const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+  /* ── Helpers ──────────────────────────── */
   const isDark = () => document.documentElement.classList.contains('dark');
-  const textColor = () => isDark() ? 'rgba(255,255,255,0.5)' : 'rgba(15,23,42,0.4)';
-  const gridColor = () => isDark() ? 'rgba(255,255,255,0.06)' : 'rgba(15,23,42,0.06)';
+  const textColor = () => isDark() ? '#cbd5e1' : '#475569';
+  const gridColor = () => isDark() ? 'rgba(255,255,255,0.1)' : '#e2e8f0';
 
-  const revenueChart = new Chart(revenueCtx, {
-    type: 'bar',
-    data: {
-      labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
-      datasets: [{
-        label: 'Revenue ($)',
-        data: [52000, 61000, 75000, 68000, 71000, 74800, 84200],
-        backgroundColor: (ctx) => {
-          const gradient = ctx.chart.ctx.createLinearGradient(0, 0, 0, 220);
-          gradient.addColorStop(0, '#6D28D9');
-          gradient.addColorStop(1, 'rgba(109,40,217,0.1)');
-          return gradient;
-        },
-        borderRadius: 8,
-        borderSkipped: false,
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: (ctx) => ` $${ctx.parsed.y.toLocaleString()}`
-          }
-        }
+  // Revenue Bar Chart
+  const revenueCanvas = document.getElementById('revenueChart');
+  if (revenueCanvas) {
+    const revenueCtx = revenueCanvas.getContext('2d');
+    new Chart(revenueCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
+        datasets: [{
+          label: 'Revenue ($)',
+          data: [52000, 61000, 75000, 68000, 71000, 74800, 84200],
+          backgroundColor: isDark() ? '#A78BFA' : '#6D28D9',
+          borderRadius: 8,
+          borderSkipped: false,
+        }]
       },
-      scales: {
-        y: {
-          beginAtZero: false,
-          min: 40000,
-          grid: { color: gridColor() },
-          ticks: {
-            color: textColor(),
-            callback: val => '$' + (val / 1000) + 'K'
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => ` $${ctx.parsed.y.toLocaleString()}`
+            }
           }
         },
-        x: {
-          grid: { display: false },
-          ticks: { color: textColor() }
+        scales: {
+          y: {
+            beginAtZero: false,
+            min: 40000,
+            grid: { color: gridColor() },
+            ticks: {
+              color: textColor(),
+              font: { weight: '500' },
+              callback: val => '$' + (val / 1000) + 'K'
+            }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { 
+              color: textColor(),
+              font: { weight: '500' }
+            }
+          }
         }
       }
-    }
-  });
+    });
+  }
 
   // Demographics Pie
   const demoCtx = document.getElementById('demoChart').getContext('2d');
@@ -362,7 +374,7 @@
       labels: ['Ghostwriting', 'Editing', 'Proofreading', 'Publishing'],
       datasets: [{
         data: [42, 31, 15, 12],
-        backgroundColor: ['#6D28D9','#8B5CF6','#A78BFA','#C4B5FD'],
+        backgroundColor: isDark() ? ['#A78BFA','#C4B5FD','#DDD6FE','#EDE9FE'] : ['#6D28D9','#8B5CF6','#A78BFA','#C4B5FD'],
         borderColor: 'transparent',
         borderWidth: 0,
         hoverOffset: 8

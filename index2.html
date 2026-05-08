@@ -40,7 +40,7 @@
     .author-card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.4) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -116,7 +116,7 @@
           </div>
           <div class="flex items-center gap-2 md:gap-3">
             <div class="flex items-center gap-1.5 sm:gap-2">
-              <button id="rtl-toggle" class="nav-link px-3 py-1 font-semibold text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">
+              <button id="rtl-toggle" class="nav-link px-3 py-1 font-medium text-[10px] tracking-wider uppercase border border-border" title="Switch to RTL">
                 RTL
               </button>
               <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
@@ -234,13 +234,13 @@
         </div>
 
         <!-- Right: Book Showcase Grid -->
-        <div class="relative grid grid-cols-2 gap-4 slide-right hidden lg:grid">
+        <div class="relative grid grid-cols-2 gap-4 slide-right hidden lg:grid lg:max-w-[420px] xl:max-w-none ml-auto">
           <div class="space-y-4">
             <div class="rounded-2xl overflow-hidden h-52 shadow-glass-lg border border-white/10 hover-float">
-              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=320&fit=crop" alt="Book" class="img-cover" />
+              <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=320&fit=crop" alt="Premium hardcover book" class="img-cover" />
             </div>
             <div class="rounded-2xl overflow-hidden h-36 shadow-glass-lg border border-white/10 hover-float" style="animation-delay:0.5s;">
-              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=250&fit=crop" alt="Books" class="img-cover" />
+              <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?w=400&h=250&fit=crop" alt="Vintage typewriter setup" class="img-cover" />
             </div>
           </div>
           <div class="space-y-4 mt-8">
@@ -248,25 +248,24 @@
               <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=250&fit=crop" alt="Library" class="img-cover" />
             </div>
             <div class="rounded-2xl overflow-hidden h-52 shadow-glass-lg border border-white/10 hover-float" style="animation-delay:1.5s;">
-              <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=400&h=320&fit=crop" alt="Writing" class="img-cover" />
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=320&fit=crop" alt="Professional manuscript editing" class="img-cover" />
             </div>
           </div>
-          <!-- Overlay stat -->
-          <div class="absolute inset-x-0 bottom-0 flex justify-center">
-            <div class="glass rounded-2xl px-5 py-3 flex items-center gap-4">
-              <div class="text-center text-white">
-                <div class="font-heading font-semibold text-xl text-purple-300">450+</div>
-                <div class="text-xs" style="color:rgba(255,255,255,0.65);">Bestsellers</div>
+          <div class="absolute inset-x-0 bottom-0 flex justify-center translate-y-1/2">
+            <div class="rounded-2xl px-6 py-4 flex items-center gap-6 shadow-2xl" style="background:rgba(15,15,15,0.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1);transition:none;">
+              <div class="text-center">
+                <div class="font-heading font-semibold text-2xl text-purple-400">450+</div>
+                <div class="text-xs font-medium text-white/80">Bestsellers</div>
               </div>
-              <div class="w-px h-8 bg-white/20"></div>
-              <div class="text-center text-white">
-                <div class="font-heading font-semibold text-xl text-purple-300">38</div>
-                <div class="text-xs" style="color:rgba(255,255,255,0.65);">Awards Won</div>
+              <div class="w-px h-10 bg-white/10"></div>
+              <div class="text-center">
+                <div class="font-heading font-semibold text-2xl text-purple-400">38</div>
+                <div class="text-xs font-medium text-white/80">Awards Won</div>
               </div>
-              <div class="w-px h-8 bg-white/20"></div>
-              <div class="text-center text-white">
-                <div class="font-heading font-semibold text-xl text-purple-300">15+</div>
-                <div class="text-xs" style="color:rgba(255,255,255,0.65);">Genres</div>
+              <div class="w-px h-10 bg-white/10"></div>
+              <div class="text-center">
+                <div class="font-heading font-semibold text-2xl text-purple-400">15+</div>
+                <div class="text-xs font-medium text-white/80">Genres</div>
               </div>
             </div>
           </div>
@@ -278,7 +277,7 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║      SECTION 2: GENRES STATS STRIP          ║
        ╚══════════════════════════════════════════════╝ -->
-  <section class="py-8 border-y" style="background:var(--color-bg);border-color:var(--color-border);">
+  <section class="py-8 border-y" style="background:var(--color-bg-alt);border-color:var(--color-border);">
     <div class="container-xl">
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center stagger-children">
         <div class="text-center">
@@ -308,7 +307,7 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║     SECTION 3: FEATURED AUTHORS             ║
        ╚══════════════════════════════════════════════╝ -->
-  <section class="section-py px-4 sm:px-0" style="background:var(--color-bg);">
+  <section class="section-py px-4 sm:px-0 bg-alt">
     <div class="container-xl">
       <div class="text-center mb-12 fade-in">
         <div class="section-tag mx-auto"><i class="fas fa-users"></i> Our Team</div>
@@ -317,7 +316,7 @@
       </div>
       <div class="grid sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger-children">
         <div class="author-card">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop&crop=faces" alt="Elena Rhodes" />
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=800&fit=crop&crop=faces" alt="Elena Rhodes" />
           <div class="author-card-overlay">
             <div class="flex items-center gap-2 mb-1">
               <span class="badge badge-accent text-xs">Non-Fiction</span>
@@ -328,7 +327,7 @@
           </div>
         </div>
         <div class="author-card">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&crop=faces" alt="Marcus Webb" />
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop&crop=faces" alt="Marcus Webb" />
           <div class="author-card-overlay">
             <div class="flex items-center gap-2 mb-1">
               <span class="badge badge-info text-xs">Business</span>
@@ -339,7 +338,7 @@
           </div>
         </div>
         <div class="author-card">
-          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=500&fit=crop&crop=faces" alt="Amara Chen" />
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop&crop=faces" alt="Amara Chen" />
           <div class="author-card-overlay">
             <div class="flex items-center gap-2 mb-1">
               <span class="badge badge-success text-xs">Fiction</span>
@@ -350,7 +349,7 @@
           </div>
         </div>
         <div class="author-card">
-          <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&h=500&fit=crop&crop=faces" alt="James Harlow" />
+          <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?w=600&h=800&fit=crop&crop=faces" alt="James Harlow" />
           <div class="author-card-overlay">
             <div class="flex items-center gap-2 mb-1">
               <span class="badge badge-warning text-xs">Memoir</span>
@@ -495,7 +494,7 @@
   <!-- ╔══════════════════════════════════════════════╗
        ║       SECTION 6: SUCCESS STORIES             ║
        ╚══════════════════════════════════════════════╝ -->
-  <section class="section-py px-4 sm:px-0" style="background:var(--color-secondary);">
+  <section class="section-py px-4 sm:px-0 bg-alt">
     <div class="container-xl">
       <div class="text-center mb-12 fade-in">
         <div class="section-tag mx-auto"><i class="fas fa-trophy"></i> Success Stories</div>
@@ -550,8 +549,8 @@
        ╚══════════════════════════════════════════════╝ -->
   <section class="section-py px-4 sm:px-0 relative overflow-hidden" style="background:var(--color-bg);">
     <div class="container-xl">
-      <div class="relative rounded-3xl overflow-hidden p-10 md:p-16" style="background:linear-gradient(135deg,var(--color-accent),#4C1D95);">
-        <div class="blob w-80 h-80 -top-10 -right-10 opacity-20" style="background:#A78BFA;"></div>
+      <div class="relative rounded-3xl overflow-hidden p-10 md:p-16" style="background:var(--color-accent);">
+        <div class="blob w-80 h-80 -top-10 -right-10 opacity-20" style="background:rgba(255,255,255,0.2);"></div>
         <div class="relative z-10 grid md:grid-cols-2 gap-10 items-center">
           <div class="text-white fade-in">
             <div class="section-tag mb-4" style="background:rgba(255,255,255,0.12);color:white;border-color:rgba(255,255,255,0.2);">
@@ -560,17 +559,17 @@
             <h2 class="font-heading font-semibold text-white mb-3" style="font-size:clamp(1.75rem,4vw,2.5rem);line-height:1.1;">
               Writing Secrets from<br/>the Pros — Free
             </h2>
-            <p style="color:rgba(255,255,255,0.75);">Join 18,000+ authors getting weekly insider tips on writing craft, publishing, and growing your author brand.</p>
+            <p style="color:rgba(255,255,255,0.85);">Join 18,000+ authors getting weekly insider tips on writing craft, publishing, and growing your author brand.</p>
           </div>
           <div class="slide-right">
             <form data-mock data-mock-type="success" data-mock-title="Subscribed!" data-mock-message="Welcome to the InkCraft community! Check your inbox." class="space-y-3">
               <div class="form-input-group">
-                <i class="fas fa-user input-icon" style="color:rgba(255,255,255,0.5);"></i>
-                <input type="text" placeholder="Your Name" class="form-input" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.20);color:white;padding-left:2.75rem;" />
+                <i class="fas fa-user input-icon" style="color:rgba(255,255,255,0.8);"></i>
+                <input type="text" placeholder="Your Name" class="form-input placeholder-white" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.25);color:white;padding-left:2.75rem;" />
               </div>
               <div class="form-input-group">
-                <i class="fas fa-envelope input-icon" style="color:rgba(255,255,255,0.5);"></i>
-                <input type="email" placeholder="Your Email Address" required class="form-input" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.20);color:white;padding-left:2.75rem;" />
+                <i class="fas fa-envelope input-icon" style="color:rgba(255,255,255,0.8);"></i>
+                <input type="email" placeholder="Your Email Address" required class="form-input placeholder-white" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.25);color:white;padding-left:2.75rem;" />
               </div>
               <button type="submit" class="btn-primary w-full justify-center" style="background:white;color:var(--color-accent);font-size:1rem;padding:0.875rem;">
                 <i class="fas fa-paper-plane"></i> Subscribe Free
@@ -634,7 +633,7 @@
           <div class="space-y-3">
             <div class="flex items-start gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
               <i class="fas fa-map-marker-alt mt-1 text-purple-400 flex-shrink-0"></i>
-              <span>350 Fifth Ave, Suite 6000,<br/>New York, NY 10118</span>
+              <span style="color:rgba(255,255,255,0.55);">350 Fifth Ave, Suite 6000,<br/>New York, NY 10118</span>
             </div>
             <div class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,0.55);">
               <i class="fas fa-envelope text-purple-400"></i>
